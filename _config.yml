@@ -2,6 +2,9 @@
 # remote_theme           : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "l2m" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
+# so we can use with github pages
+destination: docs/
+
 # Site Settings
 locale                    : "en-US"
 title                     : Lifelong Learning Machine
