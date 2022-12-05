@@ -6,8 +6,8 @@ SOURCEDIR=$(BASEDIR)
 DESTINATIONDIR=$(BASEDIR)/_site
 CONFFILE=$(BASEDIR)/_config.yml
 
-GITHUB_PAGES_REMOTE=git@github.com:NickleDave/nicholdav.info.git
-GITHUB_PAGES_BRANCH=master
+GITHUB_PAGES_REMOTE=git@github.com:NickleDave/blog.nicholdav.info.git
+GITHUB_PAGES_BRANCH=gh-pages
 
 help:
 	@echo 'Makefile for a jekyll Web site                                            		'
