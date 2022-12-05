@@ -4,15 +4,15 @@ minimal_mistakes_skin    : "l2m" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site Settings
 locale                    : "en-US"
-title                     : nicholdav.info
+title                     : Lifelong Learning Machine
 title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
+subtitle                 : nicholdav's blog
 email                     : nicholdav@gmail.com
 name                     : "David Nicholson"
 description               : >-
   Research software engineer with expertise in artificial intelligence and computational cognitive neuroscience
 baseurl                   : ""
-url                       : "https://nicholdav.info/"
+url                       : "https://blog.nicholdav.info/"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
