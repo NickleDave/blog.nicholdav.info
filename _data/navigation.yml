@@ -1,9 +1,12 @@
 main:
+  - title: "Home"
+    url: http://nicholdav.info/
+
   - title: "About"
-    url: /about.html
+    url: https://nicholdav.info/about.html
 
   - title: "Blog"
-    url: /blog.html
+    url: /
 
 about:
   - title: ""
