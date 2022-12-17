@@ -17,8 +17,8 @@ var store = [{
         "url": "/datasets/2017-10-18-bengalese-finch-song-repository",
         "teaser": null
       },{
-        "title": "Make your own `academicpages` from scratch with `jekyll`",
-        "excerpt":"In this post I document the process I went through to set up a peronsal web site with a structure similar to the academicpages theme used by many academics. I’m writing the post for my future self, and for you if you want to do the same. Why would you...","categories": [],
+        "title": "Make your own `academicpages` site from scratch with `jekyll`",
+        "excerpt":"Update 2022-12-17: I added a home page and a blog to my site, so I no longer use a set up exactly like the academicpages theme, but I’m leaving this post up to document the process (and because it’s currently my only post :sob:) In this post I document the...","categories": [],
         "tags": [],
         "url": "/how-to-use-jekyll-to-set-up-your-own-academic-website/",
         "teaser": null
