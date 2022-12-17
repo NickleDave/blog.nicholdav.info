@@ -1,30 +1,51 @@
 ---
-title:  "Make your own `academicpages` from scratch with `jekyll`"
+title:  "Make your own `academicpages` site from scratch with `jekyll`"
 ---
+
+Update 2022-12-17: I added a home page and a blog to my site,
+so I no longer use a set up exactly like the academicpages theme,
+but I'm leaving this post up to document the process
+(and because it's currently my only post :sob:)
 
 In this post I document the process I went through
 to set up a peronsal web site with a structure
-similar to the [`academicpages`](https://academicpages.github.io/) theme
-used by many academics.
+similar to the academicpages theme
+used by many academics (<https://academicpages.github.io/>).
 I'm writing the post for my future self,
 and for you if you want to do the same.
 
+## Step-by-step guide to developing your own 'academicpages'
+Here's the summary version first, so you know what you're getting into:
+1. set up a `jekyll` development environment
+2. make the landing page be your about page
+3. make the sidebar show your profile with links
+4. add links to publications, talks, etc., in the nav bar at the top of the page
+
 ## Why would you bother?
 
-I wanted a site similar in style to [`academicpages`](https://academicpages.github.io/),
+I wanted a site similar in style to `academicpages`
+(<https://academicpages.github.io/>),
 with links in the sidebar to Google Scholar, OrcID, etc.,
 and the ability to use `jekyll`'s "collections" feature
 to easily organize publications, talks and teaching.
 But I also wanted the flexibility to change themes,
 which is not easy to do with `academicpages`.
-I love to support Python libraries like `pelican`,
-and some of the themes are very versatile,
+
+If you're like me, and you mainly write code in Python,
+you might naturally use a static site generator
+written in Python (as I did for a while, see next section).
+Using jekyll, that's written in Ruby, might feel like a big jump--
+the big pain point in switching languages is often
+getting familiar with their tooling.
+As a Pythonista, of course I want to support Python libraries,
+and some of the static site generators like `pelican`
+are battle tested with themes that are very versatile,
 like their version of
 [`bootstrap`](https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3).
 But somehow `minimal-mistakes` and other `jekyll` themes just look better
 to my (untrained) eye.
 
-Last but not least, this is a fun exercise
+And as a programmar and developer, it might be a fun exercise
 in using libraries in a language besides Python.
 It's interesting to experience the tooling in the ecosystems
 of other programming languages.
@@ -82,7 +103,7 @@ I figured there couldn't be *too too* many steps
 to setting up a similar site on my own.
 
 ## Step-by-step guide to developing your own 'academicpages'
-Here's the summary version first so you know what you're getting into:
+Again, here's the outline of what we're going to do:
 1. set up a `jekyll` development environment
 2. make the landing page be your about page
 3. make the sidebar show your profile with links
