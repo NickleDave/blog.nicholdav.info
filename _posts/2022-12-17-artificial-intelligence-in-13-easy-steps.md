@@ -24,6 +24,8 @@ it was a mistake to imagine
 that intelligence could exist in an artificial, disembodied form,
 a brain in a jar that we pour on problems when we need them solved on demand.
 
+** insert images from book here, the drawings are so good! **
+
 How did Braitenberg manage all this, in my mind?
 I'll give some quotes here to sum up his message,
 but first let me better explain the content of the book.
@@ -81,6 +83,7 @@ Not gonna do it. Okay I just did.)
   + "No one knows what attention is", section on synthetic approach, still odd they don't reference Braitenberg
   + the Buszaki article about psychology and multiple definitions of terms
 
+* credit internet archive!!!
 
 <iframe src="https://archive.org/embed/vehiclesexperime00brai" width="560" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
 
