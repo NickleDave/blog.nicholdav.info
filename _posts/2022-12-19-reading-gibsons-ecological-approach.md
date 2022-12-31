@@ -1,6 +1,9 @@
 ---
-title:  "James Gibson really said your functionalist cognitivism sucks"
+title:  "Reading Gibson's Ecological Approach to Visual Perception"
+post_url: 2022-12-19-reading-gibsons-ecological-approach
 ---
+
+## and why it gave me permission to reject functionalist modular cognitivism
 
 > It is not true that “the laboratory can never be like life.” The laboratory must be like life!
 
@@ -40,7 +43,7 @@ The tasks that people in the lab used to study vision and attention
 seemed completely divorced from reality.
 In the real world, I wander around seeing natural images,
 but in the lab, you force me to hold my head still
-and fixate my eyes while you flash a 2-D array of lines and shapes at me?
+and to fixate my eyes while you flash a 2-D array of lines and shapes at me?
 Then on top of that, the supposed mechanisms
 that these tasks were meant to study
 seemed to be making gigantic assumptions
@@ -103,7 +106,7 @@ Based on my experience in academia,
 the principal route for gaining exposure to philosophy of science
 as a scientist is to be the child
 of a philosopher of science in academia.
-Maybe we should change that some. 
+Maybe we should change that some.
 Scientists can have a little philosophy, as a treat.
 
 So anyway, I worked really, really hard at doing a modeling study,
