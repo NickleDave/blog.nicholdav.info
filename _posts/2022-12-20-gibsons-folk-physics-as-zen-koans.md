@@ -16,29 +16,64 @@ of that platform, *que descanse en paz*.
 
 But let's forget Twitter ever happened, and give James Gibson some attention instead.
 
-Its his definition of the environment that I want to talk about here.
+What he actually said is *more* like:
 
-In this post, I shall offer you the following fine tidbits:
+> My folk physics is better than you folk's physics.
+
+This post is part of a series about Gibson's book,
+the Ecological Approach to Visual Perception.
+In the [intro post](link)
+I talked about why the message of his book resonates so much with me.
+
+Here I want to talk about the first chapter,
+where he gives his definition of the term *environment*.
+He starts here because he argues
+that we can't even begin to think about visual perception
+until we have a solid theoretical conception
+of what an animal needs to perceive, that is, its environment.
+Throughout the chapter,
+he establishes and refines his idea of the environment
+by contrasting it with the language and terminology of physics.
+It's hard not to read the chapter as a rejection of the reductionist way of thought,
+an allergic reaction to all of physics
+by a researcher who was brought up in that tradition.
+I don't actually think it's a rejection;
+he just knows that we are stuck in our ways of thought like he once was,
+and so he is trying to force us to wake up,
+to realize that there is another, more useful way to conceive of perception.
+
+I also couldn't help but notice that
+what he argues for instead,
+the way he talks about what animals need to perceive in the environment,
+sounds a lot like what others have called
+[folk physics](https://en.wikipedia.org/wiki/Na%C3%AFve_physics).
+
+So in this post I'll talk about all of that:
 - James Gibson as author of a spiritual text fighting against reductionist science
 - Why James Gibson thinks the folk physics of animals is good, actually
 - Why is this appealing to me, a failed, imposter vision scientist and AI researcher
-- Whether or not anybody managed to put some equations on those folk physics yet
+- Whether or not anybody managed to put some equations on Gibson's folk physics yet
 
 ## James Gibson as author of a spiritual text
 
-His writing has something of the Tao. And rightfully so; like a Buddhist monk, he fought so hard for (scientific) enlightenment by following its path according to the teachings that were passed down to him, only in the end to realize that blind adherence to those teachings was exactly what prevented him from seeing the world around him.
+Gibson's writing has something of the Tao.
+I'll explain what I'll mean, and I'll come back to this again when discussing later chapters,
+but let me first say why I think he writes this way.
+Like a Buddhist monk, he waged a battle within himself for (scientific) enlightenment
+by impeccably following the path of the teachings that were passed down to him,
+only in the end to realize that blind adherence to those teachings
+was exactly what prevented him from seeing the world around him.
 
-"The world can be described at different levels, and one can choose which level to begin with." That's how he starts the second paragraph of the book. He writes this way, like a koan. What I mean is that he says things that sound simultaneously like the most mundane observation, and yet deeply profound. Sure, physics describes things at a different level than chemistry, so what?
+"The world can be described at different levels, and one can choose which level to begin with." That's how he starts the second paragraph of the book. He writes this way, like a kōan. What I mean is that he says things that sound simultaneously like the most mundane observation, and yet deeply profound. Sure, physics describes things at a different level than chemistry, so what?
 
-(When I talk about the Tao and koans, please forgive me for what might sound like cultural appropriation. I do not mean to wear anyone's culture as a costume but I do come by these analogies honestly. I spent my early teens reading the Tao Te Ching, a chubby white trash kid that found a copy in a little Waldenbooks in a mall. Some Googling makes me think it must have been the Stephen Mitchell translation. Much like a Buddhist monk, at this age I dedicated most of my time to playing Nintendo and drawing weird little comics while living off of generic strawberry soda and off-brand ramen noodles. The Tao spoke to me the same way it spoke to David Byrne when he wrote songs like "The Good Thing". Just the very promise of thinking in a way that is not fundamentally individualistic and bullheadedly assured of your own correctness will be alluring to anyone who has failed to fit in to American culture.)
+(When I talk about the Tao and kōans, please forgive my cultural colonization. I'm sure someone will be annoyed that I'm conflating Eastern thought with a schoolf of thought within Western science. I might be a colonizer but at least I come by these analogies honestly. I spent my early teens reading the Tao Te Ching, a chubby white trash kid that found a copy in a little Waldenbooks in a mall. Some Googling makes me think it must have been the Stephen Mitchell translation. Much like a Buddhist monk, at this age I dedicated most of my time to playing Nintendo and drawing weird little comics while living off of generic strawberry soda and off-brand ramen noodles. The Tao spoke to me the same way it spoke to David Byrne when he wrote songs like "The Good Thing". Just the very promise of thinking in a way that is not fundamentally individualistic and bullheadedly assured of your own correctness will be alluring to anyone who has failed to fit in to American culture.
+So I hope it makes sense why I would compare that to Gibson's effort to force us to stop thinking like physicists.)
 
-When I say he writes like a koan, what I mean is that he says things that sound simultaneously like the most mundane observation, and yet deeply profound.
-
-Gibson continues to issue koans in the first couple of pages. On why we start with psychology: "[P]sychology begins with the division between the inanimate and the animate". On how animals belong to an environment: "...for any animal needs to distinguish not only the substances and objects of its material environment but also the other animals and the differences between them." You thought you knew that animals need to perceive other animals, yet Gibson tells us this in a way that makes it seem like it is somehow going to surprise us.
+Gibson continues to issue kōans in the first couple of pages. On why we start with psychology: "[P]sychology begins with the division between the inanimate and the animate". On how animals belong to an environment: "...for any animal needs to distinguish not only the substances and objects of its material environment but also the other animals and the differences between them." You thought you knew that animals need to perceive other animals, yet Gibson tells us this in a way that makes it seem like it is somehow going to surprise us.
 
 It reminds me of a B. Kliban comic: a single panel with a drawing of a guru wearing just a loincloth on a mountaintop in position to meditate, saying something like "truly it is written that a man has twice as many eyes and ears as mouths". And some hippies who have climbed the mountain react by saying "oh wow man, deep." I'm those hippies. At least, I get why some scientists might caricature me as one of those hippies, going to worship at the feet of Gibson.
 
-It makes so much sense to me, though. I totally get why Gibson starts with levels of description in science, and why at the same time he is so adamant that we **must** acknowledge the existence of an environment, and the interdependence of the animal and the environment. I know what he's going through. Or at least I think I do, having read the introduction. Gibson "grew up" in science as a hardcore psychophysicist. He thought he could reduce vision to its fundamental quanta, the quarks of contrast and illumination and rotation that a physicist might imagine that the visual system must use at each moment in a bottom-up, feed-forward way to assemble a percept.
+It makes so much sense to me, though. I totally get why Gibson starts with levels of description in science, and why at the same time he is so adamant that we **must** acknowledge the existence of an environment, and the interdependence of the animal and the environment. I know what he's going through. Or at least I think I do, having read the introduction. Gibson "grew up" in science as a hardcore psychophysicist. He thought he could reduce vision to its fundamental quanta, the quarks of contrast and illumination and rotation. Of course a physicist would imagine that the visual system must use such visual quanta at each moment to assemble a percept in a bottom-up way.
 
 Yet after fighting with this approach for half of his adult life, he reached enlightenment. It would never work. He had to go back to the drawing board. Now in the first chapter of the book he is trying to run us through that process, to save us from learning the hard way like he did.
 
