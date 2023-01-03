@@ -400,11 +400,17 @@ This is especially if multiple people are developing a package.
  and they are tempted by this name to just cram that one helper or validation function 
  inside `utilities`.
 
-Hold on, friend. Take a step back, take a deep breath. It's okay to add a module with just a single function. You can just have a module named `timestamp` with only one function `get_timestamp`, and have it be only 10 lines. Please believe me, it will make the codebase easier to read, it will make internal usage of the function easier to read, it will make it easier to write quick unit tests. You do **not** want to hold 500 lines of `utils` in your head when you're trying to track down a bug. 
-If for some reason you feel that you must hide helper functions like `timestamp.get_timestamp` from users then you can declare an `__all__` inside your `package.__init__` where you pointedly omit the `timestamp` module, forcing only the most intrepid repo spelunkers that know it exists to import it directly.
+Hold on, friend. Take a step back, take a deep breath. 
+It's okay to add a module with just a single function. 
+You can just have a module named `timestamp` with only one function `get_timestamp`, 
+and have it be only 10 lines. Please believe me, it will make the codebase easier to read, 
+it will make internal usage of the function easier to read, 
+it will make it easier to write quick unit tests. 
+You do **not** want to hold 500 lines of `utils` in your head when you're trying to track down a bug. 
 
 So that's me saying what that other blog post said, after I said they already said it.
-All I want to add here is that the same logic from above applies: you *want* people to use your package.
+All I want to add here is that the same logic from above applies: 
+you *want* people to use your package.
 So *give* the modules *very specific* names so people know exactly what everything is doing.
 It will help your potential users and it will help future you.
 
@@ -412,10 +418,9 @@ It will help your potential users and it will help future you.
 
 At the risk of repeating myself, 
 let me tell you again why you'd want to take these tips to heart.
-You want people to use your Python package, 
-your library that you're sharing with the world.
-People can go onto the internet 
-and just use the tools you put all that effort into!
+You want people to use your library that you're sharing with the world.
+It's amazing; people can go onto the internet 
+and just *use* the tools you put all that effort into!
 As a researcher, 
 this is the kind of instant gratification you can't get 
 when you are taking on the Herculean task 
