@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="https://blog.nicholdav.info//feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.nicholdav.info//" rel="alternate" type="text/html" /><updated>2023-01-03T15:10:50-05:00</updated><id>https://blog.nicholdav.info//feed.xml</id><title type="html">Lifelong Learning Machine</title><subtitle>Research software engineer with expertise in artificial intelligence and computational cognitive neuroscience</subtitle><author><name>David Aaron Nicholson</name><email>nicholdav@gmail.com</email></author><entry><title type="html">Four tips for structuring your research group’s Python packages</title><link href="https://blog.nicholdav.info//four-tips-structuring-research-python/" rel="alternate" type="text/html" title="Four tips for structuring your research group’s Python packages" /><published>2022-12-26T00:00:00-05:00</published><updated>2022-12-26T00:00:00-05:00</updated><id>https://blog.nicholdav.info//four-tips-structuring-research-python</id><content type="html" xml:base="https://blog.nicholdav.info//four-tips-structuring-research-python/"><![CDATA[<p>This is one of those petulant posts from someone who writes software.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="https://blog.nicholdav.info//feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.nicholdav.info//" rel="alternate" type="text/html" /><updated>2023-01-03T15:23:41-05:00</updated><id>https://blog.nicholdav.info//feed.xml</id><title type="html">Lifelong Learning Machine</title><subtitle>Research software engineer with expertise in artificial intelligence and computational cognitive neuroscience</subtitle><author><name>David Aaron Nicholson</name><email>nicholdav@gmail.com</email></author><entry><title type="html">Four tips for structuring your research group’s Python packages</title><link href="https://blog.nicholdav.info//four-tips-structuring-research-python/" rel="alternate" type="text/html" title="Four tips for structuring your research group’s Python packages" /><published>2022-12-26T00:00:00-05:00</published><updated>2022-12-26T00:00:00-05:00</updated><id>https://blog.nicholdav.info//four-tips-structuring-research-python</id><content type="html" xml:base="https://blog.nicholdav.info//four-tips-structuring-research-python/"><![CDATA[<p>This is one of those petulant posts from someone who writes software.
 A post from one of those people that describes some library they wrote as “opinionated”,
 as if the rest of us have been living in fear of expressing our opinions through software.</p>
 
@@ -392,11 +392,17 @@ This is especially if multiple people are developing a package.
  and they are tempted by this name to just cram that one helper or validation function 
  inside <code class="language-plaintext highlighter-rouge">utilities</code>.</p>
 
-<p>Hold on, friend. Take a step back, take a deep breath. It’s okay to add a module with just a single function. You can just have a module named <code class="language-plaintext highlighter-rouge">timestamp</code> with only one function <code class="language-plaintext highlighter-rouge">get_timestamp</code>, and have it be only 10 lines. Please believe me, it will make the codebase easier to read, it will make internal usage of the function easier to read, it will make it easier to write quick unit tests. You do <strong>not</strong> want to hold 500 lines of <code class="language-plaintext highlighter-rouge">utils</code> in your head when you’re trying to track down a bug. 
-If for some reason you feel that you must hide helper functions like <code class="language-plaintext highlighter-rouge">timestamp.get_timestamp</code> from users then you can declare an <code class="language-plaintext highlighter-rouge">__all__</code> inside your <code class="language-plaintext highlighter-rouge">package.__init__</code> where you pointedly omit the <code class="language-plaintext highlighter-rouge">timestamp</code> module, forcing only the most intrepid repo spelunkers that know it exists to import it directly.</p>
+<p>Hold on, friend. Take a step back, take a deep breath. 
+It’s okay to add a module with just a single function. 
+You can just have a module named <code class="language-plaintext highlighter-rouge">timestamp</code> with only one function <code class="language-plaintext highlighter-rouge">get_timestamp</code>, 
+and have it be only 10 lines. Please believe me, it will make the codebase easier to read, 
+it will make internal usage of the function easier to read, 
+it will make it easier to write quick unit tests. 
+You do <strong>not</strong> want to hold 500 lines of <code class="language-plaintext highlighter-rouge">utils</code> in your head when you’re trying to track down a bug.</p>
 
 <p>So that’s me saying what that other blog post said, after I said they already said it.
-All I want to add here is that the same logic from above applies: you <em>want</em> people to use your package.
+All I want to add here is that the same logic from above applies: 
+you <em>want</em> people to use your package.
 So <em>give</em> the modules <em>very specific</em> names so people know exactly what everything is doing.
 It will help your potential users and it will help future you.</p>
 
@@ -404,10 +410,9 @@ It will help your potential users and it will help future you.</p>
 
 <p>At the risk of repeating myself, 
 let me tell you again why you’d want to take these tips to heart.
-You want people to use your Python package, 
-your library that you’re sharing with the world.
-People can go onto the internet 
-and just use the tools you put all that effort into!
+You want people to use your library that you’re sharing with the world.
+It’s amazing; people can go onto the internet 
+and just <em>use</em> the tools you put all that effort into!
 As a researcher, 
 this is the kind of instant gratification you can’t get 
 when you are taking on the Herculean task 
