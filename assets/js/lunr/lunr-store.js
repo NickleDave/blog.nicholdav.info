@@ -23,6 +23,12 @@ var store = [{
         "url": "/how-to-use-jekyll-to-set-up-your-own-academic-website/",
         "teaser": null
       },{
+        "title": "Four tips for structuring your research group's Python packages",
+        "excerpt":"This is one of those petulant posts from someone who writes software. A post from one of those people that describes some library they wrote as “opinionated”, as if the rest of us have been living in fear of expressing our opinions through software. So, sorry in advance. But I...","categories": [],
+        "tags": [],
+        "url": "/four-tips-structuring-research-python/",
+        "teaser": null
+      },{
         "title": "Paper Title Number 1",
         "excerpt":"This paper is about the number 1. The number 2 is left for future work.   Download paper here   Recommended citation: Your Name, You. (2009). “Paper Title Number 1.” Journal 1. 1(1).  ","categories": [],
         "tags": [],
