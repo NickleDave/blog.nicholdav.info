@@ -393,7 +393,7 @@ or jump around through 3000 lines of code to find them.
 ## Finally, don't name a module `package.utils` or `package.utilities`
 
 Someone even more jaded than me has already said this:
-https://breadcrumbscollector.tech/stop-naming-your-python-modules-utils/
+<https://breadcrumbscollector.tech/stop-naming-your-python-modules-utils/>
 
 The basic idea is that the concept of `utilities` is so nebulous that more and more things will end up crammed into this module, that are less and less related to each other.
 This is especially if multiple people are developing a package.
@@ -438,6 +438,6 @@ has anybody done any research
 supporting my claims that these tips will help 
 you and others read and use your code?
 If I ever finish reading 
-(The Programmer's Brain)[https://www.manning.com/books/the-programmers-brain],
+[The Programmer's Brain](https://www.manning.com/books/the-programmers-brain),
 I'll probably be able to tell you.
 Stay tuned for another post. 🙂
