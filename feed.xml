@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="https://blog.nicholdav.info//feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.nicholdav.info//" rel="alternate" type="text/html" /><updated>2023-01-03T19:44:33-05:00</updated><id>https://blog.nicholdav.info//feed.xml</id><title type="html">Lifelong Learning Machine</title><subtitle>Research software engineer with expertise in artificial intelligence and computational cognitive neuroscience</subtitle><author><name>David Aaron Nicholson</name><email>nicholdav@gmail.com</email></author><entry><title type="html">Four tips for structuring your research group’s Python packages</title><link href="https://blog.nicholdav.info//four-tips-structuring-research-python/" rel="alternate" type="text/html" title="Four tips for structuring your research group’s Python packages" /><published>2022-12-26T00:00:00-05:00</published><updated>2022-12-26T00:00:00-05:00</updated><id>https://blog.nicholdav.info//four-tips-structuring-research-python</id><content type="html" xml:base="https://blog.nicholdav.info//four-tips-structuring-research-python/"><![CDATA[<p>This is one of those petulant posts from someone who writes software.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="https://blog.nicholdav.info//feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.nicholdav.info//" rel="alternate" type="text/html" /><updated>2023-01-03T19:54:16-05:00</updated><id>https://blog.nicholdav.info//feed.xml</id><title type="html">Lifelong Learning Machine</title><subtitle>Research software engineer with expertise in artificial intelligence and computational cognitive neuroscience</subtitle><author><name>David Aaron Nicholson</name><email>nicholdav@gmail.com</email></author><entry><title type="html">Four tips for structuring your research group’s Python packages</title><link href="https://blog.nicholdav.info//four-tips-structuring-research-python/" rel="alternate" type="text/html" title="Four tips for structuring your research group’s Python packages" /><published>2022-12-26T00:00:00-05:00</published><updated>2022-12-26T00:00:00-05:00</updated><id>https://blog.nicholdav.info//four-tips-structuring-research-python</id><content type="html" xml:base="https://blog.nicholdav.info//four-tips-structuring-research-python/"><![CDATA[<p>This is one of those petulant posts from someone who writes software.
 A post from one of those people that describes some library they wrote as “opinionated”,
 as if the rest of us have been living in fear of expressing our opinions through software.</p>
 
@@ -374,14 +374,15 @@ where (ideally) you are not hiding any functions;
 instead you are just doing some boring boilerplate imports here
 to make your life easier somewhere else.
 This lets you be more intentional about your API too.
-You can have some helper functions inside the sub-package modules that users don’t really need,
-and to broadcast this to the world,
-you just import the stuff you think people need inside your sub-package <code class="language-plaintext highlighter-rouge">__init__.py</code></p>
+You can have some helper functions inside the sub-package modules 
+that users don’t really need.
+To broadcast to the world the stuff you think people need,
+you import just that stuff inside your sub-package <code class="language-plaintext highlighter-rouge">__init__.py</code></p>
 
 <div class="notice">
 Python doesn't have a concept of "public and private members of objects",
 as languages like Java do,
-so there's no (good) way for you to **absolutely** prevent someone from
+so there's no (good) way for you to <strong>absolutely</strong> prevent someone from
 importing and accessing things.
 Instead Python follows the principle of "we're all adults here",
 and uses some conventions to indicate things like private and internal functions.
@@ -391,8 +392,10 @@ in particular, where it talks about <tt>_single_leading_underscore</tt>
 as a weak “internal use” indicator. 
 </div>
 
-<p>But from your perspective as a maintainer, you can easily focus on one little chunk of code at a time.
-<em>I promise</em> that in the long run, this will help you,
+<p>The other advantage of breaking code up into many modules within a subpackage, 
+from your perspective as a maintainer, 
+is that you can easily focus on one little chunk of code at a time.
+I <em>promise</em> that in the long run, this will help you,
 especially when you need to context switch and work on multiple things at once.
 <em>Especially</em> if there’s some helper functions and you’re not having to scroll
 or jump around through 3000 lines of code to find them.</p>
