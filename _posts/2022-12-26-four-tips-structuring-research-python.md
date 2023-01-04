@@ -383,14 +383,15 @@ where (ideally) you are not hiding any functions;
 instead you are just doing some boring boilerplate imports here
 to make your life easier somewhere else.
 This lets you be more intentional about your API too.
-You can have some helper functions inside the sub-package modules that users don't really need,
-and to broadcast this to the world,
-you just import the stuff you think people need inside your sub-package `__init__.py`
+You can have some helper functions inside the sub-package modules 
+that users don't really need.
+To broadcast to the world the stuff you think people need,
+you import just that stuff inside your sub-package `__init__.py`
 
 <div class="notice">
 Python doesn't have a concept of "public and private members of objects",
 as languages like Java do,
-so there's no (good) way for you to **absolutely** prevent someone from
+so there's no (good) way for you to <strong>absolutely</strong> prevent someone from
 importing and accessing things.
 Instead Python follows the principle of "we're all adults here",
 and uses some conventions to indicate things like private and internal functions.
@@ -400,8 +401,10 @@ in particular, where it talks about <tt>_single_leading_underscore</tt>
 as a weak “internal use” indicator. 
 </div>
 
-But from your perspective as a maintainer, you can easily focus on one little chunk of code at a time.
-*I promise* that in the long run, this will help you,
+The other advantage of breaking code up into many modules within a subpackage, 
+from your perspective as a maintainer, 
+is that you can easily focus on one little chunk of code at a time.
+I *promise* that in the long run, this will help you,
 especially when you need to context switch and work on multiple things at once.
 *Especially* if there's some helper functions and you're not having to scroll
 or jump around through 3000 lines of code to find them.
