@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="https://blog.nicholdav.info//feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.nicholdav.info//" rel="alternate" type="text/html" /><updated>2023-01-04T07:29:12-05:00</updated><id>https://blog.nicholdav.info//feed.xml</id><title type="html">Lifelong Learning Machine</title><subtitle>Research software engineer with expertise in artificial intelligence and computational cognitive neuroscience</subtitle><author><name>David Aaron Nicholson</name><email>nicholdav@gmail.com</email></author><entry><title type="html">Four tips for structuring your research group’s Python packages</title><link href="https://blog.nicholdav.info//four-tips-structuring-research-python/" rel="alternate" type="text/html" title="Four tips for structuring your research group’s Python packages" /><published>2022-12-26T00:00:00-05:00</published><updated>2022-12-26T00:00:00-05:00</updated><id>https://blog.nicholdav.info//four-tips-structuring-research-python</id><content type="html" xml:base="https://blog.nicholdav.info//four-tips-structuring-research-python/"><![CDATA[<p>This is one of those petulant posts from someone who writes software.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="https://blog.nicholdav.info//feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.nicholdav.info//" rel="alternate" type="text/html" /><updated>2023-01-04T07:51:10-05:00</updated><id>https://blog.nicholdav.info//feed.xml</id><title type="html">Lifelong Learning Machine</title><subtitle>Research software engineer with expertise in artificial intelligence and computational cognitive neuroscience</subtitle><author><name>David Aaron Nicholson</name><email>nicholdav@gmail.com</email></author><entry><title type="html">Four tips for structuring your research group’s Python packages</title><link href="https://blog.nicholdav.info//four-tips-structuring-research-python/" rel="alternate" type="text/html" title="Four tips for structuring your research group’s Python packages" /><published>2022-12-26T00:00:00-05:00</published><updated>2022-12-26T00:00:00-05:00</updated><id>https://blog.nicholdav.info//four-tips-structuring-research-python</id><content type="html" xml:base="https://blog.nicholdav.info//four-tips-structuring-research-python/"><![CDATA[<p>This is one of those petulant posts from someone who writes software.
 A post from one of those people that describes some library they wrote as “opinionated”,
 as if the rest of us have been living in fear of expressing our opinions through software.</p>
 
@@ -225,30 +225,46 @@ E.g., <code class="language-plaintext highlighter-rouge">emgtoolkit.simulate</co
 You might have noticed some other things changed in the names, too.
 Those changes relate to the other tips, that I’ll say more about below.</p>
 
-<h2 id="please-dont-name-your-modules-packageincredibly_long_technical_name_or_specific_task_separated_by_underscores">Please don’t name your modules <code class="language-plaintext highlighter-rouge">package.incredibly_long_technical_name_or_specific_task_separated_by_underscores</code></h2>
+<h2 id="please-dont-name-your-modules-packageincredibly_long_technical_name">Please don’t name your modules <code class="language-plaintext highlighter-rouge">package.incredibly_long_technical_name</code></h2>
 
 <p>There is also an even more extreme form of verbose module names, that takes the form of:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pkg/
-  incredibly_long_technical_name_separated_by_underscores
+  incredibly_long_technical_name_or_specific_task
 </code></pre></div></div>
 
 <p><em>Sometimes</em> this is justified, if it’s the core functionality of your package and you really need to clearly communicate to everyone in the universe what the package does. E.g., <code class="language-plaintext highlighter-rouge">sklearn.model_selection</code> has a very specific meaning, and it’s hard to capture with an abbreviation, and the library is trying to capture basically several sub-fields of machine learning within this sub-package. I am okay with tab-completing this name just so it’s clear to all of us what the heck we’re doing. But <code class="language-plaintext highlighter-rouge">pkg.preprocessing_electrophysiological_data</code> is not a great name. Especially if your package <em>only</em> deals with electrophysiological data. You can just say <code class="language-plaintext highlighter-rouge">pkg.preprocess</code>, it’s fine.</p>
 
-<h3 id="instead-make-module-names-general-and-move-specifics-to-function-names">Instead, make module names general and move specifics to function names</h3>
+<h3 id="instead-make-module-names-general-and-move-specifics-to-function-names">Instead, make module names general, and move specifics to function names</h3>
 
 <p>Often these really long module names can be a very specific thing you need to do.
 Here again you can make things more terse
 by moving the more specific part to a function name,
 while keeping the more general part as a module name.
-For example, instead of <code class="language-plaintext highlighter-rouge">electromyographytoolkit.emg_load_inchan_data_four_channels</code>,
-name the module <code class="language-plaintext highlighter-rouge">load</code>,
+For example, instead of</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>electroymyographytoolkit
+├── emg_load_inchan_data_four_channels.py
+</code></pre></div></div>
+
+<p>name the module <code class="language-plaintext highlighter-rouge">load</code>,
 and name a function in that module <code class="language-plaintext highlighter-rouge">inchan_data_four_channels</code>,
-so that you can type out <code class="language-plaintext highlighter-rouge">emgtoolkit.load.inchan_data_four_channels</code>.
-Your intention is still obvious but you rely on the dot attribute access to make that intention clear,
-yet simultaneously more succinct.
-This also means you have left yourself room later to add other <code class="language-plaintext highlighter-rouge">load</code> functions in your modulle,
-like <code class="language-plaintext highlighter-rouge">inchan_data_accelerometer_channel</code>, or whatever.
+so that you can type out:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">emgtoolkit</span><span class="p">.</span><span class="n">load</span><span class="p">.</span><span class="n">inchan_data_four_channels</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Your intention is still obvious. 
+But you rely on attribute access to make that intention clear,
+while simultaneously more succinct.
+This also means you have left yourself room later 
+to add other <code class="language-plaintext highlighter-rouge">load</code> functions in your module,
+like</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">emgtoolkit</span><span class="p">.</span><span class="n">load</span><span class="p">.</span><span class="n">inchan_data_accelerometer_channel</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>or whatever.
 Trust me, there <em>will</em> be a later.
 Leave <em>space</em> in your namespace.</p>
 
@@ -305,7 +321,8 @@ write in a way that <em>surfaces</em> that context.
 Write in a way that makes it much more obvious where all the functions and classes come from,
 leveraging the logical grouping that you spent so much time boiling down into concise module names.</p>
 
-<p>Please, for your future self and everyone else, make the code readable by importing <em>just</em> the module,
+<p>Please, for your future self and everyone else, 
+make the code readable by importing <em>just</em> the module <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>,
 and then referring to those classes (or function or whatever you’re referring to)
 via attribute access, i.e. with a dot, like <code class="language-plaintext highlighter-rouge">solver.BruteForceSolver</code>.
 You can get rid of many lines of imports at the top of your module
@@ -326,6 +343,16 @@ from . import solvers
 
 <p>One slight drawback of this terse approach is you can end up shadowing the most intuitive variable name for a class instance with a module that has a similar name. I.e., if I rename my module <code class="language-plaintext highlighter-rouge">pkg_solver</code> -&gt; <code class="language-plaintext highlighter-rouge">solver</code> then I won’t be able to do <code class="language-plaintext highlighter-rouge">from . import solver</code> at the top and then later <em>also</em> say <code class="language-plaintext highlighter-rouge">solver = solver.EntropySolver()</code>, because the variable name <code class="language-plaintext highlighter-rouge">solver</code> representing my class instance will clobber the name in the namespace that represents my <code class="language-plaintext highlighter-rouge">solver</code> module.
 This will cause Python’s head to explode (and yours). In this case I prefer to either use an absolute import internally, <code class="language-plaintext highlighter-rouge">import pkg.solver</code>, or to alias internally, e.g., <code class="language-plaintext highlighter-rouge">from . import solver as solver_classes</code>, so that an <em>external</em> user <em>still</em> can write something simple like <code class="language-plaintext highlighter-rouge">pkg.solver</code>.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>See similar comments from core Python dev Brett Cannon in this post,
+  <a href="https://snarky.ca/if-i-were-designing-imort-from-scratch/">https://snarky.ca/if-i-were-designing-imort-from-scratch/</a>
+  in the section “You can only import modules”. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
 <h2 id="you-should-know-sub-packages-exist">You should know sub-packages exist</h2>
 
