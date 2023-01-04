@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="https://blog.nicholdav.info//feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.nicholdav.info//" rel="alternate" type="text/html" /><updated>2023-01-04T07:51:10-05:00</updated><id>https://blog.nicholdav.info//feed.xml</id><title type="html">Lifelong Learning Machine</title><subtitle>Research software engineer with expertise in artificial intelligence and computational cognitive neuroscience</subtitle><author><name>David Aaron Nicholson</name><email>nicholdav@gmail.com</email></author><entry><title type="html">Four tips for structuring your research group’s Python packages</title><link href="https://blog.nicholdav.info//four-tips-structuring-research-python/" rel="alternate" type="text/html" title="Four tips for structuring your research group’s Python packages" /><published>2022-12-26T00:00:00-05:00</published><updated>2022-12-26T00:00:00-05:00</updated><id>https://blog.nicholdav.info//four-tips-structuring-research-python</id><content type="html" xml:base="https://blog.nicholdav.info//four-tips-structuring-research-python/"><![CDATA[<p>This is one of those petulant posts from someone who writes software.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="https://blog.nicholdav.info//feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.nicholdav.info//" rel="alternate" type="text/html" /><updated>2023-01-04T08:14:12-05:00</updated><id>https://blog.nicholdav.info//feed.xml</id><title type="html">Lifelong Learning Machine</title><subtitle>Research software engineer with expertise in artificial intelligence and computational cognitive neuroscience</subtitle><author><name>David Aaron Nicholson</name><email>nicholdav@gmail.com</email></author><entry><title type="html">Four tips for structuring your research group’s Python packages</title><link href="https://blog.nicholdav.info//four-tips-structuring-research-python/" rel="alternate" type="text/html" title="Four tips for structuring your research group’s Python packages" /><published>2022-12-26T00:00:00-05:00</published><updated>2022-12-26T00:00:00-05:00</updated><id>https://blog.nicholdav.info//four-tips-structuring-research-python</id><content type="html" xml:base="https://blog.nicholdav.info//four-tips-structuring-research-python/"><![CDATA[<p>This is one of those petulant posts from someone who writes software.
 A post from one of those people that describes some library they wrote as “opinionated”,
 as if the rest of us have been living in fear of expressing our opinions through software.</p>
 
@@ -359,12 +359,22 @@ This will cause Python’s head to explode (and yours). In this case I prefer to
 <p>Again, this is less about naming, and more about structuring internals.
 But it falls under the same category of “thing I see that tells me you might not yet have a mental model of how to organize your code to make it easier for you to maintain in the long run”.</p>
 
-<p>You should know (if you don’t already) that you can make a sub-package inside your package.</p>
+<p>You should know (if you don’t already) that you can make a sub-package inside your package.
+You do this the same way you make the package itself, 
+by adding the magical <code class="language-plaintext highlighter-rouge">__init__.py</code> file that tells Python “this directory is a package”.</p>
 
-<p>See this example in the Python docs on modules: <a href="https://docs.python.org/3/tutorial/modules.html#packages">https://docs.python.org/3/tutorial/modules.html#packages</a></p>
+<p>Here we add a <code class="language-plaintext highlighter-rouge">solvers</code> sub-package to the <code class="language-plaintext highlighter-rouge">emgtoolkit</code> package from our example.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>emgtoolkit
+├── solvers
+│   ├── __init__.py
+└── __init__.py
+</code></pre></div></div>
 
-<p>Recalling our example from above, we can refactor our (presumably gigantic) <code class="language-plaintext highlighter-rouge">solver</code> module 
-into a handful of modules inside a sub-package:</p>
+<p>Here is an example in the Python docs on modules: <a href="https://docs.python.org/3/tutorial/modules.html#packages">https://docs.python.org/3/tutorial/modules.html#packages</a></p>
+
+<p>Going back to our example from above, 
+we can refactor our (presumably gigantic) <code class="language-plaintext highlighter-rouge">solver</code> module 
+into a handful of modules inside the <code class="language-plaintext highlighter-rouge">solver</code> sub-package:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>emgtoolkit
 ├── load.py
@@ -384,7 +394,8 @@ into a handful of modules inside a sub-package:</p>
 <p>Then you can use imports so that, from the perspective of the user, 
 they have access to the <em>same</em> modules
 with classes, functions, etc., that they had before.
-You do this by importing all the classes from each module in the sub-package inside the <code class="language-plaintext highlighter-rouge">__init__.py</code>
+You do this by importing all the classes from each module 
+in the sub-package inside the <code class="language-plaintext highlighter-rouge">__init__.py</code>
 of that sub-package.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"""solver sub-package"""
@@ -433,9 +444,10 @@ or jump around through 3000 lines of code to find them.</p>
 <a href="https://breadcrumbscollector.tech/stop-naming-your-python-modules-utils/">https://breadcrumbscollector.tech/stop-naming-your-python-modules-utils/</a></p>
 
 <p>The basic idea is that the concept of <code class="language-plaintext highlighter-rouge">utilities</code> is so nebulous that more and more things will end up crammed into this module, that are less and less related to each other.
-This is especially if multiple people are developing a package.
- and they are tempted by this name to just cram that one helper or validation function 
- inside <code class="language-plaintext highlighter-rouge">utilities</code>.</p>
+This is especially likely if multiple people are developing a package, 
+and they are tempted by the name <code class="language-plaintext highlighter-rouge">utilities</code> to 
+add <em>just</em> one more helper or validation function 
+inside that (now gigantic) module when trying to add a new feature.</p>
 
 <p>Hold on, friend. Take a step back, take a deep breath. 
 It’s okay to add a module with just a single function. 
@@ -443,7 +455,12 @@ You can just have a module named <code class="language-plaintext highlighter-rou
 and have it be only 10 lines. Please believe me, it will make the codebase easier to read, 
 it will make internal usage of the function easier to read, 
 it will make it easier to write quick unit tests. 
-You do <strong>not</strong> want to hold 500 lines of <code class="language-plaintext highlighter-rouge">utils</code> in your head when you’re trying to track down a bug.</p>
+You do <strong>not</strong> want to hold 500 lines of <code class="language-plaintext highlighter-rouge">utils</code> 
+in your head when you’re trying to track down a bug. 
+If you don’t like that your top-level namespace 
+gets cluttered by these little modules, 
+than pull out our sub-package trick from above 
+to push those modules down a level.</p>
 
 <p>So that’s me saying what that other blog post said, after I said they already said it.
 All I want to add here is that the same logic from above applies: 
