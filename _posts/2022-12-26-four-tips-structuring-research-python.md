@@ -229,31 +229,50 @@ E.g., `emgtoolkit.simulate` instead of `electromyographytoolkit.emg_simulate`.
 You might have noticed some other things changed in the names, too.
 Those changes relate to the other tips, that I'll say more about below.
 
-## Please don't name your modules `package.incredibly_long_technical_name_or_specific_task_separated_by_underscores`
+## Please don't name your modules `package.incredibly_long_technical_name`
 
 There is also an even more extreme form of verbose module names, that takes the form of: 
 
 ```
 pkg/
-  incredibly_long_technical_name_separated_by_underscores
+  incredibly_long_technical_name_or_specific_task
 ```
 
 *Sometimes* this is justified, if it's the core functionality of your package and you really need to clearly communicate to everyone in the universe what the package does. E.g., `sklearn.model_selection` has a very specific meaning, and it's hard to capture with an abbreviation, and the library is trying to capture basically several sub-fields of machine learning within this sub-package. I am okay with tab-completing this name just so it's clear to all of us what the heck we're doing. But `pkg.preprocessing_electrophysiological_data` is not a great name. Especially if your package *only* deals with electrophysiological data. You can just say `pkg.preprocess`, it's fine.
 
-### Instead, make module names general and move specifics to function names
+### Instead, make module names general, and move specifics to function names
 
 Often these really long module names can be a very specific thing you need to do.
 Here again you can make things more terse
 by moving the more specific part to a function name,
 while keeping the more general part as a module name.
-For example, instead of `electromyographytoolkit.emg_load_inchan_data_four_channels`,
+For example, instead of 
+
+```
+electroymyographytoolkit
+├── emg_load_inchan_data_four_channels.py
+```
+
 name the module `load`,
 and name a function in that module `inchan_data_four_channels`,
-so that you can type out `emgtoolkit.load.inchan_data_four_channels`.
-Your intention is still obvious but you rely on the dot attribute access to make that intention clear,
-yet simultaneously more succinct.
-This also means you have left yourself room later to add other `load` functions in your modulle,
-like `inchan_data_accelerometer_channel`, or whatever.
+so that you can type out:  
+
+```python
+>>> emgtoolkit.load.inchan_data_four_channels()
+```
+
+Your intention is still obvious. 
+But you rely on attribute access to make that intention clear,
+while simultaneously more succinct.
+This also means you have left yourself room later 
+to add other `load` functions in your module,
+like 
+
+```python
+>>> emgtoolkit.load.inchan_data_accelerometer_channel()
+```
+
+or whatever.
 Trust me, there *will* be a later.
 Leave *space* in your namespace.
 
@@ -311,7 +330,8 @@ write in a way that *surfaces* that context.
 Write in a way that makes it much more obvious where all the functions and classes come from,
 leveraging the logical grouping that you spent so much time boiling down into concise module names.
 
-Please, for your future self and everyone else, make the code readable by importing *just* the module,
+Please, for your future self and everyone else, 
+make the code readable by importing *just* the module [^1],
 and then referring to those classes (or function or whatever you're referring to)
 via attribute access, i.e. with a dot, like `solver.BruteForceSolver`.
 You can get rid of many lines of imports at the top of your module
@@ -333,6 +353,13 @@ from . import solvers
 
 One slight drawback of this terse approach is you can end up shadowing the most intuitive variable name for a class instance with a module that has a similar name. I.e., if I rename my module `pkg_solver` -> `solver` then I won't be able to do `from . import solver` at the top and then later *also* say `solver = solver.EntropySolver()`, because the variable name `solver` representing my class instance will clobber the name in the namespace that represents my `solver` module.
 This will cause Python's head to explode (and yours). In this case I prefer to either use an absolute import internally, `import pkg.solver`, or to alias internally, e.g., `from . import solver as solver_classes`, so that an *external* user *still* can write something simple like `pkg.solver`.
+
+[^1]: See similar comments from core Python dev Brett Cannon in this post, 
+      <https://snarky.ca/if-i-were-designing-imort-from-scratch/>
+      in the section "You can only import modules".
+
+{:footnotes}
+* 
 
 ## You should know sub-packages exist
 
