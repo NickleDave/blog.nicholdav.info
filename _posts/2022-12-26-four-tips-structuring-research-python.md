@@ -367,11 +367,22 @@ Again, this is less about naming, and more about structuring internals.
 But it falls under the same category of "thing I see that tells me you might not yet have a mental model of how to organize your code to make it easier for you to maintain in the long run".
 
 You should know (if you don't already) that you can make a sub-package inside your package.
+You do this the same way you make the package itself, 
+by adding the magical `__init__.py` file that tells Python "this directory is a package".
 
-See this example in the Python docs on modules: <https://docs.python.org/3/tutorial/modules.html#packages>
+Here we add a `solvers` sub-package to the `emgtoolkit` package from our example.
+```
+emgtoolkit
+├── solvers
+│   ├── __init__.py
+└── __init__.py
+```
 
-Recalling our example from above, we can refactor our (presumably gigantic) `solver` module 
-into a handful of modules inside a sub-package:
+Here is an example in the Python docs on modules: <https://docs.python.org/3/tutorial/modules.html#packages>
+
+Going back to our example from above, 
+we can refactor our (presumably gigantic) `solver` module 
+into a handful of modules inside the `solver` sub-package:
 
 ```
 emgtoolkit
@@ -392,7 +403,8 @@ emgtoolkit
 Then you can use imports so that, from the perspective of the user, 
 they have access to the *same* modules
 with classes, functions, etc., that they had before.
-You do this by importing all the classes from each module in the sub-package inside the `__init__.py`
+You do this by importing all the classes from each module 
+in the sub-package inside the `__init__.py`
 of that sub-package.
 
 ```
@@ -442,9 +454,10 @@ Someone even more jaded than me has already said this:
 <https://breadcrumbscollector.tech/stop-naming-your-python-modules-utils/>
 
 The basic idea is that the concept of `utilities` is so nebulous that more and more things will end up crammed into this module, that are less and less related to each other.
-This is especially if multiple people are developing a package.
- and they are tempted by this name to just cram that one helper or validation function 
- inside `utilities`.
+This is especially likely if multiple people are developing a package, 
+and they are tempted by the name `utilities` to 
+add *just* one more helper or validation function 
+inside that (now gigantic) module when trying to add a new feature.
 
 Hold on, friend. Take a step back, take a deep breath. 
 It's okay to add a module with just a single function. 
@@ -452,7 +465,12 @@ You can just have a module named `timestamp` with only one function `get_timesta
 and have it be only 10 lines. Please believe me, it will make the codebase easier to read, 
 it will make internal usage of the function easier to read, 
 it will make it easier to write quick unit tests. 
-You do **not** want to hold 500 lines of `utils` in your head when you're trying to track down a bug. 
+You do **not** want to hold 500 lines of `utils` 
+in your head when you're trying to track down a bug. 
+If you don't like that your top-level namespace 
+gets cluttered by these little modules, 
+than pull out our sub-package trick from above 
+to push those modules down a level.
 
 So that's me saying what that other blog post said, after I said they already said it.
 All I want to add here is that the same logic from above applies: 
