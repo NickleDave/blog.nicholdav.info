@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="https://blog.nicholdav.info//feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.nicholdav.info//" rel="alternate" type="text/html" /><updated>2023-01-03T15:23:41-05:00</updated><id>https://blog.nicholdav.info//feed.xml</id><title type="html">Lifelong Learning Machine</title><subtitle>Research software engineer with expertise in artificial intelligence and computational cognitive neuroscience</subtitle><author><name>David Aaron Nicholson</name><email>nicholdav@gmail.com</email></author><entry><title type="html">Four tips for structuring your research group’s Python packages</title><link href="https://blog.nicholdav.info//four-tips-structuring-research-python/" rel="alternate" type="text/html" title="Four tips for structuring your research group’s Python packages" /><published>2022-12-26T00:00:00-05:00</published><updated>2022-12-26T00:00:00-05:00</updated><id>https://blog.nicholdav.info//four-tips-structuring-research-python</id><content type="html" xml:base="https://blog.nicholdav.info//four-tips-structuring-research-python/"><![CDATA[<p>This is one of those petulant posts from someone who writes software.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="https://blog.nicholdav.info//feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.nicholdav.info//" rel="alternate" type="text/html" /><updated>2023-01-03T19:44:33-05:00</updated><id>https://blog.nicholdav.info//feed.xml</id><title type="html">Lifelong Learning Machine</title><subtitle>Research software engineer with expertise in artificial intelligence and computational cognitive neuroscience</subtitle><author><name>David Aaron Nicholson</name><email>nicholdav@gmail.com</email></author><entry><title type="html">Four tips for structuring your research group’s Python packages</title><link href="https://blog.nicholdav.info//four-tips-structuring-research-python/" rel="alternate" type="text/html" title="Four tips for structuring your research group’s Python packages" /><published>2022-12-26T00:00:00-05:00</published><updated>2022-12-26T00:00:00-05:00</updated><id>https://blog.nicholdav.info//four-tips-structuring-research-python</id><content type="html" xml:base="https://blog.nicholdav.info//four-tips-structuring-research-python/"><![CDATA[<p>This is one of those petulant posts from someone who writes software.
 A post from one of those people that describes some library they wrote as “opinionated”,
 as if the rest of us have been living in fear of expressing our opinions through software.</p>
 
@@ -17,10 +17,10 @@ that makes it easier for people to read it and to use it.
 And you’re sharing your code because you want people to use it, right?</p>
 
 <p>I think a lot of packages from research labs end up this way 
-in part when researchers don’t have a good 
+in part because researchers don’t have a good 
 <a href="https://teachtogether.tech/en/#s:models">mental model</a> 
 of the mapping from their written code to the package they import.
-In other words, they’re not thinking 
+In other words, they don’t have a clear picture 
 of how Python translates 
 the directory structure of their code and its internal <code class="language-plaintext highlighter-rouge">import</code> statements
 into a package name with modules that can be accessed with the dot operator,
@@ -140,7 +140,8 @@ Instead you want something like this:</p>
 │   ├── __init__.py
 │   ├── random_walk.py
 │   └── shannon.py
-└── timestamp.py
+├── timestamp.py
+└── __init__.py
 </code></pre></div></div>
 
 <p>The changes I made above follow the aforementioned four tips.
@@ -171,7 +172,19 @@ from the perspective of you as a future user and reader of your own code.
 we change our frame of reference and do some time travel
 so that what you named your modules is <em>no longer</em> a problem for “future you” to solve.)</p>
 
+<p>Here’s our example package layout again:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>electroymyographytoolkit
+├── emg_load_inchan_data_four_channelinkls.py
+├── emg_main.py
+├── emg_simulate.py
+├── emg_solver.py
+├── emg_utils.py
+└── __init__.py
+
+</code></pre></div></div>
+
 <p><strong>yelling</strong>:<br />
+Look at this. What is this?!
 No one wants to type out <code class="language-plaintext highlighter-rouge">package.pkg_solver</code>!
 Why are you making me redundantly type the package name again <em>after I just typed it</em>?
 Only instead you’re making me <em>remember</em> and type some abbreviated version of the package name
@@ -201,7 +214,8 @@ just name your package and modules something terse from the get-go, like</p>
 │   ├── __init__.py
 │   ├── random_walk.py
 │   └── shannon.py
-└── timestamp.py
+├── timestamp.py
+└── __init__.py
 </code></pre></div></div>
 
 <p>Now in your scripts you can write out the whole package name, 
@@ -336,7 +350,8 @@ into a handful of modules inside a sub-package:</p>
 │   ├── __init__.py
 │   ├── random_walk.py
 │   └── shannon.py
-└── timestamp.py
+├── timestamp.py
+└── __init__.py
 </code></pre></div></div>
 
 <p>Then you can use imports so that, from the perspective of the user, 
