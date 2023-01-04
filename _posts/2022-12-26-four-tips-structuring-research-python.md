@@ -22,10 +22,10 @@ that makes it easier for people to read it and to use it.
 And you're sharing your code because you want people to use it, right?
 
 I think a lot of packages from research labs end up this way 
-in part when researchers don't have a good 
+in part because researchers don't have a good 
 [mental model](https://teachtogether.tech/en/#s:models) 
 of the mapping from their written code to the package they import.
-In other words, they're not thinking 
+In other words, they don't have a clear picture 
 of how Python translates 
 the directory structure of their code and its internal `import` statements
 into a package name with modules that can be accessed with the dot operator,
@@ -144,7 +144,8 @@ emgtoolkit
 │   ├── __init__.py
 │   ├── random_walk.py
 │   └── shannon.py
-└── timestamp.py
+├── timestamp.py
+└── __init__.py
 ```
 
 The changes I made above follow the aforementioned four tips.
@@ -173,7 +174,20 @@ from the perspective of you as a future user and reader of your own code.
 we change our frame of reference and do some time travel
 so that what you named your modules is *no longer* a problem for "future you" to solve.)
 
+Here's our example package layout again:  
+```
+electroymyographytoolkit
+├── emg_load_inchan_data_four_channelinkls.py
+├── emg_main.py
+├── emg_simulate.py
+├── emg_solver.py
+├── emg_utils.py
+└── __init__.py
+
+```
+
 **yelling**:  
+Look at this. What is this?!
 No one wants to type out `package.pkg_solver`!
 Why are you making me redundantly type the package name again *after I just typed it*?
 Only instead you're making me *remember* and type some abbreviated version of the package name
@@ -204,7 +218,8 @@ emgtoolkit
 │   ├── __init__.py
 │   ├── random_walk.py
 │   └── shannon.py
-└── timestamp.py
+├── timestamp.py
+└── __init__.py
 ```
 
 Now in your scripts you can write out the whole package name, 
@@ -343,7 +358,8 @@ emgtoolkit
 │   ├── __init__.py
 │   ├── random_walk.py
 │   └── shannon.py
-└── timestamp.py
+├── timestamp.py
+└── __init__.py
 ```
 
 Then you can use imports so that, from the perspective of the user, 
