@@ -25,6 +25,9 @@ the Ecological Approach to Visual Perception.
 In the [intro post](link)
 I talked about why the message of his book resonates so much with me.
 
+##TODO: again, disclaimer that this is an *exegesis*, links to all posts
+##TODO: include summary from end of chapter at *top*? And then proceed from there. Since it's an exegesis.
+
 Here I want to talk about the first chapter,
 where he gives his definition of the term *environment*.
 He starts here because he argues
