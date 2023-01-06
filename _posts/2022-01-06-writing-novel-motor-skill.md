@@ -9,11 +9,46 @@ title:  "Writing a novel is a motor skill and does not require representations"
 
 I want to argue that writing a novel is a motor skill that does not require *representations*.
 
-To do so, I will quote from *Writing Down the Bones*
+More precisely, I want to argue that 
+writing a novel can be reduced to 
+transcribing a conversation.
+A novel in particular, a work of literary fiction,
+is a process of 
+rewriting a conversation multiple times.
+Because a novelist does so over an extended period,
+it is easy to mistakenly think 
+that mental abstractions of the highest order are required,
+things like planning.
+But I want to claim that it is enough 
+to rerun the motor program of writing down the conversation again,
+and the things that look like planning, 
+the wall covered in post-it notes,
+are just dance steps in the overall dance.
+You can transcribe a conversation by converting it into a series of post-it notes.
+You will think that I have painted myself into a corner 
+by arguing this,
+because I need representations to have a conversation.
+But I will respond to you that this is a greatly reduced form of representations, 
+a kind of concept empiricism 
+that we use in the perfect present tense 
+when we are referring to something that's obviously there to all of us.
+
+I'll start by introducing what got me thinking about this.
+Then to make my argument that writing a novel is a motor skill, 
+I will quote from *Writing Down the Bones*, a book on the practice of writing by Natalie Goldberg.
 
 This won't seem like a convincing argument to you, if you are a big important famous scientist on either side of the debate.
 My evidence, such as it is, comes from experience, of course, not studies. 
-Just to be extra click-bait-y, at the end, I'll propose an experiment using Large Language Models, which as we all know are sentient, and how we could use them to measure whether writing a novel is really a motor skill
+I think this is a valid way of knowing,
+it is the way that writers and other artists have, 
+and we dismiss it at our own peril as scientists.
+But I will put back on my scientist hat to appease you.
+and at the end, I'll propose an experiment 
+how we could use them to measure whether writing a novel is really a motor skill
+
+Just to be extra click-bait-y I'll propose the experiment use Large Language Models, which as we all know are sentient, and how we could use them to measure whether writing a novel is really a motor skill
+
+## Introduction: 
 
 I was prompted to write this after hearing Michael Anderson
 
@@ -22,7 +57,7 @@ I was prompted to write this after hearing Michael Anderson
 * https://link.springer.com/content/pdf/10.1007/s11229-022-03505-4.pdf?pdf=button Anderson + Champion
 * Krakauer book review
 
-## Representations and Writing Novels
+### Representations and Writing Novels
 
 "True cognitive content, ideas, beliefs, 
 I simply do not see how we can do without the mental representation notion when it comes to those phenomena. And I always feel like they get skirted around by sub-personal processes in senosry and motor areas.
