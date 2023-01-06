@@ -39,6 +39,8 @@ Anderson: neuroscientists use that word
 
 Natalie Goldberg, Writing Down the Bones
 
+talk @ how you know the book and what it means to you
+
 - Chapter 1: Choose your tools carefully --> affordances, I must use an object that allows me to perceive the space in my mind through which I locomote as I write
 
 ## A thought experiment: measuring novel writing with LLM perplexity
