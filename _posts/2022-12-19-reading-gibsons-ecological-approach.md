@@ -10,6 +10,8 @@ post_url: 2022-12-19-reading-gibsons-ecological-approach
 <cite> James Gibson
 {: .small}
 
+##TODO: write this intro as a disclaimer that this is an *exegesis* and include links to later posts
+
 I want to write a series of posts on
 James Gibson's book "Ecological Approach to Visual Perception".
 I just started reading it, after hearing
