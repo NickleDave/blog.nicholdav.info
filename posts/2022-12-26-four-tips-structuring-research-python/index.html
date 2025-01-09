@@ -205,8 +205,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Update 2025-01-08:<br>
-I think this post gives better advice overall on designing a Python library API: https://benhoyt.com/writings/python-api-design/<br>
+I think this post gives better advice overall on designing a Python library API:<br>
+<a href="https://benhoyt.com/writings/python-api-design/" class="uri">https://benhoyt.com/writings/python-api-design/</a><br>
 You should read that one first, then come back and read this one for some examples of what <em>not</em> to do.</p>
+<hr>
 <p>This is one of those petulant posts from someone who writes software. A post from one of those people that describes some library they wrote as “opinionated”, as if the rest of us have been living in fear of expressing our opinions through software.</p>
 <p>So, sorry in advance. But I want to talk about some things I see a lot in Python packages shared by research groups.</p>
 <p>At the highest level, there’s two things I see: one, researchers name their modules in a way that might make sense when you’re writing your own code, but can seem very verbose or non-intuitive when you are someone else on the outside reading or using that code. Two, I see a lot of code that doesn’t structure itself in a way that makes it easier for people to read it and to use it. And you’re sharing your code because you want people to use it, right?</p>
