@@ -3,7 +3,6 @@ title: "Domain-driven software design is a good idea, still"
 description: "Domain-driven design might be just data abstraction with doodles, but you should care about it anyways"
 author: "David Nicholson"
 date: "01/02/2025"
-draft: true
 from: markdown+emoji
 image: corn-muffin-mix.jpg
 categories:
