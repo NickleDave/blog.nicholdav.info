@@ -1,0 +1,55 @@
+---
+title: "Today I Avoided: Self-hosting the streaming music app Navidrome"
+description: "How I avoided babysitting my own Navidrome server"
+author: "David Nicholson"
+date: "01/07/2025"
+draft: true
+from: markdown+emoji
+categories:
+- music
+- software
+---
+
+Inspired by many tech folks who blog about "Today I Learned", 
+I am going to blog about how "Today I Avoided" doing 
+some work that would probably teach me 
+some things about what it takes to actually run our present day world,
+but that would also be painfully boring.
+
+This is related to my last post about Bandcamp Wrapped -- 
+one thing I don't get from Bandcamp is the pretty nice Spotify user interface,
+developed over the eons by the faceless army 
+of software engineers and UI/UX experts 
+to give us access to our music, and subtly influence us to buy things from ads via some dark patterns.
+I would really like to be able to play *my* music that *I* payed for 
+through my *own* app,
+so I don't have to have my entire life mediated by some feudal tech overlord.
+
+Enter: [Navidrome](https://www.navidrome.org/), "Your Personal Streaming Service".
+As the tag-line implies, it lets you stream your own music.
+Ok, cool.
+But anyone who is not a techie will be faced with a daunting wall of docs 
+telling them they're going to need to set up Docker containers 
+and host their own instance of Navidrome, 
+possibly even using something called Docker Compose :shocked:.
+And if this person is not totally intimadated they will then watch YouTube videos 
+created by someone near my end of the neurospectrum 
+that will likely totally lose them in a swamp of detail about YAML config files.
+
+Happily I was able to avoid watching any of these videos.
+Here's my secret three step process
+
+1. Create a managed instance of Navidrome on Pikapods
+
+Link to docs
+
+2. Tag my music with Musicbrainz Picard
+
+do I need a folder structure? No
+link to Navidrome FAQ re tags
+http://www.thedreaming.org/2020/11/22/musicbrainz-picard/
+
+3. Copy my tagged music with Rclone
+
+It was as easy as following the install instructions and then doing this
+https://rclone.org/sftp/
