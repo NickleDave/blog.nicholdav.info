@@ -4,6 +4,7 @@ description: "How I avoided babysitting my own Navidrome server"
 author: "David Nicholson"
 date: "01/07/2025"
 from: markdown+emoji
+draft: true
 categories:
 - music
 - software
