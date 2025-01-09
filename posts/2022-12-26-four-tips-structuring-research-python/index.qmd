@@ -1,6 +1,7 @@
 ---
 title: Four tips for structuring your research group's Python packages
 description: "How to structure your Python package so other researchers want to use it"
+image: "penkeyboard.jpg"
 post_url: 2022-12-26-four-tips-structuring-research-python
 author: "David Nicholson"
 date: "12/26/2022"

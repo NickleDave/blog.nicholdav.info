@@ -2,6 +2,7 @@
 title: "Today I Avoided: Self-hosting the streaming music app Navidrome"
 description: "How I avoided babysitting my own Navidrome server"
 author: "David Nicholson"
+image: "casa-de-empenyo.jpg"
 date: "01/07/2025"
 from: markdown+emoji
 draft: true
