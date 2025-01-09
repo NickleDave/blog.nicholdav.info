@@ -218,11 +218,11 @@ scratch models of whatever we're working on,
 and this includes stuff we do with computers.
 Given that SICP has the nickname 
 ["The Wizard Book"](https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs),
-I can't be the only one who mistakenly falls into this habitual way of thinking 
+I can't be the only one who falls into this way of thinking--- 
 that programming is modern sorcery, 
-and I should sit before the blank screen like a cyberpunk Zeus  
+and I should sit before the blank screen like a cyberpunk Zeus 
 and have the program emerge fully-formed from my forehead.
-(Ok I am mixing Greek mythology and wizardy in my metaphors, whatever, you get the point.)
+(I am mixing Greek mythology and wizardy in my metaphors. Whatever, you get the point.)
 
 This is how I ended up finding domain-driven design in SICP, 
 and having to admit to myself that, yeah, this idea has been around forever.
