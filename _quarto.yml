@@ -2,10 +2,12 @@ project:
   type: website
 
 website:
-  title: "nicholdav-blog"
   navbar:
     right:
-      - about.qmd
+      - text: "home"
+        href: https://nicholdav.info/
+      - text: "about"
+        href: https://nicholdav.info/about.html
       - icon: github
         href: https://github.com/
       - icon: twitter
