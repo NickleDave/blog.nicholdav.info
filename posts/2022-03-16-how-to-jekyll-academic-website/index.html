@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="David Nicholson">
-<meta name="dcterms.date" content="2025-01-07">
-<meta name="description" content="How I avoided babysitting my own Navidrome server">
+<meta name="dcterms.date" content="2022-03-16">
+<meta name="description" content="Instead of forking academicpages, make it yourself to better understand jekyll">
 
-<title>Today I Avoided: Self-hosting the streaming music app Navidrome</title>
+<title>Make your own academicpages site from scratch with jekyll</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,15 +119,14 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Today I Avoided: Self-hosting the streaming music app Navidrome</h1>
+      <h1 class="title">Make your own <code>academicpages</code> site from scratch with <code>jekyll</code></h1>
                   <div>
         <div class="description">
-          How I avoided babysitting my own Navidrome server
+          Instead of forking <code>academicpages</code>, make it yourself to better understand jekyll
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">music</div>
-                <div class="quarto-category">software</div>
+                <div class="quarto-category">academia</div>
               </div>
                   </div>
   </div>
@@ -145,10 +144,16 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 7, 2025</p>
+        <p class="date">March 16, 2022</p>
       </div>
     </div>
     
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">January 8, 2025</p>
+      </div>
+    </div>
       
     </div>
     
@@ -164,24 +169,79 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>Inspired by many tech folks who blog about “Today I Learned”, I am going to blog about how “Today I Avoided” doing some work that would probably teach me some things about what it takes to actually run our present day world, but that would also be painfully boring.</p>
-<p>This is related to my last post about Bandcamp Wrapped – one thing I don’t get from Bandcamp is the pretty nice Spotify user interface, developed over the eons by the faceless army of software engineers and UI/UX experts to give us access to our music, and subtly influence us to buy things from ads via some dark patterns. I would really like to be able to play <em>my</em> music that <em>I</em> payed for through my <em>own</em> app, so I don’t have to have my entire life mediated by some feudal tech overlord.</p>
-<p>Enter: <a href="https://www.navidrome.org/">Navidrome</a>, “Your Personal Streaming Service”. As the tag-line implies, it lets you stream your own music. Ok, cool. But anyone who is not a techie will be faced with a daunting wall of docs telling them they’re going to need to set up Docker containers and host their own instance of Navidrome, possibly even using something called Docker Compose :shocked:. And if this person is not totally intimadated they will then watch YouTube videos created by someone near my end of the neurospectrum that will likely totally lose them in a swamp of detail about YAML config files.</p>
-<p>Happily I was able to avoid watching any of these videos. Here’s my secret three step process</p>
-<ol type="1">
-<li>Create a managed instance of Navidrome on Pikapods</li>
-</ol>
-<p>Link to docs</p>
-<ol start="2" type="1">
-<li>Tag my music with Musicbrainz Picard</li>
-</ol>
-<p>do I need a folder structure? No link to Navidrome FAQ re tags http://www.thedreaming.org/2020/11/22/musicbrainz-picard/</p>
-<ol start="3" type="1">
-<li>Copy my tagged music with Rclone</li>
-</ol>
-<p>It was as easy as following the install instructions and then doing this https://rclone.org/sftp/</p>
+<p>Update 2025-01-08: I switched to <a href="https://quarto.org/docs/websites/website-blog.html">quarto</a>, but I refuse to write a blog post about it.</p>
+<p>Update 2022-12-17: I added a home page and a blog to my site, so I no longer use a set up exactly like the academicpages theme, but I’m leaving this post up to document the process (and because it’s currently my only post <span class="emoji" data-emoji="sob">😭</span>)</p>
+<p>In this post I document the process I went through to set up a peronsal web site with a structure similar to the academicpages theme used by many academics (<a href="https://academicpages.github.io/" class="uri">https://academicpages.github.io/</a>). I’m writing the post for my future self, and for you if you want to do the same.</p>
+<section id="step-by-step-guide-to-developing-your-own-academicpages" class="level2">
+<h2 class="anchored" data-anchor-id="step-by-step-guide-to-developing-your-own-academicpages">Step-by-step guide to developing your own ‘academicpages’</h2>
+<p>Here’s the summary version first, so you know what you’re getting into: 1. set up a <code>jekyll</code> development environment 2. make the landing page be your about page 3. make the sidebar show your profile with links 4. add links to publications, talks, etc., in the nav bar at the top of the page</p>
+</section>
+<section id="why-would-you-bother" class="level2">
+<h2 class="anchored" data-anchor-id="why-would-you-bother">Why would you bother?</h2>
+<p>I wanted a site similar in style to <code>academicpages</code> (<a href="https://academicpages.github.io/" class="uri">https://academicpages.github.io/</a>), with links in the sidebar to Google Scholar, OrcID, etc., and the ability to use <code>jekyll</code>’s “collections” feature to easily organize publications, talks and teaching. But I also wanted the flexibility to change themes, which is not easy to do with <code>academicpages</code>.</p>
+<p>If you’re like me, and you mainly write code in Python, you might naturally use a static site generator written in Python (as I did for a while, see next section). Using jekyll, that’s written in Ruby, might feel like a big jump– the big pain point in switching languages is often getting familiar with their tooling. As a Pythonista, of course I want to support Python libraries, and some of the static site generators like <code>pelican</code> are battle tested with themes that are very versatile, like their version of <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3"><code>bootstrap</code></a>. But somehow <code>minimal-mistakes</code> and other <code>jekyll</code> themes just look better to my (untrained) eye.</p>
+<p>And as a programmar and developer, it might be a fun exercise in using libraries in a language besides Python. It’s interesting to experience the tooling in the ecosystems of other programming languages.</p>
+</section>
+<section id="how-did-we-get-here" class="level2">
+<h2 class="anchored" data-anchor-id="how-did-we-get-here">How did we get here?</h2>
+<p>I’ve had a personal web page for sometime that I set up with <code>pelican</code>, a static web page generator in Python. Basically I adopted my approach from the one Jake Vanderplas took for his <a href="https://github.com/jakevdp/jakevdp.github.io-source/">“pythonic perambulations” blog</a>. However I wasn’t happy with how my page looked (which has nothing to do with Jake Vanderplas, and everything to do with my moribund graphic design and css/html skillz). And it was time to update my site anyway. Recently I noticed a collaborator had set up their own personal site using the excellent <a href="https://academicpages.github.io/"><code>academicpages</code></a> repository, developed by <a href="https://stuartgeiger.com/">Stuart Geiger</a>. <code>academicpages</code> is great if you are trying to survive in academia and you don’t have time to bother learning how to use a static site generator. With <code>academicpages</code> you just want to follow a couple steps to add your own content to some existing template, to easily get a site.</p>
+<p>Some background: <code>academicpages</code> is a fork of <a href="https://mmistakes.github.io/minimal-mistakes/"><code>minimal-mistakes</code></a>, a very popular theme for the <code>jekyll</code> library. <code>jekyyl</code> is a static site generator written in the <code>ruby</code> programming language. You can think of it as analogous to <code>pelican</code> in Python (or Ruby developers might tell me that <code>pelican</code> is analgous to <code>jekyll</code>). One advantage of using <code>jekyll</code> is that GitHub really likes <code>jekyll</code>, letting developers easily create web pages for themselves or documentation for their projects through the <a href="https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/about-github-pages-and-jekyll">GitHub Pages service</a>. And it’s free, another plus for academics. Stuart modified the <code>minimal-mistakes</code> theme in such a way that other academics could simply fork its repo on GitHub and use the web interface to add their own content, without needing to know how to use <code>jekyll</code> or how to use any developer tools like <code>git</code>.</p>
+<p>So I knew I wanted a site like <code>academicpages</code>, but I also knew there were things I wanted to modify, such as the theme / template. There’s little documentation in the <code>academicpages</code> guide about <em>what</em> changes were made to the <code>minimal-mistakes</code> theme, and why. How did Stuart evolve the template from your standard <code>jekyll</code> minimal blog page to a very specific set-up for academics? Unique features of <code>academicpages</code> include that it lands on the <code>about</code> page and shows a profile in the sidebar with links to academia specific sites, and includes tabs like “publications”, “talks”, etc.? I tried looking at the <code>git</code> commit history but couldn’t piece it together. I figured there couldn’t be <em>too too</em> many steps to setting up a similar site on my own.</p>
+</section>
+<section id="step-by-step-guide-to-developing-your-own-academicpages-1" class="level2">
+<h2 class="anchored" data-anchor-id="step-by-step-guide-to-developing-your-own-academicpages-1">Step-by-step guide to developing your own ‘academicpages’</h2>
+<p>Again, here’s the outline of what we’re going to do: 1. set up a <code>jekyll</code> development environment 2. make the landing page be your about page 3. make the sidebar show your profile with links 4. add links to publications, talks, etc., in the nav bar at the top of the page</p>
+<section id="setting-up-a-development-environment" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up-a-development-environment">Setting up a development environment</h3>
+<p>This is a thing that might be new to academics not familiar with software engineering, but the <code>jekyll</code> and <code>ruby</code> devs have worked really hard to make it easy.</p>
+<ul>
+<li>set up a basic environment for working with <code>jekyll</code>
+<ul>
+<li>their quickstart is here: <a href="https://jekyllrb.com/docs/" class="uri">https://jekyllrb.com/docs/</a></li>
+<li>I’m on PopOS, a Linux distribution similar to Ubuntu, and I use oh-my-zsh, so I followed these instructions: <a href="https://jekyllrb.com/docs/installation/ubuntu/" class="uri">https://jekyllrb.com/docs/installation/ubuntu/</a> except I changed <code>.bashrc</code> to <code>.zshrc</code></li>
+</ul></li>
+<li>then I followed the directions for managing dependencies with <code>bundler</code> so that I could install the <code>minimal-mistakes</code> template as a <code>gem</code> instead of forking their repo and modifying it
+<ul>
+<li><a href="https://jekyllrb.com/tutorials/using-jekyll-with-bundler" class="uri">https://jekyllrb.com/tutorials/using-jekyll-with-bundler</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="making-the-landing-page-be-your-about-page" class="level3">
+<h3 class="anchored" data-anchor-id="making-the-landing-page-be-your-about-page">Making the “landing page” be your “about” page</h3>
+<p>This is the first thing that’s specific to our site design.</p>
+<ul>
+<li>use the <code>redirect</code> plugin so that the site lands on “about”</li>
+<li>add an <code>about.md</code> – make sure you copy the <a href="https://jekyllrb.com/docs/front-matter/">YAML front matter</a> from <code>academicpages</code></li>
+<li>make sure <code>_config.yml</code> specifies defaults for <code>pages</code> so that your theme gets applied to this <code>about.md</code> file
+<ul>
+<li>I copied the <code>#defaults</code> section from the <code>academicpages</code> <code>_config.yml</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="making-the-sidebar-show-your-profile-with-links" class="level3">
+<h3 class="anchored" data-anchor-id="making-the-sidebar-show-your-profile-with-links">Making the sidebar show your profile, with links</h3>
+<p>Now we’re cooking with <code>academicpages</code> gas! Or something</p>
+<ul>
+<li>to make the author profile in the sidebar render all the links that are in <code>academicpages</code> but not in <code>minimal-mistakes</code>, i.e.&nbsp;academia specific things like a Google Scholar page, ORCID profile, etc., you’ll need to add an <code>author-profile.html</code> in an <code>_includes</code> directory. Basically I copied the <code>author-profile.html</code> from <code>minimal-mistakes</code> and then added the relevant if-then statements in the <code>author-links</code> section.</li>
+<li>for things like an author pic, I added them in <code>assets/images/</code> – I think this is consider “idiomatic Jekyll” even though the <code>academicpages</code> repo just has an <code>images</code> folder in its root. Doesn’t matter too much as long as you specify the correct relative path in your <code>_config.yml</code></li>
+</ul>
+</section>
+<section id="adding-links-to-publications-talks-etc.-in-the-masthead-nav-bar" class="level3">
+<h3 class="anchored" data-anchor-id="adding-links-to-publications-talks-etc.-in-the-masthead-nav-bar">Adding links to publications, talks, etc., in the masthead nav bar</h3>
+<p>Unique to <code>academicpages</code> are the links in the navigation bar at the top of the page to pages with lists of publications, talks, and so on.</p>
+<p>If you want the same thing, there’s two things you’ll need to do: 1. you’ll need to copy the ‘navigation.yml’ file from <code>academicpages</code>, placing it in a <code>data/</code> subfolder in your project root, and modify it as you see fit. 2. add two related sections in your <code>_config.yml</code>: + a ‘collections’ section, like <a href="https://github.com/academicpages/academicpages.github.io/blob/25c30de2b4ce3e3f23559384699bb4b9865d6473/_config.yml#L176">this one</a> in the <code>academicpages</code> <code>_config.yml</code>. + and corresponding keys in your <code>defaults</code> section as shown <a href="https://github.com/academicpages/academicpages.github.io/blob/25c30de2b4ce3e3f23559384699bb4b9865d6473/_config.yml#L212">here</a> in the <code>academicpages</code> <code>_config.yml</code>.</p>
+<p>This <em>is</em> explained very briefly in the <code>about.md</code> of <code>academicpages</code> but here’s a quick explainer of how it all works. <code>minimal-mistakes</code> lets you add links to the masthead by supplying a file called <code>navigation.yml</code>. This is a <a href="https://jekyllrb.com/tutorials/navigation/">standard approach in <code>jekyll</code></a>. There are other uses for <a href="https://jekyllrb.com/docs/datafiles/">data files</a>. What’s specific to <code>minimal-mistakes</code> is that you add these links to the nav bar by specifying a <code>main</code> key in <code>navigation.yml</code>, as described here: <a href="https://mmistakes.github.io/minimal-mistakes/docs/navigation/" class="uri">https://mmistakes.github.io/minimal-mistakes/docs/navigation/</a>. In the case of <code>academicpages</code>, the links have the names of the specific sections in the <code>navigation.yml</code> with the keys “publications”, “talks”, etc.</p>
+</section>
+</section>
+<section id="coda-publishing-etc." class="level2">
+<h2 class="anchored" data-anchor-id="coda-publishing-etc.">Coda: publishing, etc.</h2>
+<p>After making the changes just described, I had a site with a structure similar to <code>academicpages</code>.</p>
+<p>To actually publish the site, I still use a workflow similar to what Jake Vanderplas uses for his blog: <a href="https://github.com/jakevdp/jakevdp.github.io-source" class="uri">https://github.com/jakevdp/jakevdp.github.io-source</a> This centers around a Makefile with commands for <code>build</code> and <code>serve</code>.</p>
+<p>The key thing that makes it easy to publish to Github Pages is to use the <code>ghp-import</code> package, as suggested by the <code>pelican</code> docs: <a href="https://docs.getpelican.com/en/latest/tips.html#project-pages" class="uri">https://docs.getpelican.com/en/latest/tips.html#project-pages</a>. Of course, <code>jekyll</code> gets special treatment on GitHub so it’s kind of overkill, but I still like having a separate repo that I just push the .html and .css files to without thinking about it.</p>
+<p>So this is how I have my site set up now! Stay tuned for it to change suddenly, because as a developer I love to spend hours farting around with tools that let me avoid real work. I’ll keep this post up for posterity anyway.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
