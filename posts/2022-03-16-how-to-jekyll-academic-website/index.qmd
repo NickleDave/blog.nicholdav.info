@@ -2,7 +2,7 @@
 title:  "Make your own `academicpages` site from scratch with `jekyll`"
 description: "Instead of forking `academicpages`, make it yourself to better understand jekyll"
 author: "David Nicholson"
-image: "caspercut.jpg"
+image: caspercut.jpg
 date: "03/16/2022"
 date-modified: "01/08/2025"
 from: markdown+emoji

@@ -2,7 +2,7 @@
 title: "My Bandcamp wrapped 2024"
 description: "Music I bought on Bandcamp in 2024"
 author: "David Nicholson"
-image: "resist-the-algorithm.jpg"
+image: resist-the-algorithm.jpg
 date: "01/05/2025"
 from: markdown+emoji
 draft: true
