@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://blog.nicholdav.info/about.html</loc>
-    <lastmod>2025-01-09T03:01:54.141Z</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.nicholdav.info/posts/2025-01-02-domain-driven-design/index.html</loc>
-    <lastmod>2025-01-09T03:04:06.106Z</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.nicholdav.info/posts/2025-01-07-setting-up-navidrome/index.html</loc>
-    <lastmod>2025-01-09T03:04:20.574Z</lastmod>
+    <loc>https://blog.nicholdav.info/index.html</loc>
+    <lastmod>2025-01-09T03:07:10.292Z</lastmod>
   </url>
   <url>
     <loc>https://blog.nicholdav.info/posts/2025-01-05-bandcamp-wrapped-2024/index.html</loc>
     <lastmod>2025-01-09T03:04:16.417Z</lastmod>
   </url>
   <url>
-    <loc>https://blog.nicholdav.info/index.html</loc>
-    <lastmod>2025-01-09T03:01:54.141Z</lastmod>
+    <loc>https://blog.nicholdav.info/posts/2025-01-07-setting-up-navidrome/index.html</loc>
+    <lastmod>2025-01-09T03:04:20.574Z</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.nicholdav.info/posts/2025-01-02-domain-driven-design/index.html</loc>
+    <lastmod>2025-01-09T03:04:06.106Z</lastmod>
   </url>
 </urlset>
