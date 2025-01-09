@@ -1,2 +1,6 @@
+# iOS
+.DS_Store
+
+# quarto
 /.quarto/
 /_site/
