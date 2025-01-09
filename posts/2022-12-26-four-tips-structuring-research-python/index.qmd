@@ -13,8 +13,11 @@ categories:
 ---
 
 Update 2025-01-08:  
-I think this post gives better advice overall on designing a Python library API: https://benhoyt.com/writings/python-api-design/  
+I think this post gives better advice overall on designing a Python library API:  
+<https://benhoyt.com/writings/python-api-design/>  
 You should read that one first, then come back and read this one for some examples of what *not* to do.
+
+---
 
 This is one of those petulant posts from someone who writes software.
 A post from one of those people that describes some library they wrote as "opinionated",

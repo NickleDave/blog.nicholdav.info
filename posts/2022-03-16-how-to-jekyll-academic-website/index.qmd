@@ -12,10 +12,14 @@ categories:
 
 Update 2025-01-08: I switched to [quarto](https://quarto.org/docs/websites/website-blog.html), but I refuse to write a blog post about it.
 
+---
+
 Update 2022-12-17: I added a home page and a blog to my site,
 so I no longer use a set up exactly like the academicpages theme,
 but I'm leaving this post up to document the process
 (and because it's currently my only post :sob:)
+
+---
 
 In this post I document the process I went through
 to set up a peronsal web site with a structure
