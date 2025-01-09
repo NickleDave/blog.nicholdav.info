@@ -195,10 +195,10 @@ because I have been attempting to read yet another book, the aforementioned
 [Structure and Interpretation of Computer Programs](https://sourceacademy.org/sicpjs)
 (AKA "SICP", and I am reading the Javascript edition, *if you even care*).
 I ended up reading this book because I have begun working my way 
-through the reading list on <teachyourselfcs.com>.
+through the reading list on [teachyourselfcs.com](https://teachyourselfcs.com/).
 That is another topic that could be a blog post unto itself,
 but suffice to say that it is a source of some shame 
-that I ostensibly make my living by programming computers,  
+that I ostensibly make my living by programming computers, 
 but I only have the vaguest idea of how computers work, 
 or how programming works,
 and so I have this need to fix that.
