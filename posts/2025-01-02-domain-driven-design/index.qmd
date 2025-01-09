@@ -19,6 +19,8 @@ but you should still be thinking about it.
 I'll get there by saying a little about one book I've been reading recently,
 [Structure and Interpretation of Computer Programs](https://sourceacademy.org/sicpjs).
 
+## What is domain-driven design?
+
 But first, let me introduce domain-driven design, and tell you why you might care about it.
 Sometime in 2022-2023, I read 
 [Domain-Driven Design](https://www.domainlanguage.com/ddd/) by Eric Evans, and I got really excited about it.
@@ -90,7 +92,8 @@ The domain should be at the front of our mind at all times,
 and we only should be iterating on the design of our software 
 insofar as it relates to the domain!
 
-Here I'll say what I said in that work meeting when I got that underwhelmed response.
+Here I'll say what I said in that work meeting when I got that underwhelmed response: 
+domain-driven development isn't just thinking about the domain. 
 Even though we all sort of subconsciously think of the domain when we *design* our code, 
 Evans advocates for a specific *development* process, 
 that he says is required for his approach to design to work.
@@ -115,24 +118,31 @@ If you are a researcher who programs,
 well, hopefully you already have a close relationship with yourself.
 And with your collaborators and colleagues.
 This second requirement naturally gives rise to one of the key ideas from the book, 
-that of *ubiquitous language*,
-that "embeds domain terminology in the software systems we build", 
+that of *ubiquitous language*.
+This is a sort of pidgin language that the domain experts and software developers 
+arrive at together through the iterative process of development.
+The words in this ubiquitous language correspond to key concepts in the domain that the software needs to capture, 
+the things that developers and domain-experts realize they should focus on, as they iterate.
+Ubiquitous language "embeds domain terminology in the software systems we build", 
 as Martin Fowler puts it in [this post](https://martinfowler.com/bliki/DomainDrivenDesign.html). 
-The ubiquitous language consists of the key concepts in the domain that the software needs to capture, 
-the things that developers and domain-experts realize they should focus on 
-as they go throug the iterative process of development.
+It's this continous process of developer and domain expert iterating together that really appeals to me.
 
-In spite of the underwhelmed response, I continued to really like the idea of domain-driven development.
+## How I've used domain-driven design
+
+Ok, now you have an idea of what domain-driven design is.
+You might ask yourself, have I done anything with this 
+or do I just like pontificating into the void about ideas from computer science and tech books?
 Even if I haven't gone back to finish the book and immerse myself in every detail,
 the core idea has really stuck with me.
-So much so that you can see that I cited the book in a Proceedings paper 
+So much so that you can see that I cited the book in the 
+[Proceedings paper](https://dael.euracoustics.org/confs/fa2023/data/articles/000403.pdf) 
 where I first introduced VocalPy, and where I included similar schematics.
 
 ![figure 1 from VocalPy proceedings paper](voc-fig1-model.png)
 
 As I mentioned above, even by the time I got to this first Proceeding paper, 
 the design of the library had evolved.
-But this is a *good thing* -- I did exactly what Evans prescribed, 
+But this is a *good thing* --- I did exactly what Evans prescribed, 
 and continued to iterate on the design of the package.
 Doing so made me realized which parts were actually useful, 
 that I wanted to retain in the core.
@@ -158,8 +168,13 @@ for programming in scientific Python.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PtTegIM6m1o?si=A6MLDiXgRoDnhuTR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+## Domain-driven design is just data abstraction with doodles, and you should do it anyway
+
+Ok, so now let me circle back around, talk about why, sure, domain-driven design is not a new idea 
+(as Evans himself acknowledges right at the start of his book), 
+and why you should be doing it, or doing even more of it. 
 This is where I come back to the "no" part of "Do we already do this? Yes and no." 
-In the discussion at the end of the talk, I said just what I've said here, 
+In the discussion at the end of that talk, I said just what I've said here, 
 that a lot of people react as if, "so, yeah, we already do that".
 If that's so, then show me the doodles! 
 Show me your mental model of your domain --- put it in your docs! 
@@ -167,19 +182,18 @@ Let me read it, let me actually see these schematics, even if they are just dood
 it helps me to know how your thought process evolved.
 All I can see right now is this insurmountable mountain of code, 
 and I don't even know where the path starts so I can scale it!
-I know that there are examples of people doing this, e.g., in the scientific Python community, 
+I know that there are examples of people doing this, 
+e.g., in the scientific Python community where I spend most of my time, 
 but I think it's fair to say that this is not the *norm*.
 I don't know that I have ever seen diagrams showing how the *design evolved*, 
-but I can't help but feel like that's exactly the sort of thing that could help people get up to speed on how the code works.
+as part of an iterative development process.
+I can't help but feel like that's exactly the sort of thing that could help people get up to speed on how the code works.
 
-Ok, so now the moral of the story at the end.
-This is where I tell you that, actually, 
-you are quite justified if you are feeling like domain-driven design is old news, 
-but *even then* you should still be thinking about it.
+And now the moral of the story at the end.
 I now know for sure that these ideas have been around longer than Eric Evans' book,
 because I have been attempting to read yet another book, the aforementioned 
 [Structure and Interpretation of Computer Programs](https://sourceacademy.org/sicpjs)
-(namely the Javascript edition, if you care).
+(AKA "SICP", and I am reading the Javascript edition, *if you even care*).
 I ended up reading this book because I have begun working my way 
 through the reading list on <teachyourselfcs.com>.
 That is another topic that could be a blog post unto itself,
@@ -193,12 +207,24 @@ computer scientists also think in terms of models of computers,
 that is, their domain, 
 and this is why it's easier to learn about computers 
 by learning their models.
-This is why it's helpful to learn git by actually learning how git works,
+This is why it's helpful to learn git by [actually learning how git works](http://gitlet.maryrosecook.com/)
+as [others have noted](https://practical-neuroimaging.github.io/git_parable.html),
 and this is why I think it has actually been worth reading SICP, 
 because it gives me two or three different mental models of how 
 computer programs work.
+Again, maybe its old news to you, 
+but I feel like I really need a reminder that we constantly build and then throw away 
+scratch models of whatever we're working on, 
+and this includes stuff we do with computers.
+Given that SICP has the nickname 
+["The Wizard Book"](https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs),
+I can't be the only one who mistakenly falls into this habitual way of thinking 
+that programming is modern sorcery, 
+and I should sit before the blank screen like a cyberpunk Zeus  
+and have the program emerge fully-formed from my forehead.
+(Ok I am mixing Greek mythology and wizardy in my metaphors, whatever, you get the point.)
 
-And so this is how I ended up finding domain-driven design in SICP, 
+This is how I ended up finding domain-driven design in SICP, 
 and having to admit to myself that, yeah, this idea has been around forever.
 Lo and behold, when I got to chapters 2 and 3, 
 there I saw that we were talking about data abstraction 
