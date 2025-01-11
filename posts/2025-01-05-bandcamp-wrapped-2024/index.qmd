@@ -1,128 +1,123 @@
 ---
-title: "My Bandcamp wrapped 2024"
-description: "Music I bought on Bandcamp in 2024"
+title: "My Bandcamp Wrapped 2024"
+description: "Music I bought on Bandcamp this year, and why"
 author: "David Nicholson"
 image: resist-the-algorithm.jpg
 date: "01/05/2025"
 from: markdown+emoji
-draft: true
 categories:
 - music
+- tech
 ---
 
-Every December, Spotify rewards us for submitting to the algorithm 
-by telling us what we listened to all year,
-as you know if you are not a boomer.
-Geriatric millenials know it, even infantile Xennials like me know it. 
-This lets us wave a badge of pride on social media: 
-"Yes, I am in the top 1% of Gwar fans."
-("Top 0.001% of Melt Banana fans"? Whatever, insert a reference to a relatively niche band 
-that you haven't thought about in a while so it strikes you as funny.)
-
-I barely Spotify. My Wrapped was "You listened to 
-
 In this post I'm sharing music I bought on Bandcamp in 2024.
+I'll also say a little bit about the interaction of music 
+and the tech industry in general:  
+apps like Spotify, Bandcamp, and YouTube; 
+how they affect artists and how they affect our listening habits.
+I've got a couple follow-up posts coming 
+on how I'm feeling like we might actually have the tools 
+for musicians and listeners to reclaim ownership of their music.
+So consider this an appetizer.
 
-First, some prelude, for context.
+---
 
-I am a huge music fan.
-I also am painfully aware that the tech industry I work in has really changed how musicians make money.
+Every December, Spotify rewards us for submitting to their algorithm, 
+by telling us a story about what we listened to all year,
+
+I barely Spotify. My Wrapped was "You listened to Tame Impala Radio 10 times in August".
+But I love to see people share their Wrapped on Bluesky and Twitter, 
+especially if ironic. "Yes, I am in the top 0.01% of Gwar fans."
+
+I want my own Wrapped! 
+I want to tell a story about what I did this year, 
+kind of like a tech blogger making a listicle of their annual achievements. 
+But I want to receive it passively from the app I listen to music on, instead of me writing a blog post.
+(Wait a second.)
+
+Thankfully, my good friend Alex Chabot LeClerc knows that I buy a lot of music through Bandcamp.
+
+And that's why he shared this cool blog post with me from Mac Wright, on how to generate a Bandcamp Wrapped, 
+with an app that Wright has on [val.town](https://www.val.town/): 
+<https://macwright.com/2024/12/06/bandcamp-wrapped.html>
+The actual app on val.town is here: <https://tmcw-bandcampwrapped.web.val.run/>
+
+I think Alex is a big fan of Wright's work. 
+And like me, Alex is really into music, and posts about it weekly on his blog:
+<https://alexchabot.net/categories/music/>  
+He shares Spotify links and playlists, and that works great 
+(I will begrudgingly admit that there are some good things about tech).
+
+But for those of us that buy a lot of music on Bandcamp, we can now generate our own Wrapped, thanks to Mac. 
+
+## Is Bandcamp Itself Wrapped?
+
+In his Bandcamp Wrapped blog post, Mac links to his own previous writing 
+about his ["prepper-style music hoarding"](https://macwright.com/2020/01/27/my-music-library).
+To quote him, "I don’t believe that any technology company in the music industry will survive in the long term."
+You should read what he has to say, but let me tell why I buy a lot of music on Bandcamp, 
+since I'm here writing a whole post about it.
+
+I am a huge music fan. I wanted to be a musician, once.
+So I am painfully aware that the tech industry I now work in has really changed how musicians make money.
 It used to be that record companies could support a relatively broad base of musicians, 
-as long as those musicians helped them sell enough sounds etched into highly processed dinosaur bones (records).
-Now we have replaced that system with a new system where tech overlords support a much narrower base of musicians, 
-basically by accident, since they pay only thousandths of a penny every time a song gets streamed.
+as long as those musicians helped them sell enough sounds etched into highly processed dinosaur bones (i.e., records).
+Now we have replaced that system with a new one, where tech overlords support a much narrower base of musicians, 
+almost by accident, since they pay only thousandths of a penny every time a song gets streamed.
 I think somebody wrote a pretty good song about it once.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MsrwtYI8a6Q?si=9QsIfkJZqaiU4sWC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 (You can't read the rest of this blog post until you sit through the whole song. My blog, my rules :sunglasses:)
 
-Ok, the angry tech bros of the broligarchy are telling themselves I'm just virtue-signaling with this 
-opening paragraph.
 Of course the right fix for this is to not actually change the system, 
 but instead to make each person feel like they alone are personally responsible for fixing everything.
-And that is why, whenever I can, I pay for music for Bandcamp.
+And that is why, whenever I can, I pay for music through Bandcamp.
 Individualism! Exceptionalism! Americanism! 
-My strategy worked perfectly fine until Bandcamp was acquired by Epic Games, 
+The Bandcamp business model lets me put my money where my mouth is, 
+because it gives artists and labels a lot of control over how they sell music: 
+what prices they set, what merchandise they sell, and so on.
+This seemed like a good way to vote with my dollars for an alternative to streaming platforms like Spotify.
+Until Bandcamp was acquired by Epic Games, 
 and then by Songtradr, 
 who [layed off half the staff](https://www.theguardian.com/music/2023/oct/17/bandcamp-lays-off-half-its-staff-after-buyout-by-songtradr).
+Perhaps not surprisingly, this was around the same time that Bandcamp workers were trying to [unionize](https://www.bandcampunited.org/).
 So much for "championing independent artists".
-So much for personally fixing everything.
+So much for me personally fixing everything.
 
-The last thing I'll say about this before I actually write about music is that I have seen a couple of attempts to 
+Ok, the angry tech bros of the broligarchy are telling themselves I'm just virtue-signaling with this 
+whole little section about how I basically deserve a Nobel prize for the amount of money I've given to artists through Bandcamp.
+The last thing I'll say, before I actually write about music, is that I have seen a couple of attempts to 
 build worker-owned platforms.
 In principle, I am totally in favor of this.
-We do not need these fucking scumbags, and the sooner we realize it the better.
-In practice, there's some complicated economics thing that goes on when you have multiple teams running on a shoelace that are all trying to replace 
-the thing run by our feudal techlords who have infinite money to fend them off.
-Someone who is smarter than me made this great website that captures the alternatives: https://bandcampalternative.com/
+We do not need our feudal tech overlords, and the sooner we realize it the better. 
+But in practice, there's some complicated economics game theory going on when you have multiple companies,
+each running on a shoelace budget, all trying to replace the platform run by the tech barons, who have infinite money to fend them off. 
+Still it's worth knowing about these efforts. 
+Someone who is smarter than me made this great website that sums up what's been done: <https://bandcampalternative.com/>
 
-My good friend Alex Chabot LeClerc also happens to be really into music,
-and posts about it weekly on his blog:
-https://alexchabot.net/categories/music/
-He shares Spotify links, and that works great (I will begrudgingly admit that there are good things about tech), 
-but he also knows that I live on Bandcamp,
+## My actual Bandcamp Wrapped 2024
 
-And that's also why he shared this cool blog post with me from Mac Wright, on how to generate a Bandcamp wrapped.
-https://macwright.com/2024/12/06/bandcamp-wrapped.html
+I will mostly shut up about tech now, and mainly write about music.
 
-The actual tool is here:
-https://tmcw-bandcampwrapped.web.val.run/
+I did as Mac's tool instructs, copying and pasting my purchases from 2024.
+Instead of just dumping the output here, I will write a little bit about the music I've been into over the last year, 
+and how I found it. This is the part where I talk about YouTube, more than I want to.
 
-I did as the tool instructs, copying and pasting my purchases over the last year.
-Instead of just dumping everything, I will write a little bit about the music I've been into over the last year, 
-and how I found it. I hope you will forgive me this bit of self-reflection.
-
-## French Canadians
-
-Since Alex inspired this post, I will start with music I bought from Canada this year.
-
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-<div><a href="https://bleujeansbleu1.bandcamp.com/album/top-minou-2"><img src="https://f4.bcbits.com/img/a1825665714_2.jpg" alt=""></a><a href="https://bleujeansbleu1.bandcamp.com/album/top-minou-2"><strong>Top Minou</strong><span> by Bleu Jeans Bleu</span></a></div></div>
-<div><a href="https://ludovicalarie.bandcamp.com/album/lappartement"><img src="https://f4.bcbits.com/img/a2861089859_2.jpg" alt=""></a><a href="https://ludovicalarie.bandcamp.com/album/lappartement"><strong>L'appartement</strong><span> by ludovic alarie</span></a></div>
-<div><a href="https://olivierlangevin.bandcamp.com/album/demain-peut-tre"><img src="https://f4.bcbits.com/img/a2511087130_2.jpg" alt=""></a><a href="https://olivierlangevin.bandcamp.com/album/demain-peut-tre"><strong>À demain peut-être</strong><span> by Galaxie</span></a></div>
-<div><a href="https://ameliefortin.bandcamp.com/album/aqualudes"><img src="https://f4.bcbits.com/img/a3796762025_2.jpg" alt=""></a><a href="https://ameliefortin.bandcamp.com/album/aqualudes"><strong>Aqualudes</strong><span> by Amélie Fortin</span></a></div>
-</div>
-
-
-He introduced me to Bleu Jeans Bleu a couple of years ago.
-Primo quality rock/pop with a distinctly Quebecois flair.
-
-See for example,
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_whvVXX0hCk?si=rOuQ70QyEj8bQK-C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-Alex told me one of their songs perfectly captures the feeling of being for him.
-
-The L'appartment album I found while in Maine for the NMAC 2024 conference.
-I was sitting in the parking lot of the hotel the conference was at, 
-and this song came on the radio, 
-on this French Canadian station I had managed to pick up.
-It was just a very nice vibe, made even more nice by the slight patina of static from the almost out of range station.
-I loved the song so much I ran inside to google and try and figure out what station it must be, so I could see if they had a playlist.
-Like a total weirdo I was even asking people at the conference I knew who happend to be from Canada if they knew of the stations.
-No, what is wrong with you.
-I found the station anyway and they did have a playlist.
-
-I liked the band so much I had to ask Alex if he knew of them; he did not, but the name rang a bell, and in fact this musician is the son of another musician Alex is familiar with.
-Not surprisingly, Alex suggested some other musicians in the same vein, like Amelie Fortin.
-And then later in the year he happened to recommend Galaxie, that definitely hit that alternative rock spot in a way I haven't heard in a while.
-
-
-## spacemusic, ambient, electronica
+### spacemusic, ambient, electronica
 
 I have been into ambient for a while.
 Like a lot of people, I was unwittingly turned on to Japanese ambient during the pandemic, thanks to the YouTube algorithm.
-See this article on ars technica: https://arstechnica.com/gaming/2020/11/how-old-ambient-japanese-music-became-a-smash-hit-on-youtube/
-(I like a lot of the related music namechecked in this article that was also mysteriously promoted by the YouTube algorithm, 
-like 1979 from Deru, Plant Music, and An Empty Bliss Beyond this World by the Caretaker)
-That made me get back into Brian Eno more deeply and then just sort of embrace ambient more generally, 
-even though the failed musician in me can feel the ghost of Frank Zappa silently seething at wallpaper music.
-Man, I get it, you were a super-genius composer, but people are allowed to like wallpaper. 
-Looking back over this year, The Algorithm has continued to turn me on to a lot of other ambient, but more into the genre of [spacemusic]().
-Somehow this fits with me continuing to dwell in the post-apocalpytic, since I played a lot of [Caves of Qud]() this year
-and I re-read the first book of the [Southern Reach Trilogy]().
+See this article on ars technica: <https://arstechnica.com/gaming/2020/11/how-old-ambient-japanese-music-became-a-smash-hit-on-youtube/>
+(I like a lot of the related music namechecked in this article, that was also mysteriously promoted by the YouTube algorithm, 
+like [1979](https://deru.bandcamp.com/album/1979) from Deru, Plant Music, 
+and An Empty Bliss Beyond this World by the Caretaker)
 
-### spacemusic
+Looking back over this year, The Algorithm has continued to turn me on to a lot of other ambient, but more into the genre of 
+[spacemusic](https://en.wikipedia.org/wiki/Space_music).
+Somehow this fits with me continuing to dwell in the post-apocalpytic, since I played a lot of 
+[Caves of Qud](https://en.wikipedia.org/wiki/Caves_of_Qud) this year
+and I re-read the first book of the [Southern Reach Trilogy](https://en.wikipedia.org/wiki/Southern_Reach_Series).
 
 #### UK
 
@@ -155,21 +150,38 @@ but as that person kindly pointed out there's actually another channel with a wh
 
 What I really love about their albums are the art, clearly made on some 80s graphic design software like Printshop, but somehow managing to look mystical at the same time.
 (Scroll through the playlist to see.)
+
 Mysticisim in the same way that I think Robert Pollard's lyrics about UFOs and his collage album covers are, at their best, mystical.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nMgiSfwbBBM?si=nyRp-RF5GPt-tumZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Modular?
+(I know, as of that last sentence I'm really blurring the line between tech blog and annoying album review guys on YouTube. Bro, I contain multitudes.)
 
-I will lump together Young Scientist and Sines of Modular Pleasure into a totally-made up genre I'll call "80s american ambient".
-There's no over themes of space per se.
-Of course I have to like a group named Young Scientist. I'm no longer so young but they really have made scientist soundtrack music,
-for those late hours in the lab.
+#### Modular?
+
+One last bit of ambient music, two groups that I will lump into a totally-made up genre I'll call "80s american ambient", 
+since there's no overt themes of space per se.
+
+##### Young Scientist
+
+The first group is named Young Scientist, and with a name like that of course I have to like them.
+I'm no longer so young, but I do feel like they really have made scientist soundtrack music,
+that conjures up late hours in the lab.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
 <div><a href="https://marcbarreca1.bandcamp.com/album/over-low-trees"><img src="https://f4.bcbits.com/img/a0972251690_2.jpg" alt=""></a><a href="https://marcbarreca1.bandcamp.com/album/over-low-trees"><strong>Over Low Trees...</strong><span> by Young Scientist</span></a></div>
 <div><a href="https://youngscientist.bandcamp.com/album/results-not-answers"><img src="https://f4.bcbits.com/img/a2250615386_2.jpg" alt=""></a><a href="https://youngscientist.bandcamp.com/album/results-not-answers"><strong>Results, Not Answers</strong><span> by Young Scientist</span></a></div>
 </div>
+
+##### Sines of Exquisite Pleasure
+
+The second group is Sines of Modular Pleasure.
+There's some question of whether they are even "real", in the sense of really old, or whether it's more of a tribute group making music in the present day.
+Check out this maniac's blog post: <https://ivandsm.github.io/2022/12/04/on-sines-of-exquisite-pleasure.html>
+(Maniac in a good way, thank you for your work, whoever you are.)
+Based on their latest release, I think they are indeed more of an homage. 
+It still works for me, and I would still lump it into this category of sounding like 
+"American suburban guys who wanted to be Brian Eno or Tangerine Dream but had to re-invent the genre from scratch".
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
 <div><a href="https://sinesofexquisitepleasure.bandcamp.com/album/alaska"><img src="https://f4.bcbits.com/img/a2740849802_2.jpg" alt=""></a><a href="https://sinesofexquisitepleasure.bandcamp.com/album/alaska"><strong>Alaska</strong><span> by Sines of Exquisite Pleasure</span></a></div>
@@ -178,13 +190,7 @@ for those late hours in the lab.
 <div><a href="https://sinesofexquisitepleasure.bandcamp.com/album/music-for-hospitals"><img src="https://f4.bcbits.com/img/a0101591275_2.jpg" alt=""></a><a href="https://sinesofexquisitepleasure.bandcamp.com/album/music-for-hospitals"><strong>Music for Hospitals</strong><span> by Sines of Exquisite Pleasure</span></a></div>
 </div>
 
-There's some question of whether Sines of Modular Pleasure are even real.
-Check out this maniac's blog post: https://ivandsm.github.io/2022/12/04/on-sines-of-exquisite-pleasure.html
-(Maniac in a good way, thank you for your work, whoever you are/)
-Based on their latest release, I think they are indeed more of an homage. 
-It still works for me, and I would still lump it into this category of "American suburban guys who wanted to be Brian Eno but had to re-invent the genre"
-
-#### Cube of the Unknowing
+##### Cube of the Unknowing
 
 Yet another YouTube find.
 
@@ -195,11 +201,12 @@ Again, as a scientist who would like to resist all the worst aspects of reductio
 <div><a href="https://eiderdownrecords.bandcamp.com/album/bog-phosphors"><img src="https://f4.bcbits.com/img/a2147955938_2.jpg" alt=""></a><a href="https://eiderdownrecords.bandcamp.com/album/bog-phosphors"><strong>Bog Phosphors</strong><span> by The Cube Of Unknowing</span></a></div>
 </div>
 
-## Electronica
+### Electronica
 
-### Hotel Pools
+#### Hotel Pools
 
-Hotel Pools is another artist I found during the pandemic.
+Hotel Pools is another artist I found during the pandemic. 
+I think probably through YouTube --- although this might be one case where I found the artist from other people's Bandcamp profiles?
 This was my running music, when I would do my routes through Rock Creek Park in DC.
 It's perfect for that. Just total shut-off-worry-noise-thoughts music.
 
@@ -207,14 +214,14 @@ It's perfect for that. Just total shut-off-worry-noise-thoughts music.
 <div><a href="https://hotelpoolsmusic.bandcamp.com/album/filo-3"><img src="https://f4.bcbits.com/img/a4051119938_2.jpg" alt=""></a><a href="https://hotelpoolsmusic.bandcamp.com/album/filo-3"><strong>FiLo</strong><span> by Hotel Pools</span></a></div>
 </div>
 
-### Home
+#### Home
 
 Yet another group I found through YouTube, this time as the first song on this random playlist that features a mecha-Bart Simpson as the image with a trippy bad VR background.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/utkEqw2GJo4?si=twASTQIY56hTZQ7K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 You're telling me that you do not feel goosebumps all over your body, as if a your soul became a laser beam shooting out of God's forehead, 
-at the very momenet you hear *that* song, with the mecha Bart and the cyberpunk background undulating behind? 
+at the very moment you hear that first song, with the mecha-Bart and the cyberpunk background undulating behind? 
 You, sir, have no soul.
 
 Turns out all their other shit is really good too.
@@ -225,44 +232,87 @@ Turns out all their other shit is really good too.
 <div><a href="https://midwestcollective.bandcamp.com/album/before-the-night"><img src="https://f4.bcbits.com/img/a4025651648_2.jpg" alt=""></a><a href="https://midwestcollective.bandcamp.com/album/before-the-night"><strong>Before The Night</strong><span> by HOME</span></a></div>
 </div>
 
+### Other
+
+Okay, now we are just going to go through a string of other music, but you will again notice that a lot of this I learned about through YouTube.
+
+#### Christoper
+
+Yes, the YouTube algorithm found this one for me too.
+
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
 <div><a href="https://errolshotwax.bandcamp.com/album/an-unexpected-giant-leap"><img src="https://f4.bcbits.com/img/a3308719318_2.jpg" alt=""></a><a href="https://errolshotwax.bandcamp.com/album/an-unexpected-giant-leap"><strong>An Unexpected Giant Leap</strong><span> by Christopher Haddow</span></a></div>
 </div>
+
+#### Hehehehe
+
+You guessed it. The YouTube algorithm found me with this one.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
 <div><a href="https://imnowt.bandcamp.com/album/d-j-vu-sonder"><img src="https://f4.bcbits.com/img/a1279361665_2.jpg" alt=""></a><a href="https://imnowt.bandcamp.com/album/d-j-vu-sonder"><strong>déjà vu, sonder</strong><span> by Hehehehe</span></a></div>
 </div>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-<div><a href="https://intlanthem.bandcamp.com/album/force-majeure"><img src="https://f4.bcbits.com/img/a3667047525_2.jpg" alt=""></a><a href="https://intlanthem.bandcamp.com/album/force-majeure"><strong>Force Majeure</strong><span> by Dezron Douglas &amp; Brandee Younger</span></a></div>
-</div>
+#### Piero Umiliani
+
+The YouTube algorithm has also turned me on to [library music](https://en.wikipedia.org/wiki/Production_music) and film scores. 
+I feel kind of gross putting some of these album covers in a blog post, but, man, this music is so good.
+I feel crazy saying this but I feel like literally some of the best music in the last century 
+was written for really awful Italian movies.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
 <div><a href="https://pieroumiliani.bandcamp.com/album/il-corpo"><img src="https://f4.bcbits.com/img/a3799970948_2.jpg" alt=""></a><a href="https://pieroumiliani.bandcamp.com/album/il-corpo"><strong>Il Corpo</strong><span> by Piero Umiliani</span></a></div>
 <div><a href="https://pieroumiliani.bandcamp.com/album/pianofender-blues"><img src="https://f4.bcbits.com/img/a4118648544_2.jpg" alt=""></a><a href="https://pieroumiliani.bandcamp.com/album/pianofender-blues"><strong>PianoFender Blues</strong><span> by Piero Umiliani</span></a></div>
 </div>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-<div><a href="https://thehighllamas.bandcamp.com/album/hey-panda"><img src="https://f4.bcbits.com/img/a1442148603_2.jpg" alt=""></a><a href="https://thehighllamas.bandcamp.com/album/hey-panda"><strong>Hey Panda</strong><span> by High Llamas</span></a></div>
-</div>
+#### Shannon Lay
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-<div><a href="https://nilsfrahm.bandcamp.com/album/day"><img src="https://f4.bcbits.com/img/a1278911408_2.jpg" alt=""></a><a href="https://nilsfrahm.bandcamp.com/album/day"><strong>Day</strong><span> by Nils Frahm</span></a></div>
-</div>
+I first got into Shannon Lay after hearing her cover on Karen Dalton's "Something on Your Mind".
+That's right, I found her cover on YouTube.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
 <div><a href="https://shannonlay.bandcamp.com/album/geist"><img src="https://f4.bcbits.com/img/a2117704671_2.jpg" alt=""></a><a href="https://shannonlay.bandcamp.com/album/geist"><strong>Geist</strong><span> by Shannon Lay</span></a></div>
 </div>
 
-## Other
+#### Nihls Frahm
 
-### Gabor Szabo
+The YouTube Algorithm definitely got me into Frahm, at about the same time it was recommending Harold Budd. 
+Budd is definitely on the ambient side, Frahm can venture into Radiohead-like pop-electronica on some albums.
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+<div><a href="https://nilsfrahm.bandcamp.com/album/day"><img src="https://f4.bcbits.com/img/a1278911408_2.jpg" alt=""></a><a href="https://nilsfrahm.bandcamp.com/album/day"><strong>Day</strong><span> by Nils Frahm</span></a></div>
+</div>
+
+#### Gabor Szabo
+
+Ok, finally, the last of the music that I found on YouTube.
+At the same time I was getting into Italian composers like Umiliani and Piero Piccioni, 
+the Algorithm played this guitar album for me.
+I can't say why it moves me so much, 
+Szabo's playing and this album in particular are almost unclassifiable in terms of genre.
+He is totally uninterested in anything poppy here, or even jazzy, 
+at least in the sense of American jazz.
+When I realized this year that the album was on Bandcamp, I had to get it.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
 <div><a href="https://ebalunga.bandcamp.com/album/dreams"><img src="https://f4.bcbits.com/img/a1678935605_2.jpg" alt=""></a><a href="https://ebalunga.bandcamp.com/album/dreams"><strong>Dreams</strong><span> by Gabor Szabo</span></a></div>
 </div>
 
-### Aroo Jaftab
+#### Force Majeure
+
+This wasn't recommended to me by The Algorithm on YouTube!
+It was actually recommended by Bandcamp!
+Before the fall of Twitter, I would see their tweets, 
+and specifically I saw this article about jazz harp:
+<https://daily.bandcamp.com/lists/jazz-harp-list>
+I really love Dorothy Ashby, 
+and so wanted to hear more in that vein.
+And so this is, but it's so much more. 
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+<div><a href="https://intlanthem.bandcamp.com/album/force-majeure"><img src="https://f4.bcbits.com/img/a3667047525_2.jpg" alt=""></a><a href="https://intlanthem.bandcamp.com/album/force-majeure"><strong>Force Majeure</strong><span> by Dezron Douglas &amp; Brandee Younger</span></a></div>
+</div>
+
+#### Aroo Jaftab
 
 I heard this artist open for Khruangbin went I went with my partner to see them at Anthem DC.
 I love the microtonal melodies that she sings, that remind me of some Iranian music.
@@ -271,3 +321,59 @@ She is also just clearly a true artist and poet. Thank God, we need more such pe
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
 <div><a href="https://aroojaftab.bandcamp.com/album/bird-under-water"><img src="https://f4.bcbits.com/img/a2692336008_2.jpg" alt=""></a><a href="https://aroojaftab.bandcamp.com/album/bird-under-water"><strong>Bird Under Water</strong><span> by arooj aftab</span></a></div>
 </div>
+
+#### High Llamas
+
+I talked about Italian soundtrack composers above.
+I know I'm not their only fan, 
+because after YouTube introduce me to their music, 
+I realized that Sean O' Hagan of the High Llamas often "quotes" them musically.
+He wears many other influences on his sleeve, 
+including psychedelic Beach boys and bossa nova, 
+but no-one else has resynthesized those influences 
+the way Sean and his collaborators have. 
+I always gotta buy a new High Llamas album.
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+<div><a href="https://thehighllamas.bandcamp.com/album/hey-panda"><img src="https://f4.bcbits.com/img/a1442148603_2.jpg" alt=""></a><a href="https://thehighllamas.bandcamp.com/album/hey-panda"><strong>Hey Panda</strong><span> by High Llamas</span></a></div>
+</div>
+
+#### French Canadians
+
+Last but not least: 
+since my friend Alex inspired this post, I would be remiss if I didn't include the music I bought from his home of Canada this year.
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+<div><a href="https://bleujeansbleu1.bandcamp.com/album/top-minou-2"><img src="https://f4.bcbits.com/img/a1825665714_2.jpg" alt=""></a><a href="https://bleujeansbleu1.bandcamp.com/album/top-minou-2"><strong>Top Minou</strong><span> by Bleu Jeans Bleu</span></a></div>
+<div><a href="https://ludovicalarie.bandcamp.com/album/lappartement"><img src="https://f4.bcbits.com/img/a2861089859_2.jpg" alt=""></a><a href="https://ludovicalarie.bandcamp.com/album/lappartement"><strong>L'appartement</strong><span> by ludovic alarie</span></a></div>
+<div><a href="https://olivierlangevin.bandcamp.com/album/demain-peut-tre"><img src="https://f4.bcbits.com/img/a2511087130_2.jpg" alt=""></a><a href="https://olivierlangevin.bandcamp.com/album/demain-peut-tre"><strong>À demain peut-être</strong><span> by Galaxie</span></a></div>
+<div><a href="https://ameliefortin.bandcamp.com/album/aqualudes"><img src="https://f4.bcbits.com/img/a3796762025_2.jpg" alt=""></a><a href="https://ameliefortin.bandcamp.com/album/aqualudes"><strong>Aqualudes</strong><span> by Amélie Fortin</span></a></div>
+</div>
+
+He introduced me to Bleu Jeans Bleu a couple of years ago.
+Primo quality rock/pop with a distinctly Quebecois flair.
+
+See for example,  
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_whvVXX0hCk?si=rOuQ70QyEj8bQK-C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Alex told me one of their songs perfectly captures the feeling of being for him.
+
+The L'appartment album I found while in Maine for the NMAC 2024 conference.
+I was sitting in the parking lot of the hotel the conference was at, 
+and this song came on the radio, 
+on this French Canadian station I had managed to pick up.
+It was just a very nice vibe, made even more nice by the slight patina of static from the almost out of range station.
+I loved the song so much I ran inside to google and try and figure out what station it must be, so I could see if they had a playlist.
+Like a total weirdo I was even asking people at the conference I knew who happend to be from Canada if they knew of the stations.
+No, what is wrong with you.
+I found the station anyway and they did have a playlist.
+
+I liked the band so much I had to ask Alex if he knew of them; he did not, but the name rang a bell, and in fact this musician is the son of another musician Alex is familiar with.
+Not surprisingly, Alex suggested some other musicians in the same vein, like Amelie Fortin.
+And then later in the year he happened to recommend Galaxie, that definitely hit that alternative rock spot in a way I haven't heard in a while.
+
+## Next time
+
+If you made it through all this music, thank you for your attention.
+As soon as I add those other posts about reclaiming ownership of music, I will link them here.
