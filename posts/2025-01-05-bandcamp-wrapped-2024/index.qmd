@@ -15,19 +15,32 @@ I'll also say a little bit about the interaction of music
 and the tech industry in general:  
 apps like Spotify, Bandcamp, and YouTube; 
 how they affect artists and how they affect our listening habits.
-I've got a couple follow-up posts coming 
-on how I'm feeling like we might actually have the tools 
+I've working on a couple follow-up posts about 
+how I feel like we're getting close to having the tools 
 for musicians and listeners to reclaim ownership of their music.
-So consider this an appetizer.
+So consider this a prelude to that.
 
 ---
 
-Every December, Spotify rewards us for submitting to their algorithm, 
-by telling us a story about what we listened to all year,
+Every December, Spotify rewards us for submitting to their algorithm 
+by giving us our Spotify Wrapped.
+Their Wrapped tells us which artist we spent the most time with, 
+what song topped our playlists, how many minutes we listened.
 
-I barely Spotify. My Wrapped was "You listened to Tame Impala Radio 10 times in August".
+I barely use Spotify. 
+My Wrapped was basically "You listened to Tame Impala Radio 10 times in August".
+
+![Screenshot from my Wrapped](wrapped-screenshot.jpg)
+
+I just got into Tame Impala, don't judge me.
+You can see my fifth most listened too song was a song I listened to maybe twice 
+from a French Canadian artist that my friend Alex introduced me too 
+(that's foreshadowing for later).
+
 But I love to see people share their Wrapped on Bluesky and Twitter, 
 especially if ironic. "Yes, I am in the top 0.01% of Gwar fans."
+
+![Sita tweet with screenshot of Wrapped that says "Pink Pilates Princess". Tweet says "i think spotify wrapped just called me a slur".](spotify-wrapped-tweet.jpg)
 
 I want my own Wrapped! 
 I want to tell a story about what I did this year, 
@@ -38,9 +51,9 @@ But I want to receive it passively from the app I listen to music on, instead of
 Thankfully, my good friend Alex Chabot LeClerc knows that I buy a lot of music through Bandcamp.
 
 And that's why he shared this cool blog post with me from Mac Wright, on how to generate a Bandcamp Wrapped, 
-with an app that Wright has on [val.town](https://www.val.town/): 
-<https://macwright.com/2024/12/06/bandcamp-wrapped.html>
-The actual app on val.town is here: <https://tmcw-bandcampwrapped.web.val.run/>
+with an app that Wright has on [val.town](https://www.val.town/):  
+<https://macwright.com/2024/12/06/bandcamp-wrapped.html>.
+The actual app on val.town is here:  <https://tmcw-bandcampwrapped.web.val.run/>
 
 I think Alex is a big fan of Wright's work. 
 And like me, Alex is really into music, and posts about it weekly on his blog:
@@ -94,15 +107,15 @@ We do not need our feudal tech overlords, and the sooner we realize it the bette
 But in practice, there's some complicated economics game theory going on when you have multiple companies,
 each running on a shoelace budget, all trying to replace the platform run by the tech barons, who have infinite money to fend them off. 
 Still it's worth knowing about these efforts. 
-Someone who is smarter than me made this great website that sums up what's been done: <https://bandcampalternative.com/>
+Someone who is smarter than me made this great website that sums up what's been done:  <https://bandcampalternative.com/>
 
-## My actual Bandcamp Wrapped 2024
+## More like Youtube Wrapped 2024, amirite?
 
 I will mostly shut up about tech now, and mainly write about music.
 
 I did as Mac's tool instructs, copying and pasting my purchases from 2024.
 Instead of just dumping the output here, I will write a little bit about the music I've been into over the last year, 
-and how I found it. This is the part where I talk about YouTube, more than I want to.
+and how I found it. This is the part where I talk about the YouTube Algorithm, maybe more than I want to.
 
 ### spacemusic, ambient, electronica
 
@@ -115,11 +128,11 @@ and An Empty Bliss Beyond this World by the Caretaker)
 
 Looking back over this year, The Algorithm has continued to turn me on to a lot of other ambient, but more into the genre of 
 [spacemusic](https://en.wikipedia.org/wiki/Space_music).
-Somehow this fits with me continuing to dwell in the post-apocalpytic, since I played a lot of 
-[Caves of Qud](https://en.wikipedia.org/wiki/Caves_of_Qud) this year
-and I re-read the first book of the [Southern Reach Trilogy](https://en.wikipedia.org/wiki/Southern_Reach_Series).
+Somehow this sci-fi ambient fits with the rest of my media diet: I played a lot of 
+post-apocalpytic roguelike [Caves of Qud](https://en.wikipedia.org/wiki/Caves_of_Qud) this year
+and I re-read the first book of the post-apocalpytic [Southern Reach Trilogy](https://en.wikipedia.org/wiki/Southern_Reach_Series).
 
-#### UK
+#### UK ambient
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
 <div><a href="https://stevebrenner.bandcamp.com/album/nacht-musik"><img src="https://f4.bcbits.com/img/a1047453790_2.jpg" alt=""></a><a href="https://stevebrenner.bandcamp.com/album/nacht-musik"><strong>NACHT MUSIK</strong><span> by Steve Brenner</span></a></div>
@@ -131,27 +144,37 @@ and I re-read the first book of the [Southern Reach Trilogy](https://en.wikipedi
 
 Both Steve Brenner and Tim Stebbing I think are UK artists who got their start in the ~70s.
 I found them through YouTube channels like Sounds of the Dawn, [here](https://www.youtube.com/watch?v=27UWFg6Nxd8) and [here](https://www.youtube.com/watch?v=5oWO4eB3YbM).
-Brenner has directly sent me an email every time I've purchased from him.
+Side note: Brenner has directly sent me a (brief!) email every time I've purchased from him.
 This is the kind of personal touch you don't get when you stream music through a Platform.
 
-#### American Primitive
+#### American Primitive ambient
 
-Ok, there's only one group in this category, the Nightcrawlers, but I love them, and I wish I could pay them more for all of their music.
+Ok, there's only one group in this category, the Nightcrawlers, but I love them, and I wish I could pay them more for all of their music. 
+I don't know if they already have their own microgenre but I'm going to call it "American Primitive ambient".
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
 <div><a href="https://thenightcrawlerspa.bandcamp.com/album/the-biophonic-boombox-recordings"><img src="https://f4.bcbits.com/img/a2111723000_2.jpg" alt=""></a><a href="https://thenightcrawlerspa.bandcamp.com/album/the-biophonic-boombox-recordings"><strong>The Biophonic Boombox Recordings</strong><span> by The Nightcrawlers</span></a></div>
 </div>
 
-I found them through this channel
-
-but as that person kindly pointed out there's actually another channel with a whole playlist.
+I found them through this channel: <https://www.youtube.com/watch?v=qkmsWKKPVvo>
+But as that person kindly pointed out there's actually another channel with a whole playlist.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=NfXdndRHmoVJ4AMG&amp;list=PLmHXYk0FPToBWd5fjDmkyd0NOWlAiBZxd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-What I really love about their albums are the art, clearly made on some 80s graphic design software like Printshop, but somehow managing to look mystical at the same time.
-(Scroll through the playlist to see.)
+What I really love about their albums are the art, clearly made on some 80s graphic design software like Printshop, 
+but somehow managing to have a mysticisim at the same time.
 
-Mysticisim in the same way that I think Robert Pollard's lyrics about UFOs and his collage album covers are, at their best, mystical.
+
+::: {layout-ncol=3}
+
+![](nightcrawlers-hop-scotch-youtube-thumbnail.html){fig-alt="Hopscotch album cover"}
+
+![](nightcrawlers-largo-tree-youtube-thumbnail.jpg){fig-alt="Largo Tree album cover"}
+
+![](nightcrawlers-spacewalk-youtube-thumbnail.jpg){fig-alt="Spacewalk album cover"}
+:::
+
+They have a mysticisim in the same way that I think Robert Pollard's lyrics about UFOs and his collage album covers are, at their best, mystical.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nMgiSfwbBBM?si=nyRp-RF5GPt-tumZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -159,14 +182,14 @@ Mysticisim in the same way that I think Robert Pollard's lyrics about UFOs and h
 
 #### Modular?
 
-One last bit of ambient music, two groups that I will lump into a totally-made up genre I'll call "80s american ambient", 
+One last bit of ambient music, two groups that I will lump into another totally-made up microgenre I'll call "80s american ambient", 
 since there's no overt themes of space per se.
 
 ##### Young Scientist
 
 The first group is named Young Scientist, and with a name like that of course I have to like them.
 I'm no longer so young, but I do feel like they really have made scientist soundtrack music,
-that conjures up late hours in the lab.
+that conjures up late hours in the lab. Yes, I found them through YouTube.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
 <div><a href="https://marcbarreca1.bandcamp.com/album/over-low-trees"><img src="https://f4.bcbits.com/img/a0972251690_2.jpg" alt=""></a><a href="https://marcbarreca1.bandcamp.com/album/over-low-trees"><strong>Over Low Trees...</strong><span> by Young Scientist</span></a></div>
@@ -175,7 +198,8 @@ that conjures up late hours in the lab.
 
 ##### Sines of Exquisite Pleasure
 
-The second group is Sines of Modular Pleasure.
+The second group is Sines of Modular Pleasure. Again, yes, I found them through YouTube.
+
 There's some question of whether they are even "real", in the sense of really old, or whether it's more of a tribute group making music in the present day.
 Check out this maniac's blog post: <https://ivandsm.github.io/2022/12/04/on-sines-of-exquisite-pleasure.html>
 (Maniac in a good way, thank you for your work, whoever you are.)
@@ -209,6 +233,7 @@ Hotel Pools is another artist I found during the pandemic.
 I think probably through YouTube --- although this might be one case where I found the artist from other people's Bandcamp profiles?
 This was my running music, when I would do my routes through Rock Creek Park in DC.
 It's perfect for that. Just total shut-off-worry-noise-thoughts music.
+So I had to get their new album this year.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
 <div><a href="https://hotelpoolsmusic.bandcamp.com/album/filo-3"><img src="https://f4.bcbits.com/img/a4051119938_2.jpg" alt=""></a><a href="https://hotelpoolsmusic.bandcamp.com/album/filo-3"><strong>FiLo</strong><span> by Hotel Pools</span></a></div>
@@ -216,7 +241,7 @@ It's perfect for that. Just total shut-off-worry-noise-thoughts music.
 
 #### Home
 
-Yet another group I found through YouTube, this time as the first song on this random playlist that features a mecha-Bart Simpson as the image with a trippy bad VR background.
+Yet another group I found through YouTube this year, this time as the first song on this random playlist that features a mecha-Bart Simpson as the image with a trippy bad VR background.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/utkEqw2GJo4?si=twASTQIY56hTZQ7K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -256,8 +281,7 @@ You guessed it. The YouTube algorithm found me with this one.
 
 The YouTube algorithm has also turned me on to [library music](https://en.wikipedia.org/wiki/Production_music) and film scores. 
 I feel kind of gross putting some of these album covers in a blog post, but, man, this music is so good.
-I feel crazy saying this but I feel like literally some of the best music in the last century 
-was written for really awful Italian movies.
+Hot take: literally some of the best music in the last century was composed for trashy Italian movies.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
 <div><a href="https://pieroumiliani.bandcamp.com/album/il-corpo"><img src="https://f4.bcbits.com/img/a3799970948_2.jpg" alt=""></a><a href="https://pieroumiliani.bandcamp.com/album/il-corpo"><strong>Il Corpo</strong><span> by Piero Umiliani</span></a></div>
@@ -338,7 +362,7 @@ I always gotta buy a new High Llamas album.
 <div><a href="https://thehighllamas.bandcamp.com/album/hey-panda"><img src="https://f4.bcbits.com/img/a1442148603_2.jpg" alt=""></a><a href="https://thehighllamas.bandcamp.com/album/hey-panda"><strong>Hey Panda</strong><span> by High Llamas</span></a></div>
 </div>
 
-#### French Canadians
+#### My Alex Chabot-Leclerc Wrapped 2024
 
 Last but not least: 
 since my friend Alex inspired this post, I would be remiss if I didn't include the music I bought from his home of Canada this year.
@@ -352,24 +376,26 @@ since my friend Alex inspired this post, I would be remiss if I didn't include t
 
 He introduced me to Bleu Jeans Bleu a couple of years ago.
 Primo quality rock/pop with a distinctly Quebecois flair.
+Alex told me one of their songs perfectly captures the feeling of being in Quebec for him.
+You might mistake them for a novelty group, ironically parodying 
 
 See for example,  
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_whvVXX0hCk?si=rOuQ70QyEj8bQK-C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Alex told me one of their songs perfectly captures the feeling of being for him.
-
-The L'appartment album I found while in Maine for the NMAC 2024 conference.
+The L'appartment album I found while in Maine for the 
+[NMAC 2024 conference](https://www.grc.org/neural-mechanisms-of-acoustic-communication-grs-conference/2024/).
 I was sitting in the parking lot of the hotel the conference was at, 
 and this song came on the radio, 
 on this French Canadian station I had managed to pick up.
 It was just a very nice vibe, made even more nice by the slight patina of static from the almost out of range station.
 I loved the song so much I ran inside to google and try and figure out what station it must be, so I could see if they had a playlist.
-Like a total weirdo I was even asking people at the conference I knew who happend to be from Canada if they knew of the stations.
+Like a total weirdo, I was even asking people at the conference I knew who happend to be from Canada if they knew of the stations.
 No, what is wrong with you.
-I found the station anyway and they did have a playlist.
+I found the station anyway, and they did have a playlist.
 
-I liked the band so much I had to ask Alex if he knew of them; he did not, but the name rang a bell, and in fact this musician is the son of another musician Alex is familiar with.
+I liked the band so much I had to ask Alex if he knew of them; 
+he did not, but the name rang a bell, and in fact this musician is the son of another musician Alex is familiar with.
 Not surprisingly, Alex suggested some other musicians in the same vein, like Amelie Fortin.
 And then later in the year he happened to recommend Galaxie, that definitely hit that alternative rock spot in a way I haven't heard in a while.
 
