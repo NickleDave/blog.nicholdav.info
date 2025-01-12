@@ -50,12 +50,12 @@ But I want to receive it passively from the app I listen to music on, instead of
 
 Thankfully, my good friend Alex Chabot-Leclerc knows that I buy a lot of music through Bandcamp.
 
-And that's why he shared this cool blog post with me from Mac Wright, on how to generate a Bandcamp Wrapped, 
-with an app that Wright has on [val.town](https://www.val.town/):  
+And that's why he shared this cool blog post with me from Tom MacWright, on how to generate a Bandcamp Wrapped, 
+with an app that MacWright has on [val.town](https://www.val.town/):  
 <https://macwright.com/2024/12/06/bandcamp-wrapped.html>.  
 The actual app on val.town is here:  <https://tmcw-bandcampwrapped.web.val.run/>
 
-I think Alex is a big fan of Wright's work. 
+I think Alex is a big fan of MacWright's work. 
 And like me, Alex is really into music, and posts about it weekly on his blog:
 <https://alexchabot.net/categories/music/>  
 He shares Spotify links and playlists, and that works great 
@@ -65,7 +65,7 @@ But for those of us that buy a lot of music on Bandcamp, we can now generate our
 
 ## Is Bandcamp Itself Wrapped?
 
-In his Bandcamp Wrapped blog post, Mac links to his own previous writing 
+In his Bandcamp Wrapped blog post, MacWright links to his own previous writing 
 about his ["prepper-style music hoarding"](https://macwright.com/2020/01/27/my-music-library).
 To quote him, "I don’t believe that any technology company in the music industry will survive in the long term."
 You should read what he has to say, but let me tell why I buy a lot of music on Bandcamp, 
@@ -113,7 +113,7 @@ Someone who is smarter than me made this great website that sums up what's been 
 
 I will mostly shut up about tech now, and mainly write about music.
 
-I did as Mac's tool instructs, copying and pasting my Bandcamp purchases from 2024. That gave me a big list in HTML. 
+I did as MacWright's tool instructs, copying and pasting my Bandcamp purchases from 2024. That gave me a big list in HTML. 
 Instead of just dumping the output here, I decided to write about the music I've been into over the last year, and how I found it. 
 But it turns out this blog post will be *way* too long if I write about **all** the music I bought on Bandcamp this year 
 ([virtue signaling intensifies]).
