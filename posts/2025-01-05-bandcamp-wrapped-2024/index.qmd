@@ -1,5 +1,5 @@
 ---
-title: "My Bandcamp Wrapped 2024"
+title: "My Bandcamp-YouTube-Spotify-friends Wrapped 2024"
 description: "Music I bought on Bandcamp this year, and why"
 author: "David Nicholson"
 image: resist-the-algorithm.jpg
@@ -12,13 +12,13 @@ categories:
 
 In this post I'm sharing music I bought on Bandcamp in 2024.
 I'll also say a little bit about the interaction of music 
-and the tech industry in general:  
+and the tech industry in general: 
 apps like Spotify, Bandcamp, and YouTube; 
 how they affect artists and how they affect our listening habits.
-I've working on a couple follow-up posts about 
-how I feel like we're getting close to having the tools 
+I've working on a couple follow-up posts.
+Those are about how I feel like we're getting close to having the tools 
 for musicians and listeners to reclaim ownership of their music.
-So consider this a prelude to that.
+So consider this post a prelude to those.
 
 ---
 
@@ -30,7 +30,7 @@ what song topped our playlists, how many minutes we listened.
 I barely use Spotify. 
 My Wrapped was basically "You listened to Tame Impala Radio 10 times in August".
 
-![Screenshot from my Wrapped](wrapped-screenshot.jpg)
+![Screenshot from my Wrapped](wrapped-screenshot.jpg){width=40%}
 
 I just got into Tame Impala, don't judge me.
 You can see my fifth most listened too song was a song I listened to maybe twice 
@@ -40,7 +40,7 @@ from a French Canadian artist that my friend Alex introduced me too
 But I love to see people share their Wrapped on Bluesky and Twitter, 
 especially if ironic. "Yes, I am in the top 0.01% of Gwar fans."
 
-![Sita tweet with screenshot of Wrapped that says "Pink Pilates Princess". Tweet says "i think spotify wrapped just called me a slur".](spotify-wrapped-tweet.jpg)
+![](spotify-wrapped-tweet.png){width=75% fig-alt="Sita tweet with screenshot of Wrapped that says 'Pink Pilates Princess'. Tweet says 'i think spotify wrapped just called me a slur'."}
 
 I want my own Wrapped! 
 I want to tell a story about what I did this year, 
@@ -48,11 +48,11 @@ kind of like a tech blogger making a listicle of their annual achievements.
 But I want to receive it passively from the app I listen to music on, instead of me writing a blog post.
 (Wait a second.)
 
-Thankfully, my good friend Alex Chabot LeClerc knows that I buy a lot of music through Bandcamp.
+Thankfully, my good friend Alex Chabot-Leclerc knows that I buy a lot of music through Bandcamp.
 
 And that's why he shared this cool blog post with me from Mac Wright, on how to generate a Bandcamp Wrapped, 
 with an app that Wright has on [val.town](https://www.val.town/):  
-<https://macwright.com/2024/12/06/bandcamp-wrapped.html>.
+<https://macwright.com/2024/12/06/bandcamp-wrapped.html>.  
 The actual app on val.town is here:  <https://tmcw-bandcampwrapped.web.val.run/>
 
 I think Alex is a big fan of Wright's work. 
@@ -109,15 +109,21 @@ each running on a shoelace budget, all trying to replace the platform run by the
 Still it's worth knowing about these efforts. 
 Someone who is smarter than me made this great website that sums up what's been done:  <https://bandcampalternative.com/>
 
-## More like Youtube Wrapped 2024, amirite?
+## More like Youtube Wrapped 2020-2024
 
 I will mostly shut up about tech now, and mainly write about music.
 
-I did as Mac's tool instructs, copying and pasting my purchases from 2024.
-Instead of just dumping the output here, I will write a little bit about the music I've been into over the last year, 
-and how I found it. This is the part where I talk about the YouTube Algorithm, maybe more than I want to.
+I did as Mac's tool instructs, copying and pasting my Bandcamp purchases from 2024. That gave me a big list in HTML. 
+Instead of just dumping the output here, I decided to write about the music I've been into over the last year, and how I found it. 
+But it turns out this blog post will be *way* too long if I write about **all** the music I bought on Bandcamp this year 
+([virtue signaling intensifies]).
+So I'll talk about something more interesting:
+how do I replace Spotify's recommendations?
+I can pay artists directly, I can make my own Spotify wrapped, but how do I find new music?
+It turns out, mostly YouTube, but also recommendations from friends.
+Let's talk about each in turn.
 
-### spacemusic, ambient, electronica
+### I was radicalized by YouTube ambient playlists
 
 I have been into ambient for a while.
 Like a lot of people, I was unwittingly turned on to Japanese ambient during the pandemic, thanks to the YouTube algorithm.
@@ -259,15 +265,7 @@ Turns out all their other shit is really good too.
 
 ### Other
 
-Okay, now we are just going to go through a string of other music, but you will again notice that a lot of this I learned about through YouTube.
-
-#### Christoper
-
-Yes, the YouTube algorithm found this one for me too.
-
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-<div><a href="https://errolshotwax.bandcamp.com/album/an-unexpected-giant-leap"><img src="https://f4.bcbits.com/img/a3308719318_2.jpg" alt=""></a><a href="https://errolshotwax.bandcamp.com/album/an-unexpected-giant-leap"><strong>An Unexpected Giant Leap</strong><span> by Christopher Haddow</span></a></div>
-</div>
+Okay, we're mostly going to leave ambient and electronica behind now, but we're still talking about music I learned about through YouTube.
 
 #### Hehehehe
 
@@ -321,51 +319,12 @@ When I realized this year that the album was on Bandcamp, I had to get it.
 <div><a href="https://ebalunga.bandcamp.com/album/dreams"><img src="https://f4.bcbits.com/img/a1678935605_2.jpg" alt=""></a><a href="https://ebalunga.bandcamp.com/album/dreams"><strong>Dreams</strong><span> by Gabor Szabo</span></a></div>
 </div>
 
-#### Force Majeure
-
-This wasn't recommended to me by The Algorithm on YouTube!
-It was actually recommended by Bandcamp!
-Before the fall of Twitter, I would see their tweets, 
-and specifically I saw this article about jazz harp:
-<https://daily.bandcamp.com/lists/jazz-harp-list>
-I really love Dorothy Ashby, 
-and so wanted to hear more in that vein.
-And so this is, but it's so much more. 
-
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-<div><a href="https://intlanthem.bandcamp.com/album/force-majeure"><img src="https://f4.bcbits.com/img/a3667047525_2.jpg" alt=""></a><a href="https://intlanthem.bandcamp.com/album/force-majeure"><strong>Force Majeure</strong><span> by Dezron Douglas &amp; Brandee Younger</span></a></div>
-</div>
-
-#### Aroo Jaftab
-
-I heard this artist open for Khruangbin went I went with my partner to see them at Anthem DC.
-I love the microtonal melodies that she sings, that remind me of some Iranian music.
-She is also just clearly a true artist and poet. Thank God, we need more such people in the world.
-
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-<div><a href="https://aroojaftab.bandcamp.com/album/bird-under-water"><img src="https://f4.bcbits.com/img/a2692336008_2.jpg" alt=""></a><a href="https://aroojaftab.bandcamp.com/album/bird-under-water"><strong>Bird Under Water</strong><span> by arooj aftab</span></a></div>
-</div>
-
-#### High Llamas
-
-I talked about Italian soundtrack composers above.
-I know I'm not their only fan, 
-because after YouTube introduce me to their music, 
-I realized that Sean O' Hagan of the High Llamas often "quotes" them musically.
-He wears many other influences on his sleeve, 
-including psychedelic Beach boys and bossa nova, 
-but no-one else has resynthesized those influences 
-the way Sean and his collaborators have. 
-I always gotta buy a new High Llamas album.
-
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-<div><a href="https://thehighllamas.bandcamp.com/album/hey-panda"><img src="https://f4.bcbits.com/img/a1442148603_2.jpg" alt=""></a><a href="https://thehighllamas.bandcamp.com/album/hey-panda"><strong>Hey Panda</strong><span> by High Llamas</span></a></div>
-</div>
-
 #### My Alex Chabot-Leclerc Wrapped 2024
 
-Last but not least: 
-since my friend Alex inspired this post, I would be remiss if I didn't include the music I bought from his home of Canada this year.
+The other way I find music is through friends of course. 
+Since my friend Alex inspired this post, I would be remiss if I didn't include the music I bought from his home of Canada this year. 
+I promise I have at least one other friend, but I promise I am trying to keep this post somewhat short.
+So, let's just talk about what Alex recommended to me.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
 <div><a href="https://bleujeansbleu1.bandcamp.com/album/top-minou-2"><img src="https://f4.bcbits.com/img/a1825665714_2.jpg" alt=""></a><a href="https://bleujeansbleu1.bandcamp.com/album/top-minou-2"><strong>Top Minou</strong><span> by Bleu Jeans Bleu</span></a></div>
