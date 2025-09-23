@@ -12,6 +12,9 @@ categories:
 - Python
 ---
 
+Update 2025-09-22:
+Made some small tweaks to language, but didn't hate what I wrote as much as I thought.
+
 Update 2025-01-08:  
 I think this post gives better advice overall on designing a Python library API:  
 <https://benhoyt.com/writings/python-api-design/>  
@@ -47,10 +50,14 @@ the directory structure of their code and its internal `import` statements
 into a package name with modules that can be accessed with the dot operator,
 like so: `package.subpackage.module.function`.
 
-To use a technical term, 
-the code does not fully leverage its own [namespace](https://realpython.com/python-namespaces-scope/),
-the literal mapping from names of things in the package 
-to the functions and classes that they refer to.
+To use more technical terms, 
+the code does not fully leverage the fact that Python treats modules as 
+[namespaces](https://realpython.com/python-namespaces-scope/),
+a way of collecting objects like functions and classes 
+that we define in code into groups.
+(Some other people that teach Python to scientists also seem to think it's worth knowing how namespaces 
+relate to imports and modules, since they wrote 
+[this page](https://openastronomy.org/rcsc18/chapters/04-further-python/03-imports-and-namespaces))
 If I may invoke the holy sayings of the revered masters,
 ["namespaces are a honking great idea"](https://inventwithpython.com/blog/2018/08/17/the-zen-of-python-explained/).
 To a wizened software engineer, 
@@ -253,7 +260,14 @@ pkg/
   incredibly_long_technical_name_or_specific_task
 ```
 
-*Sometimes* this is justified, if it's the core functionality of your package and you really need to clearly communicate to everyone in the universe what the package does. E.g., `sklearn.model_selection` has a very specific meaning, and it's hard to capture with an abbreviation, and the library is trying to capture basically several sub-fields of machine learning within this sub-package. I am okay with tab-completing this name just so it's clear to all of us what the heck we're doing. But `pkg.preprocessing_electrophysiological_data` is not a great name. Especially if your package *only* deals with electrophysiological data. You can just say `pkg.preprocess`, it's fine.
+*Sometimes* this is justified, if it's the core functionality of your package 
+and you really need to clearly communicate to everyone in the universe what the package does. 
+E.g., `sklearn.model_selection` has a very specific meaning, and it's hard to capture with an abbreviation, 
+and the library is trying to capture basically several sub-fields of machine learning within this sub-package. 
+I am okay with tab-completing this name just so it's clear to all of us what the heck we're doing. 
+But `pkg.preprocessing_electrophysiological_data` is not a great name. 
+Especially if your package *only* deals with electrophysiological data.
+You can just say `pkg.preprocess`, it's fine.
 
 ### Instead, make module names general, and move specifics to function names
 
@@ -366,8 +380,17 @@ from . import solvers
         solver = solvers.ShannonSolver()
 ```
 
-One slight drawback of this terse approach is you can end up shadowing the most intuitive variable name for a class instance with a module that has a similar name. I.e., if I rename my module `pkg_solver` -> `solver` then I won't be able to do `from . import solver` at the top and then later *also* say `solver = solver.EntropySolver()`, because the variable name `solver` representing my class instance will clobber the name in the namespace that represents my `solver` module.
-This will cause Python's head to explode (and yours). In this case I prefer to either use an absolute import internally, `import pkg.solver`, or to alias internally, e.g., `from . import solver as solver_classes`, so that an *external* user *still* can write something simple like `pkg.solver`.
+One slight drawback of this terse approach is 
+you can end up shadowing the most intuitive variable name for a class instance 
+with a module that has a similar name. 
+I.e., if I rename my module `pkg_solver` -> `solver` then I won't be able to do `from . import solver` at the top 
+and then later *also* say `solver = solver.EntropySolver()`, 
+because the variable name `solver` representing my class instance will clobber the name in the namespace 
+that represents my `solver` module.
+This will cause Python's head to explode (and yours). 
+In this case I prefer to either use an absolute import internally, 
+`import pkg.solver`, or to alias internally, e.g., `from . import solver as solver_classes`, 
+so that an *external* user *still* can write something simple like `pkg.solver`.
 
 [^1]: See similar comments from core Python dev Brett Cannon in this post, 
       <https://snarky.ca/if-i-were-designing-imort-from-scratch/>
@@ -379,7 +402,8 @@ This will cause Python's head to explode (and yours). In this case I prefer to e
 ## You should know sub-packages exist
 
 Again, this is less about naming, and more about structuring internals.
-But it falls under the same category of "thing I see that tells me you might not yet have a mental model of how to organize your code to make it easier for you to maintain in the long run".
+But it falls under the same category of "thing I see that tells me you might not yet have a 
+mental model of how to organize your code to make it easier for you to maintain in the long run".
 
 You should know (if you don't already) that you can make a sub-package inside your package.
 You do this the same way you make the package itself, 
@@ -468,7 +492,8 @@ or jump around through 3000 lines of code to find them.
 Someone even more jaded than me has already said this:
 <https://breadcrumbscollector.tech/stop-naming-your-python-modules-utils/>
 
-The basic idea is that the concept of `utilities` is so nebulous that more and more things will end up crammed into this module, that are less and less related to each other.
+The basic idea is that the concept of `utilities` is so nebulous 
+that more and more things will end up crammed into this module, that are less and less related to each other.
 This is especially likely if multiple people are developing a package, 
 and they are tempted by the name `utilities` to 
 add *just* one more helper or validation function 
