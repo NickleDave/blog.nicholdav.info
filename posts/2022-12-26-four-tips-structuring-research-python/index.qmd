@@ -52,12 +52,12 @@ like so: `package.subpackage.module.function`.
 
 To use more technical terms, 
 the code does not fully leverage the fact that Python treats modules as 
-[namespaces](https://realpython.com/python-namespaces-scope/),
-a way of collecting objects like functions and classes 
-that we define in code into groups.
+[namespaces](https://realpython.com/python-namespaces-scope/).
+Namespaces are a way of collecting the objects like functions and classes 
+that we define in code into (named) groups.
 (Some other people that teach Python to scientists also seem to think it's worth knowing how namespaces 
 relate to imports and modules, since they wrote 
-[this page](https://openastronomy.org/rcsc18/chapters/04-further-python/03-imports-and-namespaces))
+[this page](https://openastronomy.org/rcsc18/chapters/04-further-python/03-imports-and-namespaces).)
 If I may invoke the holy sayings of the revered masters,
 ["namespaces are a honking great idea"](https://inventwithpython.com/blog/2018/08/17/the-zen-of-python-explained/).
 To a wizened software engineer, 
