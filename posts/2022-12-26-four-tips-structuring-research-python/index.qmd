@@ -5,7 +5,7 @@ image: penkeyboard.jpg
 post_url: 2022-12-26-four-tips-structuring-research-python
 author: "David Nicholson"
 date: "12/26/2022"
-date-modified: "01/08/2025"
+date-modified: "09/22/2025"
 from: markdown+emoji
 categories:
 - research software engineering
