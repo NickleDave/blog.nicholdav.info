@@ -10,7 +10,8 @@ categories:
 - academia
 ---
 
-Update 2025-01-08: I switched to [quarto](https://quarto.org/docs/websites/website-blog.html), but I refuse to write a blog post about it.
+Update 2025-01-08: I switched to [quarto](https://quarto.org/docs/websites/website-blog.html), 
+but I refuse to write a blog post about it.
 
 ---
 
@@ -29,7 +30,9 @@ I'm writing the post for my future self,
 and for you if you want to do the same.
 
 ## Step-by-step guide to developing your own 'academicpages'
+
 Here's the summary version first, so you know what you're getting into:
+
 1. set up a `jekyll` development environment
 2. make the landing page be your about page
 3. make the sidebar show your profile with links
