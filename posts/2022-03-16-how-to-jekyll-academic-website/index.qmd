@@ -4,11 +4,13 @@ description: "Instead of forking `academicpages`, make it yourself to better und
 author: "David Nicholson"
 image: caspercut.jpg
 date: "03/16/2022"
-date-modified: "01/08/2025"
+date-modified: "09/24/2025"
 from: markdown+emoji
 categories:
 - academia
 ---
+
+Update 2025-09-24: Fixed how a numbered list was formatted.
 
 Update 2025-01-08: I switched to [quarto](https://quarto.org/docs/websites/website-blog.html), 
 but I refuse to write a blog post about it.
