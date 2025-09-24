@@ -74,7 +74,7 @@
     "href": "posts/2022-03-16-how-to-jekyll-academic-website/index.html#step-by-step-guide-to-developing-your-own-academicpages",
     "title": "Make your own academicpages site from scratch with jekyll",
     "section": "Step-by-step guide to developing your own ‘academicpages’",
-    "text": "Step-by-step guide to developing your own ‘academicpages’\nHere’s the summary version first, so you know what you’re getting into: 1. set up a jekyll development environment 2. make the landing page be your about page 3. make the sidebar show your profile with links 4. add links to publications, talks, etc., in the nav bar at the top of the page"
+    "text": "Step-by-step guide to developing your own ‘academicpages’\nHere’s the summary version first, so you know what you’re getting into:\n\nset up a jekyll development environment\nmake the landing page be your about page\nmake the sidebar show your profile with links\nadd links to publications, talks, etc., in the nav bar at the top of the page"
   },
   {
     "objectID": "posts/2022-03-16-how-to-jekyll-academic-website/index.html#why-would-you-bother",
