@@ -4,10 +4,16 @@ description: "Music I bought on Bandcamp this year, and why"
 author: "David Nicholson"
 image: resist-the-algorithm.jpg
 date: "01/05/2025"
+date-modified: "09/24/2025"
 from: markdown+emoji
 categories:
 - music
 - tech
+---
+
+Update 2025-09-24: I edited this down to make all the same points 
+without listing literally almost all the music I bought on Bandcamp last year :sweat_smile: 
+
 ---
 
 In this post I'm sharing music I bought on Bandcamp in 2024.
@@ -138,7 +144,7 @@ Somehow this sci-fi ambient fits with the rest of my media diet: I played a lot 
 post-apocalpytic roguelike [Caves of Qud](https://en.wikipedia.org/wiki/Caves_of_Qud) this year
 and I re-read the first book of the post-apocalpytic [Southern Reach Trilogy](https://en.wikipedia.org/wiki/Southern_Reach_Series).
 
-#### UK ambient
+### UK ambient
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
 <div><a href="https://stevebrenner.bandcamp.com/album/nacht-musik"><img src="https://f4.bcbits.com/img/a1047453790_2.jpg" alt=""></a><a href="https://stevebrenner.bandcamp.com/album/nacht-musik"><strong>NACHT MUSIK</strong><span> by Steve Brenner</span></a></div>
@@ -153,7 +159,7 @@ I found them through YouTube channels like Sounds of the Dawn, [here](https://ww
 Side note: Brenner has directly sent me a (brief!) email every time I've purchased from him.
 This is the kind of personal touch you don't get when you stream music through a Platform.
 
-#### American Primitive ambient
+### American Primitive ambient
 
 Ok, there's only one group in this category, the Nightcrawlers, but I love them, and I wish I could pay them more for all of their music. 
 I don't know if they already have their own microgenre but I'm going to call it "American Primitive ambient".
@@ -163,7 +169,7 @@ I don't know if they already have their own microgenre but I'm going to call it 
 </div>
 
 I found them through this channel: <https://www.youtube.com/watch?v=qkmsWKKPVvo>
-But as that person kindly pointed out there's actually another channel with a whole playlist.
+But as that person kindly pointed out, there's actually another channel with a whole playlist of just the Nightcrawlers.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=NfXdndRHmoVJ4AMG&amp;list=PLmHXYk0FPToBWd5fjDmkyd0NOWlAiBZxd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -186,12 +192,12 @@ They have a mysticisim in the same way that I think Robert Pollard's lyrics abou
 
 (I know, as of that last sentence I'm really blurring the line between tech blog and annoying album review guys on YouTube. Bro, I contain multitudes.)
 
-#### Modular?
+### Modular?
 
 One last bit of ambient music, two groups that I will lump into another totally-made up microgenre I'll call "80s american ambient", 
 since there's no overt themes of space per se.
 
-##### Young Scientist
+#### Young Scientist
 
 The first group is named Young Scientist, and with a name like that of course I have to like them.
 I'm no longer so young, but I do feel like they really have made scientist soundtrack music,
@@ -202,7 +208,7 @@ that conjures up late hours in the lab. Yes, I found them through YouTube.
 <div><a href="https://youngscientist.bandcamp.com/album/results-not-answers"><img src="https://f4.bcbits.com/img/a2250615386_2.jpg" alt=""></a><a href="https://youngscientist.bandcamp.com/album/results-not-answers"><strong>Results, Not Answers</strong><span> by Young Scientist</span></a></div>
 </div>
 
-##### Sines of Exquisite Pleasure
+#### Sines of Exquisite Pleasure
 
 The second group is Sines of Modular Pleasure. Again, yes, I found them through YouTube.
 
@@ -220,40 +226,19 @@ It still works for me, and I would still lump it into this category of sounding 
 <div><a href="https://sinesofexquisitepleasure.bandcamp.com/album/music-for-hospitals"><img src="https://f4.bcbits.com/img/a0101591275_2.jpg" alt=""></a><a href="https://sinesofexquisitepleasure.bandcamp.com/album/music-for-hospitals"><strong>Music for Hospitals</strong><span> by Sines of Exquisite Pleasure</span></a></div>
 </div>
 
-##### Cube of the Unknowing
+### Home
 
-Yet another YouTube find.
+Ok, so we are definitely at the point where, if I list all the music I bought on Bandcamp this year, 
+this blog post would put you to sleep, if it's not already.
 
-Again, as a scientist who would like to resist all the worst aspects of reductionism, how am I not going to like an album called Ghost Circuits of Menlo Park?
-
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-<div><a href="https://fortevilfruit.bandcamp.com/album/ghost-circuits-menlo"><img src="https://f4.bcbits.com/img/a3894051532_2.jpg" alt=""></a><a href="https://fortevilfruit.bandcamp.com/album/ghost-circuits-menlo"><strong>Ghost Circuits Menlo</strong><span> by The Cube of Unknowing</span></a></div>
-<div><a href="https://eiderdownrecords.bandcamp.com/album/bog-phosphors"><img src="https://f4.bcbits.com/img/a2147955938_2.jpg" alt=""></a><a href="https://eiderdownrecords.bandcamp.com/album/bog-phosphors"><strong>Bog Phosphors</strong><span> by The Cube Of Unknowing</span></a></div>
-</div>
-
-### Electronica
-
-#### Hotel Pools
-
-Hotel Pools is another artist I found during the pandemic. 
-I think probably through YouTube --- although this might be one case where I found the artist from other people's Bandcamp profiles?
-This was my running music, when I would do my routes through Rock Creek Park in DC.
-It's perfect for that. Just total shut-off-worry-noise-thoughts music.
-So I had to get their new album this year.
-
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-<div><a href="https://hotelpoolsmusic.bandcamp.com/album/filo-3"><img src="https://f4.bcbits.com/img/a4051119938_2.jpg" alt=""></a><a href="https://hotelpoolsmusic.bandcamp.com/album/filo-3"><strong>FiLo</strong><span> by Hotel Pools</span></a></div>
-</div>
-
-#### Home
-
-Yet another group I found through YouTube this year, this time as the first song on this random playlist that features a mecha-Bart Simpson as the image with a trippy bad VR background.
+But I can't resist sharing one more artist I found through YouTube this year, 
+this time as the first song on this random "mix" video that features a mecha-Bart Simpson as the image with a trippy bad VR background.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/utkEqw2GJo4?si=twASTQIY56hTZQ7K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 You're telling me that you do not feel goosebumps all over your body, as if a your soul became a laser beam shooting out of God's forehead, 
 at the very moment you hear that first song, with the mecha-Bart and the cyberpunk background undulating behind? 
-You, sir, have no soul.
+You, sir, have no soul. (Or madam. Or ma-them. However you prefer to be addressed.)
 
 Turns out all their other shit is really good too.
 
@@ -263,67 +248,11 @@ Turns out all their other shit is really good too.
 <div><a href="https://midwestcollective.bandcamp.com/album/before-the-night"><img src="https://f4.bcbits.com/img/a4025651648_2.jpg" alt=""></a><a href="https://midwestcollective.bandcamp.com/album/before-the-night"><strong>Before The Night</strong><span> by HOME</span></a></div>
 </div>
 
-### Other
-
-Okay, we're mostly going to leave ambient and electronica behind now, but we're still talking about music I learned about through YouTube.
-
-#### Hehehehe
-
-You guessed it. The YouTube algorithm found me with this one.
-
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-<div><a href="https://imnowt.bandcamp.com/album/d-j-vu-sonder"><img src="https://f4.bcbits.com/img/a1279361665_2.jpg" alt=""></a><a href="https://imnowt.bandcamp.com/album/d-j-vu-sonder"><strong>déjà vu, sonder</strong><span> by Hehehehe</span></a></div>
-</div>
-
-#### Piero Umiliani
-
-The YouTube algorithm has also turned me on to [library music](https://en.wikipedia.org/wiki/Production_music) and film scores. 
-I feel kind of gross putting some of these album covers in a blog post, but, man, this music is so good.
-Hot take: literally some of the best music in the last century was composed for trashy Italian movies.
-
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-<div><a href="https://pieroumiliani.bandcamp.com/album/il-corpo"><img src="https://f4.bcbits.com/img/a3799970948_2.jpg" alt=""></a><a href="https://pieroumiliani.bandcamp.com/album/il-corpo"><strong>Il Corpo</strong><span> by Piero Umiliani</span></a></div>
-<div><a href="https://pieroumiliani.bandcamp.com/album/pianofender-blues"><img src="https://f4.bcbits.com/img/a4118648544_2.jpg" alt=""></a><a href="https://pieroumiliani.bandcamp.com/album/pianofender-blues"><strong>PianoFender Blues</strong><span> by Piero Umiliani</span></a></div>
-</div>
-
-#### Shannon Lay
-
-I first got into Shannon Lay after hearing her cover on Karen Dalton's "Something on Your Mind".
-That's right, I found her cover on YouTube.
-
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-<div><a href="https://shannonlay.bandcamp.com/album/geist"><img src="https://f4.bcbits.com/img/a2117704671_2.jpg" alt=""></a><a href="https://shannonlay.bandcamp.com/album/geist"><strong>Geist</strong><span> by Shannon Lay</span></a></div>
-</div>
-
-#### Nihls Frahm
-
-The YouTube Algorithm definitely got me into Frahm, at about the same time it was recommending Harold Budd. 
-Budd is definitely on the ambient side, Frahm can venture into Radiohead-like pop-electronica on some albums.
-
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-<div><a href="https://nilsfrahm.bandcamp.com/album/day"><img src="https://f4.bcbits.com/img/a1278911408_2.jpg" alt=""></a><a href="https://nilsfrahm.bandcamp.com/album/day"><strong>Day</strong><span> by Nils Frahm</span></a></div>
-</div>
-
-#### Gabor Szabo
-
-Ok, finally, the last of the music that I found on YouTube.
-At the same time I was getting into Italian composers like Umiliani and Piero Piccioni, 
-the Algorithm played this guitar album for me.
-I can't say why it moves me so much, 
-Szabo's playing and this album in particular are almost unclassifiable in terms of genre.
-He is totally uninterested in anything poppy here, or even jazzy, 
-at least in the sense of American jazz.
-When I realized this year that the album was on Bandcamp, I had to get it.
-
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-<div><a href="https://ebalunga.bandcamp.com/album/dreams"><img src="https://f4.bcbits.com/img/a1678935605_2.jpg" alt=""></a><a href="https://ebalunga.bandcamp.com/album/dreams"><strong>Dreams</strong><span> by Gabor Szabo</span></a></div>
-</div>
-
-#### My Alex Chabot-Leclerc Wrapped 2024
+### My Alex Chabot-Leclerc Wrapped 2024
 
 The other way I find music is through friends of course. 
 Since my friend Alex inspired this post, I would be remiss if I didn't include the music I bought from his home of Canada this year. 
-I promise I have at least one other friend, but I promise I am trying to keep this post somewhat short.
+I promise I have at least one other friend, but I also promised I was trying to keep this post somewhat short.
 So, let's just talk about what Alex recommended to me.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
