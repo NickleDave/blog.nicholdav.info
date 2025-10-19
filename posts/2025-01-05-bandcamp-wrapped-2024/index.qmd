@@ -177,9 +177,7 @@ What I really love about their albums are the art, clearly made on some 80s grap
 but somehow managing to have a mysticisim at the same time.
 
 
-::: {layout-ncol=3}
-
-![](nightcrawlers-hop-scotch-youtube-thumbnail.html){fig-alt="Hopscotch album cover"}
+::: {layout-ncol=2}
 
 ![](nightcrawlers-largo-tree-youtube-thumbnail.jpg){fig-alt="Largo Tree album cover"}
 
