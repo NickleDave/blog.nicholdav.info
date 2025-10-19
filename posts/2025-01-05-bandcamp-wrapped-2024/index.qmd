@@ -39,7 +39,7 @@ My Wrapped was basically "You listened to Tame Impala Radio 10 times in August".
 ![Screenshot from my Wrapped](wrapped-screenshot.jpg){width=40%}
 
 I just got into Tame Impala, don't judge me.
-You can see my fifth most listened-to song was a song that I listened to maybe twice,  
+You can see my fifth most listened-to song was a song that I listened to maybe twice, 
 from a French Canadian artist that my friend Alex introduced me to 
 (that's foreshadowing for later).
 
@@ -135,11 +135,11 @@ I have been into ambient for a while.
 Like a lot of people, I was unwittingly turned on to Japanese ambient during the pandemic, thanks to the YouTube algorithm.
 See this article on ars technica: <https://arstechnica.com/gaming/2020/11/how-old-ambient-japanese-music-became-a-smash-hit-on-youtube/>
 (I like a lot of the related music namechecked in this article, that was also mysteriously promoted by the YouTube algorithm, 
-like [1979](https://deru.bandcamp.com/album/1979) from Deru, Plant Music, 
-and An Empty Bliss Beyond this World by the Caretaker)
+like [1979](https://deru.bandcamp.com/album/1979) from Deru, Mort Garson's [Plantasia](https://www.youtube.com/playlist?list=OLAK5uy_klMRQPQx5JiK1-BoH9oIaE6rss4wqfES8), 
+and [An Empty Bliss Beyond this World](https://www.youtube.com/playlist?list=OLAK5uy_m1Hb9METyVWNorBDHLvfU9bS2MllDhWrs) by the Caretaker)
 
 Looking back over this year, The Algorithm has continued to turn me on to a lot of other ambient, but more into the genre of 
-[spacemusic](https://en.wikipedia.org/wiki/Space_music).
+[Space Music](https://en.wikipedia.org/wiki/Space_music).
 Somehow this sci-fi ambient fits with the rest of my media diet: I played a lot of 
 post-apocalpytic roguelike [Caves of Qud](https://en.wikipedia.org/wiki/Caves_of_Qud) this year
 and I re-read the first book of the post-apocalpytic [Southern Reach Trilogy](https://en.wikipedia.org/wiki/Southern_Reach_Series).
