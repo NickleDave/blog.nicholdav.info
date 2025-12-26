@@ -1,6 +1,6 @@
 ---
 title: "Domain-driven software design is a good idea, still"
-description: "Domain-driven design might be just data abstraction with doodles, but you should care about it anyways"
+description: "Domain-driven design might not be a new idea, but you should think about it more anyways"
 author: "David Nicholson"
 date: "01/02/2025"
 date-modified: "09/22/2025"
@@ -13,24 +13,34 @@ categories:
 ---
 
 Update 2025-09-24:
-Broke this post up into two posts, one here and [one on the VocalPy developer's blog](https://blog.vocalpy.org/posts/2025-12-19-domain-driven-design/), 
-based on feedback from [Ben Fulton](https://fosstodon.org/@benfulton), [Hector Correa](https://hectorcorrea.com/about), 
-[Kris Armeni](https://www.kristijanarmeni.net/) and [Warrick Ball])(https://warrickball.gitlab.io/) in [US-RSE](https://us-rse.org/),
-and [Felipe Moreno]() in [pyOpenSci]().
+I broke this post up into two posts, one here and [one on the VocalPy developer's blog](https://blog.vocalpy.org/posts/2025-12-19-domain-driven-design/), 
+based on feedback from folks in the [US-RSE](https://us-rse.org/) and [pyOpenSci](https://www.pyopensci.org/) communities: 
+[Ben Fulton](https://fosstodon.org/@benfulton), [Hector Correa](https://hectorcorrea.com/about), 
+[Kris Armeni](https://www.kristijanarmeni.net/) and [Warrick Ball](https://warrickball.gitlab.io/),
+and [Felipe Moreno](https://flpm.dev/).
+
+Update 2025-12-23: Revise again.
 
 ---
 
-This post falls in the category of "me writing about how my thinking has evolved about research and software". 
-If you are a researcher that writes software, then you might get something out of it.
-Especially if you're not familiar with the idea of domain-driven design.
-What I hope to convince you of is that, sure, domain-driven design is just as obvious an idea as it sounds, 
-but you should still be thinking about it.
-I'll get there by saying a little about one book I've been reading recently,
-[Structure and Interpretation of Computer Programs](https://sourceacademy.org/sicpjs).
+In this post I hope to convince you that you should care about domain-driven design.
+It falls into the category of "me writing about how my thinking has evolved about research and software". 
 
-## What is domain-driven design?
+You might read about domain-driven design and think 
+"I already do this. Why do I need to name it and formalize it?"
+I am not claiming this is a radical new idea. 
+What I hope to convince you of is that, sure, domain-driven design is just as obvious as it sounds, 
+but you should be thinking about it more anyways.
+My argument is that it's good not just for designing software, 
+but for developing software, as a way to keep you from getting lost in the weeds.
 
-But first, let me introduce domain-driven design, and tell you why you might care about it.
+So: first I'll [introduce domain driven design](#what-is-domain-driven-design), 
+then I'll explain why [I think it's worth thinking about it more, even if you think it's something you already do](#domain-driven-design-is-not-new), 
+and then finally I'll talk about how it helps me [avoid getting lost in the weeds when I code](#domain-driven-design-helps-avoid-getting-lost).
+
+## What is domain-driven design? {#what-is-domain-driven-design}
+
+First, let me introduce domain-driven design, and tell you why you might care about it.
 Sometime in 2022-2023, I read 
 [Domain-Driven Design](https://www.domainlanguage.com/ddd/) by Eric Evans, and I got really excited about it.
 (You can get it from bookshop.org 
@@ -41,21 +51,11 @@ and they mentioned it in the introduction.
 Full disclosure: I have not finished either of these books. 
 In fact, I haven't finished a lot of books, but that's maybe the undiagnosed ADD talking.
 I did spend a lot of time with the first few chapters of both, though.
+
 If you do nothing else, read the first chapter of Evans' book, where he relates the story 
 of how he worked with some electrical engineers to design software they would use to 
 design printed circuit boards (AKA PCBs). 
-If you have ever gone through the process of designing software for some real-world domain, 
-I bet it will really resonate with you.
-Or, you know what?
-I'll dare to say that, even if you have only ever written nerdy software tools 
-for the domain of other software nerds, 
-you still might find that the story resonates with you. 
-It's an interesting story for a couple of reasons. First of all, you have a feeling that he is 
-almost an anthropologist, going into this unfamiliar tribe of electrical engineers 
-so he can learn their culture.
-I think this is a familiar feeling for anyone who has tried to translate 
-some real-world domain into software, even if it's part of a culture they feel like they belong to.
-Second, you really get a feel for his process. 
+
 At the beginning, he makes mistakes.
 He tries to understand their jargon word-for-word.
 Then he asks them to specify in detail what they think the software should do.
@@ -66,14 +66,34 @@ These are simple, rough box and arrow sketches as he shows.
 
 ![evans figure 1.2](evans-2003-fig1.2.png)
 
+Notice what is happening here: this is not just a developer creating a UML diagram to show to other developers. 
+This is software engineers and domain experts developing a pidgin language together. 
+They use this pidgin to talk about the domain problem they are trying to solve with software.
+
+It's an interesting story for a couple of reasons. First of all, you have a feeling that he is 
+almost an anthropologist, going into this unfamiliar tribe of electrical engineers 
+so he can learn their culture.
+I think this is a familiar feeling for anyone who has tried to translate 
+some real-world domain into software, even if it's part of a culture they feel like they belong to.
+Second, you really get a feel for his process. 
+
+If you have ever gone through the process of designing software for some real-world domain, 
+I bet the story really resonates with you.
+Or, you know what?
+I'll dare to say that, even if you have only ever written nerdy software tools 
+for the domain of other software nerds, 
+you still might find that the story resonates with you. 
+Software engineering is a domain, after all.
+(I'll return to this point below.)
+
 At this point, you might be thinking, "write code in terms of your domain, yeah, sure, everybody does that".
-Like I said, I got really excited reading this stuff and told people about it 
+Like I said, I got really excited reading this stuff, and told people about it 
 at the job I had at the time.
 I made a big deal of presenting parts of the book, 
 and talking about how we could use this approach for what we were working on.
 And I got this very underwhelmed response of 
 "Yeah, we sort of already do that. Aren't you just describing object-oriented programming?"
-Yes, but no! I'll come back to the "no, we aren't doing that below", but first, the yes.
+Yes, but no! I'll come back to the "no, we aren't doing that" below, but first, the yes.
 We should realize this is what we're already doing and be very explicit about it!
 The domain should be at the front of our mind at all times, 
 and we only should be iterating on the design of our software 
@@ -81,13 +101,15 @@ insofar as it relates to the domain!
 
 Here I'll say what I said in that work meeting when I got that underwhelmed response: 
 domain-driven development isn't just thinking about the domain. 
-Even though we all sort of subconsciously think of the domain when we *design* our code, 
-Evans advocates for a specific *development* process, 
-that he says is required for his approach to design to work.
-The important part here is that he sees his process as a form of extreme or Agile programming.
+Even though we all think of the domain when we *design* our code,
+more or less subconsciously,  
+Evans advocates for a specific *development* process.
+He says this process is required for his approach to design to work.
+He sees his process as a form of extreme or Agile programming.
 If you don't know what those are, 
-what you need to know is that they are more iterative 
-then previous approaches based on 
+then what you need to know is that they are more iterative 
+than previous approaches.
+Those previous approaches focused on 
 "elaborate development methodologies that burden projects with useless, 
 static documents and obsessive upfront planning and design", as he puts it.
 Instead, Evans focuses on writing code that has a bare bones implementation 
@@ -97,16 +119,16 @@ It's really easy to iterate interactively in a Jupyter notebook
 with a bare-bones implementation of your sketch of an API.
 Of course, later you should do some proper engineering instead of living in Jupyter notebooks, 
 so you don't have to worry about someone 
-giving a preachy lecture in the form of a conference talk 
+giving a [preachy conference talk](https://www.youtube.com/watch?v=7jiPeIFXb6U) 
 that condemns you for your naughty programming practices.
-His other requirement for the development process is that 
+Evans' other requirement for the development process is that 
 "[d]evelopers and domain experts have a close relationship."
 If you are a researcher who programs, 
 well, hopefully you already have a close relationship with yourself.
 And with your collaborators and colleagues.
 This second requirement naturally gives rise to one of the key ideas from the book, 
 that of *ubiquitous language*.
-This is a sort of pidgin language that the domain experts and software developers 
+This is what I called a pidgin above, a language that the domain experts and software developers 
 arrive at together through the iterative process of development.
 The words in this ubiquitous language correspond to key concepts in the domain that the software needs to capture, 
 the things that developers and domain-experts realize they should focus on, as they iterate.
@@ -114,16 +136,17 @@ Ubiquitous language "embeds domain terminology in the software systems we build"
 as Martin Fowler puts it in [this post](https://martinfowler.com/bliki/DomainDrivenDesign.html). 
 It's this continous process of developer and domain expert iterating together that really appeals to me.
 
-## Domain-driven design is just data abstraction with doodles, and you should do it anyway
+## Domain-driven design is not new, and you should think about it more anyway {#domain-driven-design-is-not-new}
 
 Ok, so now let me circle back around, talk about why, sure, domain-driven design is not a new idea 
 (as Evans himself acknowledges right at the start of his book), 
 and why you should be doing it, or doing even more of it. 
 This is where I come back to the "no" part of "Do we already do this? Yes and no." 
-In the discussion at the end of that talk, I said just what I've said here, 
-that a lot of people react as if, "so, yeah, we already do that".
+As you can tell, I've gotten this reaction before: "so, yeah, we already do that".
+
 If that's so, then show me the doodles! 
-Show me your mental model of your domain --- put it in your docs! 
+Like Evans' box-and-arrow diagrams above.
+Show me your mental model of your domain. Put it in your docs! 
 Let me read it, let me actually see these schematics, even if they are just doodles, 
 it helps me to know how your thought process evolved.
 All I can see right now is this insurmountable mountain of code, 
@@ -135,44 +158,36 @@ I don't know that I have ever seen diagrams showing how the *design evolved*,
 as part of an iterative development process.
 I can't help but feel like that's exactly the sort of thing that could help people get up to speed on how the code works.
 
-And now the moral of the story at the end.
-I now know for sure that these ideas have been around longer than Eric Evans' book,
-because I have been attempting to read yet another book, the aforementioned 
-[Structure and Interpretation of Computer Programs](https://sourceacademy.org/sicpjs)
-(AKA "SICP", and I am reading the Javascript edition, *if you even care*).
-I ended up reading this book because I have begun working my way 
-through the reading list on [teachyourselfcs.com](https://teachyourselfcs.com/).
-That is another topic that could be a blog post unto itself,
-but suffice to say that it is a source of some shame 
-that I ostensibly make my living by programming computers, 
-but I only have the vaguest idea of how computers work, 
-or how programming works,
-and so I have this need to fix that.
-I have also realized that, of course, 
-computer scientists also think in terms of models of computers, 
-that is, their domain, 
-and this is why it's easier to learn about computers 
-by learning their models.
-This is why it's helpful to learn git by [actually learning how git works](http://gitlet.maryrosecook.com/)
-as [others have noted](https://practical-neuroimaging.github.io/git_parable.html),
-and this is why I think it has actually been worth reading SICP, 
-because it gives me two or three different mental models of how 
-computer programs work.
-Again, maybe its old news to you, 
-but I feel like I really need a reminder that we constantly build and then throw away 
-scratch models of whatever we're working on, 
-and this includes stuff we do with computers.
-Given that SICP has the nickname 
-["The Wizard Book"](https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs),
-I can't be the only one who falls into this way of thinking--- 
-that programming is modern sorcery, 
-and I should sit before the blank screen like a cyberpunk Zeus 
-and have the program emerge fully-formed from my forehead.
-(I am mixing Greek mythology and wizardy in my metaphors. Whatever, you get the point.)
+Not to belabor the point, but here I'll stick in a couple examples of architecture diagrams 
+from docs that I have noticed since I've been revisiting this idea. 
 
-This is how I ended up finding domain-driven design in SICP, 
+Here for example is a diagram from the "internals" section of the  `dask`  docs on [scheduling](https://docs.dask.org/en/stable/scheduling.html), 
+illustrating the two types of schedulers:
+
+![diagram showing two types of Dask schedulers](dask-overview-schedulers.svg)
+
+And here is a diagram from the "architecture" section of the `mlflow` docs, 
+illustrating [common setups](https://mlflow.org/docs/latest/self-hosting/architecture/overview/#common-setups):
+
+![diagram showing coming setups of mlflow](tracking-setup-overview-3d8cfd511355d9379328d69573763331.png)
+
+I want you to see these examples differently though.
+these show software engineers doing domain-driven design 
+with other software engineers: the other engineers they work with,
+and the engineers that use their library.
+A software engineer's "abstraction" is the same thing as domain-driven design's "ubiquitous language".
+(This is me returning to the point above about software engineering being a domain.)
+
+## Domain-driven design helps you avoid getting lost in the weeds when you code {#domain-driven-design-helps-avoid-getting-lost}
+
+And now, one last reason why I think you should care more about domain-driven design. 
+I now know for sure that these ideas have been around longer than Eric Evans' book,
+because I have been attempting to read yet another book,  
+[Structure and Interpretation of Computer Programs](https://sourceacademy.org/sicpjs) (AKA, SICP).
+
+I ended up finding domain-driven design in SICP, 
 and having to admit to myself that, yeah, this idea has been around forever.
-Lo and behold, when I got to chapters 2 and 3, 
+When I got to chapters 2 and 3, 
 there I saw that we were talking about data abstraction 
 and designing programs for modeling. Sound familiar?
 Let me quote you this bit from chapter 3:
@@ -188,6 +203,47 @@ If we have been successful in our system organization,
 then to add a new feature or debug an old one we will have to work on only a localized part of the system.
 
 Well there it is, domain-driven design in a nutshell.
-And if so great and venerable a source as SICP deigns to talk about it, 
-if these supposedly very smart people think it's worth discussing in the introductory sections of their book chapters, 
-then it *must* be an idea worth thinking about. QED.
+
+I ended up reading this book because I have begun working my way 
+through the reading list on [teachyourselfcs.com](https://teachyourselfcs.com/).
+My reasons for working through that could be a blog post unto itself, 
+but suffice to say it is a source of some shame 
+that I ostensibly make my living by programming computers, 
+but I only have the vaguest idea of how computers work, 
+or how programming works,
+and so I have this need to fix that. 
+Reading books like SICP has also made me realize that, of course, 
+computer scientists think in terms of models of computers, 
+--that is, their domain--and this is why it's easier to learn about computers 
+by learning about the models that computer scientists use. 
+This is why it's helpful to learn git by [actually learning how git works](http://gitlet.maryrosecook.com/)
+as [others have noted](https://practical-neuroimaging.github.io/git_parable.html),
+Reading SICP gives you different mental models of how computer programs work.
+
+Again, maybe its old news to you, 
+but I feel like I really need a reminder that we constantly build and then throw away 
+scratch models of whatever we're working on, 
+be it computers or any other domain.
+One reason I think I need this reminder is that, by its very nature, 
+programming requires us to [hyperfixate on details](https://bsky.app/profile/pookleblinky.bsky.social/post/3man7h66o722m).
+Building a mental model of what's going on 
+is one way to avoid getting lost in the weeds.
+The other reason I think I need to be reminded to focus on my model of the domain 
+is that I have somehow inherited this notion of a programmer as a modern conjurer; 
+that I should sit before the blank screen emitting cryptic incancations 
+until the program emerges fully formed. 
+Like a cyberpunk Zeus with code children sprouting from my forehead.
+I am mixing Greek mythology and wizardy in my metaphors. Whatever, you get the point. 
+Given that SICP has the nickname 
+["The Wizard Book"](https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs),
+I can't be the only one who falls into this way of thinking--- 
+that programming is modern sorcery. 
+Reminding yourself that you need to have a model of what you're doing 
+is a way to avoid this tendency as well.
+
+I hate to end on an appeal to authority, 
+but I feel like, if a book as venerable and time-honored as SICP talks about domain-driven design, 
+if the authors think it's worth discussing in the introductory sections of their chapters, 
+then it *must* be an idea worth keeping in mind.
+(Such is the state of computer science that I am calling a book that's less than half a century old "time-honored".)
+I hope I've convinced you to think about domain-driven design just a little more.
