@@ -3,9 +3,9 @@ title: "Domain-driven software design is a good idea, still"
 description: "Domain-driven design might not be a new idea, but you should think about it more anyways"
 author: "David Nicholson"
 date: "01/02/2025"
-date-modified: "09/22/2025"
+date-modified: "2025-12-23"
 from: markdown+emoji
-image: corn-muffin-mix.jpg
+image: evans-2003-fig1.2.png
 categories:
 - domain-driven design
 - computer science
@@ -19,7 +19,7 @@ based on feedback from folks in the [US-RSE](https://us-rse.org/) and [pyOpenSci
 [Kris Armeni](https://www.kristijanarmeni.net/) and [Warrick Ball](https://warrickball.gitlab.io/),
 and [Felipe Moreno](https://flpm.dev/).
 
-Update 2025-12-23: Revise again.
+Update 2025-12-23: Revised again.
 
 ---
 
@@ -31,12 +31,9 @@ You might read about domain-driven design and think
 I am not claiming this is a radical new idea. 
 What I hope to convince you of is that, sure, domain-driven design is just as obvious as it sounds, 
 but you should be thinking about it more anyways.
-My argument is that it's good not just for designing software, 
-but for developing software, as a way to keep you from getting lost in the weeds.
 
 So: first I'll [introduce domain driven design](#what-is-domain-driven-design), 
-then I'll explain why [I think it's worth thinking about it more, even if you think it's something you already do](#domain-driven-design-is-not-new), 
-and then finally I'll talk about how it helps me [avoid getting lost in the weeds when I code](#domain-driven-design-helps-avoid-getting-lost).
+then I'll explain why [I think it's worth thinking about it more, even if you think it's something you already do](#domain-driven-design-is-not-new).
 
 ## What is domain-driven design? {#what-is-domain-driven-design}
 
@@ -48,9 +45,6 @@ Sometime in 2022-2023, I read
 and if you're feeling dangerous you can probably find a PDF of it on a random GitHub repository.)
 I ended up reading it because I had been reading [Architecture Patterns with Python](https://www.cosmicpython.com/book/preface.html), 
 and they mentioned it in the introduction.
-Full disclosure: I have not finished either of these books. 
-In fact, I haven't finished a lot of books, but that's maybe the undiagnosed ADD talking.
-I did spend a lot of time with the first few chapters of both, though.
 
 If you do nothing else, read the first chapter of Evans' book, where he relates the story 
 of how he worked with some electrical engineers to design software they would use to 
@@ -87,8 +81,7 @@ Software engineering is a domain, after all.
 (I'll return to this point below.)
 
 At this point, you might be thinking, "write code in terms of your domain, yeah, sure, everybody does that".
-Like I said, I got really excited reading this stuff, and told people about it 
-at the job I had at the time.
+I got really excited reading this stuff, and told people about it at the job I had at the time.
 I made a big deal of presenting parts of the book, 
 and talking about how we could use this approach for what we were working on.
 And I got this very underwhelmed response of 
@@ -99,20 +92,18 @@ The domain should be at the front of our mind at all times,
 and we only should be iterating on the design of our software 
 insofar as it relates to the domain!
 
-Here I'll say what I said in that work meeting when I got that underwhelmed response: 
-domain-driven development isn't just thinking about the domain. 
-Even though we all think of the domain when we *design* our code,
-more or less subconsciously,  
-Evans advocates for a specific *development* process.
+Now, the "but no": domain-driven development isn't just thinking about the domain. 
+Yes, we all think of the domain when we write our code,
+more or less subconsciously. 
+But Evans advocates for a specific *development* process.
 He says this process is required for his approach to design to work.
-He sees his process as a form of extreme or Agile programming.
-If you don't know what those are, 
-then what you need to know is that they are more iterative 
-than previous approaches.
-Those previous approaches focused on 
+He sees it as a form of extreme or Agile programming.
+If you're not familiar with those, 
+the important thing to know here that they are more iterative 
+than previous approaches, that focused on 
 "elaborate development methodologies that burden projects with useless, 
-static documents and obsessive upfront planning and design", as he puts it.
-Instead, Evans focuses on writing code that has a bare bones implementation 
+static documents and obsessive upfront planning and design", as Evans puts it.
+Instead, he focuses on writing code that has a bare bones implementation 
 he can test right away. "Development is iterative." 
 Of course, this is one place where Python, my main programming language, shines.
 It's really easy to iterate interactively in a Jupyter notebook 
@@ -121,6 +112,7 @@ Of course, later you should do some proper engineering instead of living in Jupy
 so you don't have to worry about someone 
 giving a [preachy conference talk](https://www.youtube.com/watch?v=7jiPeIFXb6U) 
 that condemns you for your naughty programming practices.
+
 Evans' other requirement for the development process is that 
 "[d]evelopers and domain experts have a close relationship."
 If you are a researcher who programs, 
@@ -128,7 +120,7 @@ well, hopefully you already have a close relationship with yourself.
 And with your collaborators and colleagues.
 This second requirement naturally gives rise to one of the key ideas from the book, 
 that of *ubiquitous language*.
-This is what I called a pidgin above, a language that the domain experts and software developers 
+This is what I called a pidgin above. It's a language that the domain experts and software developers 
 arrive at together through the iterative process of development.
 The words in this ubiquitous language correspond to key concepts in the domain that the software needs to capture, 
 the things that developers and domain-experts realize they should focus on, as they iterate.
@@ -149,18 +141,81 @@ Like Evans' box-and-arrow diagrams above.
 Show me your mental model of your domain. Put it in your docs! 
 Let me read it, let me actually see these schematics, even if they are just doodles, 
 it helps me to know how your thought process evolved.
-All I can see right now is this insurmountable mountain of code, 
-and I don't even know where the path starts so I can scale it!
+All I can see right now is this insurmountable mountain of code. 
+I don't even know where the hiking trail starts so that I can scale the mountain!
 I know that there are examples of people doing this, 
 e.g., in the scientific Python community where I spend most of my time, 
 but I think it's fair to say that this is not the *norm*.
-(Warrick Ball from US-RSE shared a good example of this from his [aims3 docs](https://warrickball.gitlab.io/aims3-alpha/grids.html))
+(Thank you to Warrick Ball from US-RSE who shared a good example of domain-driven design from his [aims3 docs](https://warrickball.gitlab.io/aims3-alpha/grids.html))
 I don't know that I have ever seen diagrams showing how the *design evolved*, 
 as part of an iterative development process.
 I can't help but feel like that's exactly the sort of thing that could help people get up to speed on how the code works.
 
-Not to belabor the point, but here I'll stick in a couple examples of architecture diagrams 
+Just to make this real concrete, I'll give one example from my world of scientific Python. 
+With this example, I want to show first of all that, yes, 
+people definitely work this already, even if they don't call it domain-driven design. 
+And, second, that we could make this design process easier to find, and use it in a way 
+that makes code easier to understand.
+My example is: the `numpy` n-dimensional array, that we'll call `ndarray` for short. 
+This is the core abstraction tha makes all of scientific Python possible. 
+How do the developers of NumPy conceive of the `ndarray`?
+Of course, if you go to the "Getting Started" section, you can get a [written introduction](https://numpy.org/doc/2.1/user/whatisnumpy.html), 
+arguing for why we need an n-dimensional array in Python, and showing you some code snippets.
+Great. But I want a drawing. Like the doodles above. A picture is worth a thousand words. 
+So if I make it down to the bottom of that page, I can find a link to the [NumPy reference](https://numpy.org/doc/2.1/reference/index.html#reference), 
+and there finally if I click on [array objects](https://numpy.org/doc/2.1/reference/arrays.html), I can find this picture: 
+
+![](conceptual-diagram-array.png)
+
+I think a diagram like this would help a beginner understand what an `ndarray` is!  
+And I can't be the only one, since [Nicolas Rougier](https://www.labri.fr/perso/nrougier/) has written [a whole book about](https://www.labri.fr/perso/nrougier/from-python-to-numpy/) 
+going from Python to NumPy, and he starts the book with these kinds of diagrams. 
+
+
+::: {#fig-rougier layout-ncol=2}
+
+![Diagram of item layout of NumPy array](rougier-numpy-array-01.png)
+
+![Diagram of memory layout of NumPy array](rougier-numpy-array-02.png)
+
+Diagrams from book From Python to NumPy showing "anatomy of a NumPy array"
+:::
+
+
+Similarly, the [Software Carpentry](software-carpentry.org) course [Programming with Python](https://swcarpentry.github.io/python-novice-inflammation/02-numpy.html) 
+uses a diagram to illustrate how `numpy.max` function works. 
+(If you look up the `numpy.ndarray.max` method, you'll be directed to the `numpy.max` page.)
+
+![Diagram of how the numpy max function works when the argument axis is 0 and when it is 1](python-operations-across-axes.png)
+
+Every time I have to remember which `axis` is which, I find myself wishing the NumPy docs had a diagram like this. 
+
+More to my point above: I want to know how the design of the `ndarray` evolved! 
+How did a group of developers come together from packages like `numeric` and arrive at a new design? 
+What did they recycle, and what did they throw away? 
+If I look at the ["Under-the-hood documentation for developers"](https://numpy.org/doc/2.1/dev/underthehood.html), 
+I don't find *any* of this. 
+Of course you can argue that this might seem like too much detail for developer docs. 
+If I'm a developer and I'm just trying to figure out how to subclass `ndarray`, 
+do I really need to know the whole history of your library? 
+Yet I know this stuff exists, on [GitHub issues](https://github.com/scikit-learn/scikit-learn/issues/29032) for example, 
+as part of the design and development process. 
+So maybe it's worth keeping a record of how things evolved somewhere in your documentation? 
+And making that more readable with diagrams. 
+
+Please let me emphasize that I am not trying to call out Numpy here, or make an example of them, 
+or anything like that. 
+I know how much work and how many volunteer hours go into maintaining NumPy, 
+and building the community around it. A lot of those people are my friends from conferences. 
+I just want to give some sort of concrete examples. 
+In their defense, we can notice that NumPy is so widely used that it was easy for me to find these examples. 
+I am just wondering what *else* we can do as research software engineers to make libraries more approachable. 
+Maybe it would help prevent snarky young kids from writing blog posts [like this](https://dynomight.net/numpy/). 
+
+Not to belabor the point, but I'll stick in a couple more examples of architecture diagrams 
 from docs that I have noticed since I've been revisiting this idea. 
+Two things I want to say here: the first being that, while it's good that these diagrams exist, you often have to dig to find them. 
+So, again, I'm not saying I have a revolutionary idea; I'm just wondering if we could surface this stuff a little more. 
 
 Here for example is a diagram from the "internals" section of the  `dask`  docs on [scheduling](https://docs.dask.org/en/stable/scheduling.html), 
 illustrating the two types of schedulers:
@@ -172,20 +227,20 @@ illustrating [common setups](https://mlflow.org/docs/latest/self-hosting/archite
 
 ![diagram showing coming setups of mlflow](tracking-setup-overview-3d8cfd511355d9379328d69573763331.png)
 
-I want you to see these examples differently though.
-these show software engineers doing domain-driven design 
-with other software engineers: the other engineers they work with,
-and the engineers that use their library.
-A software engineer's "abstraction" is the same thing as domain-driven design's "ubiquitous language".
+The second thing I want to say here is: I think you can see these diagrams differently. 
+They show software engineers doing domain-driven design. 
+At the risk of sounding like I'm preaching that "everything is domain-driven design", 
+I'll say that this looks to me now like software engineers designing for a domain using an ubiquitous language, 
+one spoken by the other engineers they work with, and the engineers that use their libraries.
+They speak in terms of "abstractions" and "architectures". 
 (This is me returning to the point above about software engineering being a domain.)
 
-## Domain-driven design helps you avoid getting lost in the weeds when you code {#domain-driven-design-helps-avoid-getting-lost}
+## Reprise: domain-driven design is such an old idea that it's in SICP
 
-And now, one last reason why I think you should care more about domain-driven design. 
-I now know for sure that these ideas have been around longer than Eric Evans' book,
+Lastly, let me reiterate, I know these ideas are not new.
+I now know for sure they've been around longer than Eric Evans' book,
 because I have been attempting to read yet another book, 
-[Structure and Interpretation of Computer Programs](https://sourceacademy.org/sicpjs) (AKA, SICP).
-
+[Structure and Interpretation of Computer Programs](https://sourceacademy.org/sicpjs), AKA, SICP.
 I ended up finding domain-driven design in SICP, 
 and having to admit to myself that, yeah, this idea has been around forever.
 When I got to chapters 2 and 3, 
@@ -205,46 +260,38 @@ then to add a new feature or debug an old one we will have to work on only a loc
 
 Well there it is, domain-driven design in a nutshell.
 
-I ended up reading this book because I have begun working my way 
-through the reading list on [teachyourselfcs.com](https://teachyourselfcs.com/).
-My reasons for working through that could be a blog post unto itself, 
-but suffice to say it is a source of some shame 
-that I ostensibly make my living by programming computers, 
-but I only have the vaguest idea of how computers work, 
-or how programming works,
-and so I have this need to fix that. 
-Reading books like SICP has also made me realize that, of course, 
-computer scientists think in terms of models of computers, 
---that is, their domain--and this is why it's easier to learn about computers 
-by learning about the models that computer scientists use. 
-This is why it's helpful to learn git by [actually learning how git works](http://gitlet.maryrosecook.com/)
-as [others have noted](https://practical-neuroimaging.github.io/git_parable.html),
-Reading SICP gives you different mental models of how computer programs work.
-
-Again, maybe its old news to you, 
-but I feel like I really need a reminder that we constantly build and then throw away 
-scratch models of whatever we're working on, 
-be it computers or any other domain.
-One reason I think I need this reminder is that, by its very nature, 
-programming requires us to [hyperfixate on details](https://bsky.app/profile/pookleblinky.bsky.social/post/3man7h66o722m).
-Building a mental model of what's going on 
-is one way to avoid getting lost in the weeds.
-The other reason I think I need to be reminded to focus on my model of the domain 
-is that I have somehow inherited this notion of a programmer as a modern conjurer; 
-that I should sit before the blank screen emitting cryptic incancations 
-until the program emerges fully formed. 
-Like a cyberpunk Zeus with code children sprouting from my forehead.
-I am mixing Greek mythology and wizardy in my metaphors. Whatever, you get the point. 
-Given that SICP has the nickname 
-["The Wizard Book"](https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs),
-I can't be the only one who falls into this way of thinking--- 
-that programming is modern sorcery. 
-Reminding yourself that you need to have a model of what you're doing 
-is a way to avoid this tendency as well.
-
 I hate to end on an appeal to authority, 
 but I feel like, if a book as venerable and time-honored as SICP talks about domain-driven design, 
 if the authors think it's worth discussing in the introductory sections of their chapters, 
 then it *must* be an idea worth keeping in mind.
 (Such is the state of computer science that I am calling a book that's less than half a century old "time-honored".)
 I hope I've convinced you to think about domain-driven design just a little more.
+
+## Addendum
+
+I wrote a follow-up post related to what I'm learning from SICP: 
+["Have a working model when you code"](../2025-12-31-working-model/index.qmd). 
+I broke that off into another post to make extra sure I don't sound like a rabid revolutionary claiming that 
+everything is domain-driven design. I'm afraid I am tiptoeing towards a breakaway sect of 
+programmers here. 
+
+But I have to say that thinking about domain-driven design has also got me seeing overlap 
+with ideas like [programming as theory building](https://cekrem.github.io/posts/programming-as-theory-building-naur/), 
+and [domain-specific languages](https://mitpress.mit.edu/9780262140539/a-small-matter-of-programming/) 
+as an alternative to magical, god-like AI "agents" that do all the intellectual heavy lifting for 
+software developers (and anyone else who does any kind of creative thinking for a living). 
+See this quote from the introduction to "A Small Matter of Programming" 
+(the book I just linked to, that considers task-specific languages, among other things): 
+
+![](small-matter-of-programming-screenshot.jpg){fig-alt="Screenshot of text from introduction. What interests me about these scenarios is not that they make fantastic, unrealistic promises (though I think they do), or that the instructions given by the user are couched in simple English (Tesler at least concedes that more structured languages may be needed), or that they embody such a grand vision (though the vision has much appeal). Rather, it is interesting that it is the programmer who is to control all of the computational magic. As Tesler says, programmers will endow computer-agents with their basic capabilities, even meeting such exciting challenges as programming the computer to know what users will think before they think it! By comparison, notice the relationship of the end user to the computer; the end user is engaged in the most humdrum activities: making queries regarding a phone conversation, asking the computer to set up an appointment, requesting articles from the library (Tesler, 1991). Now contrast this vision of the computer-agent with what Alan Kay (in the same issue of Scientific American) envisions for educational software: children writing simulations of complex natural phenomena such as biological and physical systems to better understand how they function. Kay's colleagues have created a simulation construction kit for children so that they can build their own simulations. The construction kit lets children write simple scripts that model animal behavior. Using the kit they can change parameters to see how changing conditions affect the animal. This use of computers is an instance of what Tesler called the personal implement: the children are doing nothing more or less than programming. With the kit, the children have tools that give them tremendous scope for intellectual exploration and personal empowerment."}
+
+(Thank you to [Alistair Davidson](https://bellacaledonia.org.uk/contributor/alistair-davidson/) 
+who I saw post about this book [on Bluesky](https://bsky.app/profile/moh-kohn.bsky.social/post/3m5ia4x543s2s), 
+I'm recycling their screenshot and alt text.)
+I think that ideas about software as the output of a human-driven, theory-based process 
+put the lie to the notion that Large Language Model-driven development will end 
+software engineering as we know it sometime soon. LLMs can't think, they can't theorize, 
+no matter how many names you steal from cognitive science to give to the underlying math. 
+Yes, as a (lapsed) cognitive scientist, I think ["chain of thought reasoning"](https://machinelearning.apple.com/research/illusion-of-thinking) 
+is an offensive name for what is essentially Viterbi decoding with delusions of grandeur. 
+But I'll save those thoughts for yet another blog post.
