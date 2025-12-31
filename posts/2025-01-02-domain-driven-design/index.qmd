@@ -154,6 +154,7 @@ and I don't even know where the path starts so I can scale it!
 I know that there are examples of people doing this, 
 e.g., in the scientific Python community where I spend most of my time, 
 but I think it's fair to say that this is not the *norm*.
+(Warrick Ball from US-RSE shared a good example of this from his [aims3 docs](https://warrickball.gitlab.io/aims3-alpha/grids.html))
 I don't know that I have ever seen diagrams showing how the *design evolved*, 
 as part of an iterative development process.
 I can't help but feel like that's exactly the sort of thing that could help people get up to speed on how the code works.
@@ -182,7 +183,7 @@ A software engineer's "abstraction" is the same thing as domain-driven design's 
 
 And now, one last reason why I think you should care more about domain-driven design. 
 I now know for sure that these ideas have been around longer than Eric Evans' book,
-because I have been attempting to read yet another book,  
+because I have been attempting to read yet another book, 
 [Structure and Interpretation of Computer Programs](https://sourceacademy.org/sicpjs) (AKA, SICP).
 
 I ended up finding domain-driven design in SICP, 
