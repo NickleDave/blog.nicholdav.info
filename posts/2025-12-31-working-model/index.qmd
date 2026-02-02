@@ -3,6 +3,7 @@ title: "Have a working model when you code"
 description: "How having a working model can make you a more efficient coder"
 author: "David Nicholson"
 date: "12/31/2025"
+draft: true
 from: markdown+emoji
 image: git-staging-area.svg
 categories:
