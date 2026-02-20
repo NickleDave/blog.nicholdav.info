@@ -1,0 +1,88 @@
+---
+title: "I wish the numpy docs had more diagrams"
+description: "One picture of an axis is worth a thousand examples in your docstrings"
+author: "David Nicholson"
+date: "02/20/2026"
+draft: true
+from: markdown+emoji
+image: git-staging-area.svg
+categories:
+- computer science
+- research software engineering
+---
+
+If that's so, then show me the doodles! 
+Like Evans' box-and-arrow diagrams above.
+Show me your mental model of your domain. Put it in your docs! 
+Let me read it, let me actually see these schematics, even if they are just doodles, 
+it helps me to know how your thought process evolved.
+All I can see right now is this insurmountable mountain of code. 
+I don't even know where the hiking trail starts so that I can scale the mountain!
+I know that there are examples of people doing this, 
+e.g., in the scientific Python community where I spend most of my time, 
+but I think it's fair to say that this is not the *norm*.
+(Thank you to Warrick Ball from US-RSE who shared a good example of domain-driven design from his [aims3 docs](https://warrickball.gitlab.io/aims3-alpha/grids.html))
+I don't know that I have ever seen diagrams showing how the *design evolved*, 
+as part of an iterative development process.
+I can't help but feel like that's exactly the sort of thing that could help people get up to speed on how the code works.
+
+Just to make this real concrete, I'll give one example from my world of scientific Python. 
+With this example, I want to show first of all that, yes, 
+people definitely work this already, even if they don't call it domain-driven design. 
+And, second, that we could make this design process easier to find, and use it in a way 
+that makes code easier to understand.
+My example is: the `numpy` n-dimensional array, that we'll call `ndarray` for short. 
+This is the core abstraction tha makes all of scientific Python possible. 
+How do the developers of NumPy conceive of the `ndarray`?
+Of course, if you go to the "Getting Started" section, you can get a [written introduction](https://numpy.org/doc/2.1/user/whatisnumpy.html), 
+arguing for why we need an n-dimensional array in Python, and showing you some code snippets.
+Great. But I want a drawing. Like the doodles above. A picture is worth a thousand words. 
+So if I make it down to the bottom of that page, I can find a link to the [NumPy reference](https://numpy.org/doc/2.1/reference/index.html#reference), 
+and there finally if I click on [array objects](https://numpy.org/doc/2.1/reference/arrays.html), I can find this picture: 
+
+![](conceptual-diagram-array.png)
+
+I think a diagram like this would help a beginner understand what an `ndarray` is!  
+And I can't be the only one, since [Nicolas Rougier](https://www.labri.fr/perso/nrougier/) has written [a whole book about](https://www.labri.fr/perso/nrougier/from-python-to-numpy/) 
+going from Python to NumPy, and he starts the book with these kinds of diagrams. 
+
+
+::: {#fig-rougier layout-ncol=2}
+
+![Diagram of item layout of NumPy array](rougier-numpy-array-01.png)
+
+![Diagram of memory layout of NumPy array](rougier-numpy-array-02.png)
+
+Diagrams from book From Python to NumPy showing "anatomy of a NumPy array"
+:::
+
+
+Similarly, the [Software Carpentry](software-carpentry.org) course [Programming with Python](https://swcarpentry.github.io/python-novice-inflammation/02-numpy.html) 
+uses a diagram to illustrate how `numpy.max` function works. 
+(If you look up the `numpy.ndarray.max` method, you'll be directed to the `numpy.max` page.)
+
+![Diagram of how the numpy max function works when the argument axis is 0 and when it is 1](python-operations-across-axes.png)
+
+Every time I have to remember which `axis` is which, I find myself wishing the NumPy docs had a diagram like this. 
+
+More to my point above: I want to know how the design of the `ndarray` evolved! 
+How did a group of developers come together from packages like `numeric` and arrive at a new design? 
+What did they recycle, and what did they throw away? 
+If I look at the ["Under-the-hood documentation for developers"](https://numpy.org/doc/2.1/dev/underthehood.html), 
+I don't find *any* of this. 
+Of course you can argue that this might seem like too much detail for developer docs. 
+If I'm a developer and I'm just trying to figure out how to subclass `ndarray`, 
+do I really need to know the whole history of your library? 
+Yet I know this stuff exists, on [GitHub issues](https://github.com/scikit-learn/scikit-learn/issues/29032) for example, 
+as part of the design and development process. 
+So maybe it's worth keeping a record of how things evolved somewhere in your documentation? 
+And making that more readable with diagrams. 
+
+Please let me emphasize that I am not trying to call out Numpy here, or make an example of them, 
+or anything like that. 
+I know how much work and how many volunteer hours go into maintaining NumPy, 
+and building the community around it. A lot of those people are my friends from conferences. 
+I just want to give some sort of concrete examples. 
+In their defense, we can notice that NumPy is so widely used that it was easy for me to find these examples. 
+I am just wondering what *else* we can do as research software engineers to make libraries more approachable. 
+Maybe it would help prevent snarky young kids from writing blog posts [like this](https://dynomight.net/numpy/). 
