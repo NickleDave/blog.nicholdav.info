@@ -79,6 +79,9 @@ and talking about how we could use this approach for what we were working on.
 And I got this very underwhelmed response of 
 "Yeah, we sort of already do that. Aren't you just describing object-oriented programming?"
 Yes, but no! I'll come back to the "no, we aren't doing that" below, but first, the yes.
+Yes, Evans is writing about object-oriented programming (henceforth, OOP), 
+but the key thing is not just OOP, it's which objects to make. 
+The important part is not the objects, but that the objects are grounded in the domain. 
 We should realize this is what we're already doing and be very explicit about it!
 The domain should be at the front of our mind at all times, 
 and we only should be iterating on the design of our software 
@@ -119,6 +122,51 @@ the things that developers and domain-experts realize they should focus on, as t
 Ubiquitous language "embeds domain terminology in the software systems we build", 
 as Martin Fowler puts it in [this post](https://martinfowler.com/bliki/DomainDrivenDesign.html). 
 It's this continous process of developer and domain expert iterating together that really appeals to me.
+
+I'll say why DDD isn't just OOP another way, paraphrasing [Alex Chabot-Leclerc] 
+who gave me feedback on earlier versions of this post: 
+the software developer should work backwards from the needs of the end user. 
+DDD provides a process and guidelines for doing so. 
+This mitigates the tendency of software developers to come up with computer-science-shaped solutions to problems. 
+Those solutions make sense to them, but they are very hard for non-computer scientists to 
+learn and reason about. Do not make your end user think in terms of csv files, Parquet formats, json blobs. 
+A scientist cares about concepts from their domain, technical terms that 
+have very nuanced meanings.
+At the end of the day, they only care about a numpy array inasmuch as it makes life easier 
+when they do an analysis.
+
+## Domain-driven design by example
+
+To make my point clear, I'm going to quote directly from a [post](https://benhoyt.com/writings/python-api-design/) 
+I've linked to before.  
+Ostensibly, this post is about API design for Python.
+
+> Let’s start with some code. What do you think this snippet does?
+>
+> ```python
+> manager = urllib.request.HTTPPasswordMgrWithDefaultRealm()
+> manager.add_password(None, 'https://httpbin.org/', 'usr', 'pwd')
+> handler = urllib.request.HTTPBasicAuthHandler(manager)
+> opener = urllib.request.build_opener(handler)
+> response = opener.open('https://httpbin.org/basic-auth/usr/pwd')
+> print(response.status)
+> ```
+> As you probably figured out, it makes an HTTP request to an httpbin.org URL with a username and password.
+> 
+> But is urllib.request a good API?
+> 
+> No, it’s terrible! You have to learn about “managers” and “handlers” and “openers”. There are two ultra-long names, HTTPPasswordMgrWithDefaultRealm (what a mouthful!) and HTTPBasicAuthHandler.
+> 
+> This kind of code is why the Requests library was born, back in 2011. In fact, if you’ve looked at the Requests documentation, you probably know that this example is taken from the comparison linked at the top of their docs (updated based on an official how-to).
+> 
+> Here’s how you’d make that same HTTP call with the Requests API:
+> 
+> ```python
+> response = requests.get('https://httpbin.org/basic-auth/usr/pwd',
+>                         auth=('usr', 'pwd'))
+> print(response.status_code)
+> ```
+> Now that’s a nice API.
 
 ## Domain-driven design is not new, and you should think about it more anyway {#domain-driven-design-is-not-new}
 
