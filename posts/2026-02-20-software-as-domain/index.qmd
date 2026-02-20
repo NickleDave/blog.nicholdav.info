@@ -1,0 +1,23 @@
+
+Not to belabor the point, but I'll stick in a couple more examples of architecture diagrams 
+from docs that I have noticed since I've been revisiting this idea. 
+Two things I want to say here: the first being that, while it's good that these diagrams exist, you often have to dig to find them. 
+So, again, I'm not saying I have a revolutionary idea; I'm just wondering if we could surface this stuff a little more. 
+
+Here for example is a diagram from the "internals" section of the  `dask`  docs on [scheduling](https://docs.dask.org/en/stable/scheduling.html), 
+illustrating the two types of schedulers:
+
+![diagram showing two types of Dask schedulers](dask-overview-schedulers.svg)
+
+And here is a diagram from the "architecture" section of the `mlflow` docs, 
+illustrating [common setups](https://mlflow.org/docs/latest/self-hosting/architecture/overview/#common-setups):
+
+![diagram showing coming setups of mlflow](tracking-setup-overview-3d8cfd511355d9379328d69573763331.png)
+
+The second thing I want to say here is: I think you can see these diagrams differently. 
+They show software engineers doing domain-driven design. 
+At the risk of sounding like I'm preaching that "everything is domain-driven design", 
+I'll say that this looks to me now like software engineers designing for a domain using an ubiquitous language, 
+one spoken by the other engineers they work with, and the engineers that use their libraries.
+They speak in terms of "abstractions" and "architectures". 
+(This is me returning to the point above about software engineering being a domain.)
