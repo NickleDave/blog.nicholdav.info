@@ -36,6 +36,7 @@ then I'll explain why [I think it's worth thinking about it more, even if you th
 ## What is domain-driven design? {#what-is-domain-driven-design}
 
 First, let me introduce domain-driven design, and tell you why you might care about it.
+(From here on out I'll write "DDD" to avoid making you read "domain-driven design" a thousand times.)
 Sometime in 2022-2023, I read 
 [Domain-Driven Design](https://www.domainlanguage.com/ddd/) by Eric Evans, and I got really excited about it.
 If you do nothing else, read the first chapter of Evans' book, where he relates the story 
@@ -62,17 +63,10 @@ so he can learn their culture.
 I think this is a familiar feeling for anyone who has tried to translate 
 some real-world domain into software, even if it's part of a culture they feel like they belong to.
 Second, you really get a feel for his process. 
-
 If you have ever gone through the process of designing software for some real-world domain, 
 I bet the story really resonates with you.
-Or, you know what?
-I'll dare to say that, even if you have only ever written nerdy software tools 
-for the domain of other software nerds, 
-you still might find that the story resonates with you. 
-Software engineering is a domain, after all.
-(I'll return to this point below.)
 
-At this point, you might be thinking, "write code in terms of your domain, yeah, sure, everybody does that".
+Now, you might be thinking, "write code in terms of your domain, yeah, sure, everybody does that".
 I got really excited reading this stuff, and told people about it at the job I had at the time.
 I made a big deal of presenting parts of the book, 
 and talking about how we could use this approach for what we were working on.
@@ -80,14 +74,14 @@ And I got this very underwhelmed response of
 "Yeah, we sort of already do that. Aren't you just describing object-oriented programming?"
 Yes, but no! I'll come back to the "no, we aren't doing that" below, but first, the yes.
 Yes, Evans is writing about object-oriented programming (henceforth, OOP), 
-but the key thing is not just OOP, it's which objects to make. 
+but the key thing is not just OOP, it's which objects to make--the design!
 The important part is not the objects, but that the objects are grounded in the domain. 
-We should realize this is what we're already doing and be very explicit about it!
+We should realize that this is a design problem, and be very explicit about it!
 The domain should be at the front of our mind at all times, 
-and we only should be iterating on the design of our software 
-insofar as it relates to the domain!
+so that when we iterate on the design of our software 
+it is easier for domain experts to learn and use!
 
-Now, the "but no": domain-driven development isn't just thinking about the domain. 
+Now, the "but no": DDD isn't just doing OOP, but constrained by your domain. 
 Yes, we all think of the domain when we write our code,
 more or less subconsciously. 
 But Evans advocates for a specific *development* process.
@@ -106,7 +100,7 @@ with a bare-bones implementation of your sketch of an API.
 Of course, later you should do some proper engineering instead of living in Jupyter notebooks, 
 so you don't have to worry about someone 
 giving a [preachy conference talk](https://www.youtube.com/watch?v=7jiPeIFXb6U) 
-that condemns you for your naughty programming practices.
+that condemns you for your naughty software development practices.
 
 Evans' other requirement for the development process is that 
 "[d]evelopers and domain experts have a close relationship."
@@ -123,23 +117,48 @@ Ubiquitous language "embeds domain terminology in the software systems we build"
 as Martin Fowler puts it in [this post](https://martinfowler.com/bliki/DomainDrivenDesign.html). 
 It's this continous process of developer and domain expert iterating together that really appeals to me.
 
-I'll say why DDD isn't just OOP another way, paraphrasing [Alex Chabot-Leclerc] 
-who gave me feedback on earlier versions of this post: 
-the software developer should work backwards from the needs of the end user. 
+I'll say why DDD isn't just OOP another way, paraphrasing [Alex Chabot-Leclerc](https://alexchabot.net/) 
+(who gave me feedback on earlier versions of this post).
+Ideally, the software developer should work backwards from the needs of the end user. 
 DDD provides a process and guidelines for doing so. 
 This mitigates the tendency of software developers to come up with computer-science-shaped solutions to problems. 
 Those solutions make sense to them, but they are very hard for non-computer scientists to 
-learn and reason about. Do not make your end user think in terms of csv files, Parquet formats, json blobs. 
+learn and reason about. 
 A scientist cares about concepts from their domain, technical terms that 
 have very nuanced meanings.
-At the end of the day, they only care about a numpy array inasmuch as it makes life easier 
-when they do an analysis.
+At the end of the day, a scientist using scientific Python only cares about a Numpy array 
+inasmuch as it makes life easier when they do an analysis.
+Do not make your end user think in terms of csv files, Parquet formats, and json blobs. 
+It's bad enough that I have to think so much about 
+[the format of csv files](https://modelingwithdata.org/arch/00000201.htm), 
+if at all possible I should ameliorate the need for other humans to do so.
 
 ## Domain-driven design by example
 
-To make my point clear, I'm going to quote directly from a [post](https://benhoyt.com/writings/python-api-design/) 
-I've linked to before.  
-Ostensibly, this post is about API design for Python.
+If DDD is so great, why isn't everyone doing it? 
+In other words, you might be wondering what some examples of DDD are. 
+
+Let me first say I would be happy to learn that this is all 
+old news to a lot of software developers. 
+From my vantage point in the world of scientifc Python, 
+I'm not so sure.
+I can give you examples of Python APIs that I could say 
+have the "feel" of what I would expect DDD to produce, 
+even if the developers did not think of themselves as "doing DDD".
+I can also link to my own post explaining how I am trying to use DDD 
+for scientific software (below), 
+comparing and contrasting that with the (mostly implicit) rules 
+for scientific Python APIs.
+But as far as I know, this is not a well-known idea 
+(and maybe that means I shouldn't bother thinking about it so much).
+
+To give you an example of a DDD-like Python API, 
+I'm going to quote directly from a [post](https://benhoyt.com/writings/python-api-design/) 
+I've linked to before, in my post about 
+[structuring Python packages for scientific software]. 
+Ostensibly, the post I'm linking to is about API design for Python. 
+It compares and contrasts the API of the `requests` library 
+with the `urllib` library built into the Python standard library.
 
 > Let’s start with some code. What do you think this snippet does?
 >
@@ -168,9 +187,18 @@ Ostensibly, this post is about API design for Python.
 > ```
 > Now that’s a nice API.
 
+From a DDD point of view, the important thing here is that the `requests` API 
+is designed at the level of detail that someone working with HTTP requests 
+is thinking about. They make a request, they get back a response. 
+(Thank you again to Alex Chabot-Leclerc, this time for suggesting `requests` as an example.)
+
+But wait: is email a domain? Isn't it just a weird sub-field of computer science, 
+kind of like how cooking and baking could be considered sub-fields of organic chemistry?
+Yes, you're exactly right. 
+
 ## Domain-driven design is not new, and you should think about it more anyway {#domain-driven-design-is-not-new}
 
-Ok, so now let me circle back around, talk about why, sure, domain-driven design is not a new idea 
+Ok, so now let me circle back around, talk about why, sure, DDD is not a new idea 
 (as Evans himself acknowledges right at the start of his book), 
 and why you should be doing it, or doing even more of it. 
 This is where I come back to the "no" part of "Do we already do this? Yes and no." 
@@ -180,7 +208,7 @@ Let me reiterate, I know these ideas are not new.
 I now know for sure they've been around longer than Eric Evans' book,
 because I have been attempting to read yet another book, 
 [Structure and Interpretation of Computer Programs](https://sourceacademy.org/sicpjs), AKA, SICP.
-I ended up finding domain-driven design in SICP, 
+I ended up finding DDD in SICP, 
 and having to admit to myself that, yeah, this idea has been around forever.
 When I got to chapters 2 and 3, 
 there I saw that we were talking about data abstraction 
@@ -197,10 +225,10 @@ of the new symbolic analogs of those objects or actions.
 If we have been successful in our system organization, 
 then to add a new feature or debug an old one we will have to work on only a localized part of the system.
 
-Well there it is, domain-driven design in a nutshell.
+Well there it is, DDD in a nutshell.
 
 I hate to end on an appeal to authority, 
-but I feel like, if a book as venerable and time-honored as SICP talks about domain-driven design, 
+but I feel like, if a book as venerable and time-honored as SICP talks about DDD, 
 if the authors think it's worth discussing in the introductory sections of their chapters, 
 then it *must* be an idea worth keeping in mind.
 (Such is the state of computer science that I am calling a book that's less than half a century old "time-honored".)
@@ -208,7 +236,7 @@ I hope I've convinced you to think about domain-driven design just a little more
 
 ## Addendum: domain-driven design and coding LLMs
 
-I have to say that thinking about domain-driven design has also got me seeing overlap 
+I have to say that thinking about DDD has also got me seeing overlap 
 with ideas like [programming as theory building](https://cekrem.github.io/posts/programming-as-theory-building-naur/).
 The whole point of that post is that
 
@@ -217,7 +245,8 @@ they still need a way to formulate their ideas.
 These notes from Jamie sum up why doing that via an LLM using natural language "prompts" is a bad idea:
 https://www.scattered-thoughts.net/notes/a-small-matter-of-programming/
 
-> In natural language interfaces, users have to learn the undocumented subset of their natural language that the machine understands correctly
+> In natural language interfaces, users have to learn the undocumented subset of their natural language 
+> that the machine understands correctly
 
 and [domain-specific languages](https://mitpress.mit.edu/9780262140539/a-small-matter-of-programming/) 
 as an alternative to magical, god-like AI "agents" that do all the intellectual heavy lifting for 
