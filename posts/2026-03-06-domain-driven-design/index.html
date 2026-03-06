@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="David Nicholson">
+<meta name="dcterms.date" content="2026-03-06">
+<meta name="description" content="Domain-driven design might not be a new idea, but you should think about it more anyways">
+
+<title>Domain-driven software design is a good idea, still</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2c128a76c5dbb243be50ea3089ffe19d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://nicholdav.info/"> 
+<span class="menu-text">home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://nicholdav.info/about.html"> 
+<span class="menu-text">about</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://blog.nicholdav.info/"> 
+<span class="menu-text">blog</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/NickleDave"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://bsky.app/profile/nicholdav.bsky.social"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Domain-driven software design is a good idea, still</h1>
+                  <div>
+        <div class="description">
+          Domain-driven design might not be a new idea, but you should think about it more anyways
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">domain-driven design</div>
+                <div class="quarto-category">computer science</div>
+                <div class="quarto-category">research software engineering</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>David Nicholson </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 6, 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p>Update 2026-03-06: I first wrote this back at the start of 2025. Now I’ve rewritten and broken this post up into two, one here and <a href="https://blog.vocalpy.org/posts/2025-12-19-domain-driven-design/">one on the VocalPy developer’s blog</a>, based on feedback from folks in the <a href="https://us-rse.org/">US-RSE</a> and <a href="https://www.pyopensci.org/">pyOpenSci</a> communities: <a href="https://fosstodon.org/@benfulton">Ben Fulton</a>, <a href="https://hectorcorrea.com/about">Hector Correa</a>, <a href="https://www.kristijanarmeni.net/">Kris Armeni</a> and <a href="https://warrickball.gitlab.io/">Warrick Ball</a>, and <a href="https://flpm.dev/">Felipe Moreno</a>. Special thanks to <a href="https://alexchabot.net/">Alex Chabot-Leclerc</a> for reading closely and talking through the earlier version.</p>
+<hr>
+<p>In this post I hope to convince you that you should care about domain-driven design. It falls into the category of “me writing about how my thinking has evolved about research and software”.</p>
+<p>You might read about domain-driven design and think “I already do this. Why do I need to name it and formalize it?” I am not claiming this is a radical new idea. What I hope to convince you of is that, sure, domain-driven design is just as obvious as it sounds, but you should be thinking about it more anyways.</p>
+<p>So: first I’ll <a href="#what-is-domain-driven-design">introduce domain driven design</a>, then I’ll explain why <a href="#domain-driven-design-is-not-new">I think it’s worth thinking about it more, even if you think it’s something you already do</a>.</p>
+<section id="what-is-domain-driven-design" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-domain-driven-design">What is domain-driven design?</h2>
+<p>First, let me introduce domain-driven design, and tell you why you might care about it. (From here on out I’ll write “DDD” to avoid making you read “domain-driven design” a thousand times.) Sometime in 2022-2023, I read <a href="https://www.domainlanguage.com/ddd/">Domain-Driven Design</a> by Eric Evans, and I got really excited about it. If you do nothing else, read the first chapter of Evans’ book, where he relates the story of how he worked with some electrical engineers to design software they would use to design printed circuit boards (AKA PCBs).</p>
+<p>At the beginning, he makes mistakes. He tries to understand their jargon word-for-word. Then he asks them to specify in detail what they think the software should do. Neither of those approaches were ever going to work well. Finally he hits upon the idea of asking them to draw out diagrams of their process and how the software should interact with it. These are simple, rough box and arrow sketches as he shows.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="evans-2003-fig1.2.png" class="img-fluid figure-img"></p>
+<figcaption>evans figure 1.2</figcaption>
+</figure>
+</div>
+<p>Notice what is happening here: this is not just a developer creating a UML diagram to show to other developers. This is software engineers and domain experts developing a pidgin language together. They use this pidgin to talk about the domain problem they are trying to solve with software.</p>
+<p>It’s an interesting story for a couple of reasons. First of all, you have a feeling that he is almost an anthropologist, going into this unfamiliar tribe of electrical engineers so he can learn their culture. I think this is a familiar feeling for anyone who has tried to translate some real-world domain into software, even if it’s part of a culture they feel like they belong to. Second, you really get a feel for his process. If you have ever gone through the process of designing software for some real-world domain, I bet the story really resonates with you.</p>
+<p>Now, you might be thinking, “write code in terms of your domain, yeah, sure, everybody does that”. I got really excited reading this stuff, and told people about it at the job I had at the time. I made a big deal of presenting parts of the book, and talking about how we could use this approach for what we were working on. And I got this very underwhelmed response of “Yeah, we sort of already do that. Aren’t you just describing object-oriented programming?” Yes, but no! I’ll come back to the “no, we aren’t doing that” below, but first, the yes. Yes, Evans is writing about object-oriented programming (henceforth, OOP), but the key thing is not just OOP, it’s which objects to make–the design! The important part is not the objects, but that the objects are grounded in the domain. We should realize that this is a design problem, and be very explicit about it! The domain should be at the front of our mind at all times, so that when we iterate on the design of our software it is easier for domain experts to learn and use!</p>
+<p>Now, the “but no”: DDD isn’t just doing OOP, but constrained by your domain. Yes, we all think of the domain when we write our code, more or less subconsciously. But Evans advocates for a specific <em>development</em> process. He says this process is required for his approach to design to work. He sees it as a form of extreme or Agile programming. If you’re not familiar with those, the important thing to know here that they are more iterative than previous approaches, that focused on “elaborate development methodologies that burden projects with useless, static documents and obsessive upfront planning and design”, as Evans puts it. Instead, he focuses on writing code that has a bare bones implementation he can test right away. “Development is iterative.” Of course, this is one place where Python, my main programming language, shines. It’s really easy to iterate interactively in a Jupyter notebook with a bare-bones implementation of your sketch of an API. Of course, later you should do some proper engineering instead of living in Jupyter notebooks, so you don’t have to worry about someone giving a <a href="https://www.youtube.com/watch?v=7jiPeIFXb6U">preachy conference talk</a> that condemns you for your naughty software development practices.</p>
+<p>Evans’ other requirement for the development process is that “[d]evelopers and domain experts have a close relationship.” If you are a researcher who programs, well, hopefully you already have a close relationship with yourself. And with your collaborators and colleagues. This second requirement naturally gives rise to one of the key ideas from the book, that of <em>ubiquitous language</em>. This is what I called a pidgin above. It’s a language that the domain experts and software developers arrive at together through the iterative process of development. The words in this ubiquitous language correspond to key concepts in the domain that the software needs to capture, the things that developers and domain-experts realize they should focus on, as they iterate. Ubiquitous language “embeds domain terminology in the software systems we build”, as Martin Fowler puts it in <a href="https://martinfowler.com/bliki/DomainDrivenDesign.html">this post</a>. It’s this continous process of developer and domain expert iterating together that really appeals to me.</p>
+<p>I’ll say why DDD isn’t just OOP another way, paraphrasing <a href="https://alexchabot.net/">Alex Chabot-Leclerc</a> (who gave me feedback on earlier versions of this post). Ideally, the software developer should work backwards from the needs of the end user. DDD provides a process and guidelines for doing so. This mitigates the tendency of software developers to come up with computer-science-shaped solutions to problems. Those solutions make sense to them, but they are very hard for non-computer scientists to learn and reason about. A scientist cares about concepts from their domain, technical terms that have very nuanced meanings. At the end of the day, a scientist using scientific Python only cares about a Numpy array inasmuch as it makes life easier when they do an analysis. Do not make your end user think in terms of csv files, Parquet formats, and json blobs. It’s bad enough that I have to think so much about <a href="https://modelingwithdata.org/arch/00000201.htm">the format of csv files</a>, if at all possible I should ameliorate the need for other humans to do so.</p>
+</section>
+<section id="domain-driven-design-by-example" class="level2">
+<h2 class="anchored" data-anchor-id="domain-driven-design-by-example">Domain-driven design by example</h2>
+<p>If DDD is so great, why isn’t everyone doing it? In other words, you might be wondering what some examples of DDD are.</p>
+<p>Let me first say I would be happy to learn that this is all old news to a lot of software developers. From my vantage point in the world of scientifc Python, I’m not so sure. I can give you examples of Python APIs that I could say have the “feel” of what I would expect DDD to produce, even if the developers did not think of themselves as “doing DDD”. I can also link to my own post explaining how I am trying to use DDD for scientific software (below), comparing and contrasting that with the (mostly implicit) rules for scientific Python APIs. But as far as I know, this is not a well-known idea (and maybe that means I shouldn’t bother thinking about it so much).</p>
+<p>To give you an example of a DDD-like Python API, I’m going to quote directly from a <a href="https://benhoyt.com/writings/python-api-design/">post</a> I’ve linked to before, in my post about <a href="../../posts/2022-12-26-four-tips-structuring-research-python/index.html">structuring Python packages for scientific software</a>. Ostensibly, the post I’m linking to is about API design for Python. It compares and contrasts the API of the <code>requests</code> library with the <code>urllib</code> library built into the Python standard library.</p>
+<blockquote class="blockquote">
+<p>Let’s start with some code. What do you think this snippet does?</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>manager <span class="op">=</span> urllib.request.HTTPPasswordMgrWithDefaultRealm()</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>manager.add_password(<span class="va">None</span>, <span class="st">'https://httpbin.org/'</span>, <span class="st">'usr'</span>, <span class="st">'pwd'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>handler <span class="op">=</span> urllib.request.HTTPBasicAuthHandler(manager)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>opener <span class="op">=</span> urllib.request.build_opener(handler)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> opener.<span class="bu">open</span>(<span class="st">'https://httpbin.org/basic-auth/usr/pwd'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.status)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>As you probably figured out, it makes an HTTP request to an httpbin.org URL with a username and password.</p>
+<p>But is urllib.request a good API?</p>
+<p>No, it’s terrible! You have to learn about “managers” and “handlers” and “openers”. There are two ultra-long names, HTTPPasswordMgrWithDefaultRealm (what a mouthful!) and HTTPBasicAuthHandler.</p>
+<p>This kind of code is why the Requests library was born, back in 2011. In fact, if you’ve looked at the Requests documentation, you probably know that this example is taken from the comparison linked at the top of their docs (updated based on an official how-to).</p>
+<p>Here’s how you’d make that same HTTP call with the Requests API:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(<span class="st">'https://httpbin.org/basic-auth/usr/pwd'</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                        auth<span class="op">=</span>(<span class="st">'usr'</span>, <span class="st">'pwd'</span>))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.status_code)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now that’s a nice API.</p>
+</blockquote>
+<p>From a DDD point of view, the important thing here is that the <code>requests</code> API is designed at the level of detail that someone working with HTTP requests is thinking about. They make a request, they get back a response. (Thank you again to Alex Chabot-Leclerc, this time for suggesting <code>requests</code> as an example.)</p>
+<p>Wait; is email a domain? Isn’t it just a weird sub-field of computer science, kind of like how cooking and baking could be considered sub-fields of organic chemistry? Yes, you’re right. I’m telling you that you should think about DDD more, but I can’t give you many good examples of it. The other example Alex suggested to me was <code>beautifulsoup</code>, and I agree that package has a user-centric API, but now we’ve moved from the email to another weird branch on the family tree of computer science: HTML and XML. The best example I have is <a href="https://blog.vocalpy.org/posts/2025-12-19-domain-driven-design/">my own blog post</a> on how I’m using DDD as I develop VocalPy. The second best example I could think of in scientific Python was <a href="https://geopandas.org/en/stable/"><code>geopandas</code></a>. Generally, I think a lot of <a href="https://www.pyopensci.org/python-packages.html">pyOpenSci packages</a> could be seen through a DDD lens. But I’m pretty sure the developers don’t think of themselves as “doing DDD”. In earlier versions of this post, I had a mini-rant about, if you feel like everybody already does DDD, then show me! Put the DDD-style diagrams in your docs, let me see how the design evolved! Literally I was advocating that researchers writing scientific software include DDD-style diagrams in their docs, that specifically illustrate changes over time. Okay, maybe adding an illustrated history of your API to your docs won’t help users much. But I <em>do</em> think it would be really interesting, if you care about the design of scientific software, to look at a big dataset of design docs across time for multiple projects,<br>
+and try and make sense of them within the framework of DDD.</p>
+</section>
+<section id="domain-driven-design-is-not-new" class="level2">
+<h2 class="anchored" data-anchor-id="domain-driven-design-is-not-new">Domain-driven design is not new, and you should think about it more anyway</h2>
+<p>Ok, so now let me circle back around, talk about why, sure, DDD is not a new idea (as Evans himself acknowledges right at the start of his book), and why you should be doing it, or doing even more of it. This is where I come back to the “no” part of “Do we already do this? Yes and no.” As you can tell, I’ve gotten this reaction before: “so, yeah, we already do that”.</p>
+<p>Let me reiterate, I know these ideas are not new. I now know for sure they’ve been around longer than Eric Evans’ book, because I have been attempting to read yet another book, <a href="https://sourceacademy.org/sicpjs">Structure and Interpretation of Computer Programs</a>, AKA, SICP. I ended up finding DDD in SICP, and having to admit to myself that, yeah, this idea has been around forever. When I got to chapters 2 and 3, there I saw that we were talking about data abstraction and designing programs for modeling. Sound familiar? Let me quote you this bit from chapter 3:</p>
+<blockquote class="blockquote">
+<p>One powerful design strategy, which is particularly appropriate to the construction of programs for modeling physical systems, is to base the structure of our programs on the structure of the system being modeled. For each object in the system, we construct a corresponding computational object. For each system action, we define a symbolic operation in our computational model. Our hope in using this strategy is that extending the model to accommodate new objects or new actions will require no strategic changes to the program, only the addition of the new symbolic analogs of those objects or actions. If we have been successful in our system organization, then to add a new feature or debug an old one we will have to work on only a localized part of the system.</p>
+</blockquote>
+<p>Well there it is, DDD in a nutshell.</p>
+<p>I hate to end on an appeal to authority, but I feel like, if a book as venerable and time-honored as SICP talks about DDD, if the authors think it’s worth discussing in the introductory sections of their chapters, then it <em>must</em> be an idea worth keeping in mind. (Such is the state of computer science that I am calling a book that’s less than half a century old “time-honored”.) I hope I’ve convinced you to think about domain-driven design just a little more.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/blog\.nicholdav\.info");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
