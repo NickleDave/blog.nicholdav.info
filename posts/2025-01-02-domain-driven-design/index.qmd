@@ -31,7 +31,7 @@ What I hope to convince you of is that, sure, domain-driven design is just as ob
 but you should be thinking about it more anyways.
 
 So: first I'll [introduce domain driven design](#what-is-domain-driven-design), 
-then I'll explain why [I think it's worth thinking about it more, even if you think it's something you already do](#domain-driven-design-is-not-new).
+then I'll explain why [I think it's worth thinking about it more, even if you think it's something you already do](#domain-driven-design-is-not-new). 
 
 ## What is domain-driven design? {#what-is-domain-driven-design}
 
@@ -155,7 +155,7 @@ But as far as I know, this is not a well-known idea
 To give you an example of a DDD-like Python API, 
 I'm going to quote directly from a [post](https://benhoyt.com/writings/python-api-design/) 
 I've linked to before, in my post about 
-[structuring Python packages for scientific software]. 
+[structuring Python packages for scientific software](../2022-12-26-four-tips-structuring-research-python/index.qmd). 
 Ostensibly, the post I'm linking to is about API design for Python. 
 It compares and contrasts the API of the `requests` library 
 with the `urllib` library built into the Python standard library.
@@ -192,9 +192,32 @@ is designed at the level of detail that someone working with HTTP requests
 is thinking about. They make a request, they get back a response. 
 (Thank you again to Alex Chabot-Leclerc, this time for suggesting `requests` as an example.)
 
-But wait: is email a domain? Isn't it just a weird sub-field of computer science, 
+Wait; is email a domain? Isn't it just a weird sub-field of computer science, 
 kind of like how cooking and baking could be considered sub-fields of organic chemistry?
-Yes, you're exactly right. 
+Yes, you're right. I'm telling you that you should think about DDD more, 
+but I can't give you many good examples of it. 
+The other example Alex suggested to me was `beautifulsoup`, 
+and I agree that package has a user-centric API, 
+but now we've moved from the email to another weird branch on the family tree of computer science: 
+HTML and XML.
+The best example I have is [my own blog post](https://blog.vocalpy.org/posts/2025-12-19-domain-driven-design/) 
+on how I'm using DDD as I develop VocalPy. 
+The second best example I could think of in scientific Python was [`geopandas`](https://geopandas.org/en/stable/). 
+Generally, I think a lot of [pyOpenSci packages](https://www.pyopensci.org/python-packages.html) 
+could be seen through a DDD lens. 
+But I'm pretty sure the developers don't think of themselves as "doing DDD". 
+In earlier versions of this post, I had a mini-rant about, 
+if you feel like everybody already does DDD, then show me! 
+Put the DDD-style diagrams in your docs, 
+let me see how the design evolved! 
+Literally I was advocating that researchers writing scientific software 
+include DDD-style diagrams in their docs, 
+that specifically illustrate changes over time. 
+Okay, maybe adding an illustrated history of your API to your docs won't help users much. 
+But I *do* think it would be really interesting, 
+if you care about the design of scientific software, 
+to look at a big dataset of design docs across time for multiple projects,  
+and try and make sense of them within the framework of DDD.
 
 ## Domain-driven design is not new, and you should think about it more anyway {#domain-driven-design-is-not-new}
 
@@ -233,39 +256,3 @@ if the authors think it's worth discussing in the introductory sections of their
 then it *must* be an idea worth keeping in mind.
 (Such is the state of computer science that I am calling a book that's less than half a century old "time-honored".)
 I hope I've convinced you to think about domain-driven design just a little more.
-
-## Addendum: domain-driven design and coding LLMs
-
-I have to say that thinking about DDD has also got me seeing overlap 
-with ideas like [programming as theory building](https://cekrem.github.io/posts/programming-as-theory-building-naur/).
-The whole point of that post is that
-
-Likewise, for end users who don't want to care about computer science, 
-they still need a way to formulate their ideas.
-These notes from Jamie sum up why doing that via an LLM using natural language "prompts" is a bad idea:
-https://www.scattered-thoughts.net/notes/a-small-matter-of-programming/
-
-> In natural language interfaces, users have to learn the undocumented subset of their natural language 
-> that the machine understands correctly
-
-and [domain-specific languages](https://mitpress.mit.edu/9780262140539/a-small-matter-of-programming/) 
-as an alternative to magical, god-like AI "agents" that do all the intellectual heavy lifting for 
-software developers (and anyone else who does any kind of creative thinking for a living). 
-See this quote from the introduction to "A Small Matter of Programming" 
-(the book I just linked to, that considers task-specific languages, among other things): 
-
-![](small-matter-of-programming-screenshot.jpg){fig-alt="Screenshot of text from introduction. What interests me about these scenarios is not that they make fantastic, unrealistic promises (though I think they do), or that the instructions given by the user are couched in simple English (Tesler at least concedes that more structured languages may be needed), or that they embody such a grand vision (though the vision has much appeal). Rather, it is interesting that it is the programmer who is to control all of the computational magic. As Tesler says, programmers will endow computer-agents with their basic capabilities, even meeting such exciting challenges as programming the computer to know what users will think before they think it! By comparison, notice the relationship of the end user to the computer; the end user is engaged in the most humdrum activities: making queries regarding a phone conversation, asking the computer to set up an appointment, requesting articles from the library (Tesler, 1991). Now contrast this vision of the computer-agent with what Alan Kay (in the same issue of Scientific American) envisions for educational software: children writing simulations of complex natural phenomena such as biological and physical systems to better understand how they function. Kay's colleagues have created a simulation construction kit for children so that they can build their own simulations. The construction kit lets children write simple scripts that model animal behavior. Using the kit they can change parameters to see how changing conditions affect the animal. This use of computers is an instance of what Tesler called the personal implement: the children are doing nothing more or less than programming. With the kit, the children have tools that give them tremendous scope for intellectual exploration and personal empowerment."}
-
-(Thank you to [Alistair Davidson](https://bellacaledonia.org.uk/contributor/alistair-davidson/) 
-who I saw post about this book [on Bluesky](https://bsky.app/profile/moh-kohn.bsky.social/post/3m5ia4x543s2s), 
-I'm recycling their screenshot and alt text.)
-I think that ideas about software as the output of a human-driven, theory-based process 
-put the lie to the notion that Large Language Model-driven development will end 
-software engineering as we know it anytime soon. 
-A coding LLM is just a statistical model of (programming) languages, 
-"auto-complete on steroids". 
-LLMs can't think, they can't theorize, 
-no matter how many names you steal from cognitive science to give to the underlying math. 
-Yes, as a (lapsed) cognitive scientist, I think ["chain of thought reasoning"](https://machinelearning.apple.com/research/illusion-of-thinking) 
-is an offensive name for what is essentially Viterbi decoding with delusions of grandeur. 
-But I'll save those thoughts for yet another blog post.
