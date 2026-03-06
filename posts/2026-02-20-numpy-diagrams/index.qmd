@@ -1,15 +1,18 @@
 ---
-title: "I wish the numpy docs had more diagrams"
-description: "One picture of an axis is worth a thousand examples in your docstrings"
+title: "Sometimes I wish the numpy docs had more diagrams"
+description: "One picture of an axis is worth a thousand code snippets in your docstrings"
 author: "David Nicholson"
 date: "02/20/2026"
 draft: true
 from: markdown+emoji
-image: git-staging-area.svg
+image: python-operations-across-axes.png
 categories:
 - computer science
 - research software engineering
 ---
+
+At the end of the day, a scientist using scientific Python only cares about a Numpy array 
+inasmuch as it makes life easier when they do an analysis.
 
 If that's so, then show me the doodles! 
 Like Evans' box-and-arrow diagrams above.
