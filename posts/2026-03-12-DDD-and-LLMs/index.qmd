@@ -1,0 +1,71 @@
+---
+title: "Domain-driven design and coding LLMs"
+description: "Domain-driven design and related ideas put the lie to the notion we'll all be replaced with LLMs anytime soon"
+author: "David Nicholson"
+date: "03/12/2026"
+draft: true
+from: markdown+emoji
+image: git-staging-area.svg
+categories:
+- computer science
+- research software engineering
+---
+
+Ok, so, first off, believe me, I'm well aware that there's no shortage of thoughtfluencers 
+opining about coding LLMs.
+
+But since I rewrote and shared my post about 
+[domain-driven design DDD](../2026-03-12-DDD-and-LLMs/index.qmd),
+I have to say a little bit about 
+how domain-driven design relates the use of Large Language Models (LLMs) for coding.
+
+I have to say that thinking about DDD has also got me seeing overlap 
+with ideas like [programming as theory building](https://cekrem.github.io/posts/programming-as-theory-building-naur/) 
+and [domain-specific languages](https://mitpress.mit.edu/9780262140539/a-small-matter-of-programming/).
+They conceive of software as artifacts of human culture, 
+designed for a domain and built according to a theory 
+because that's what *humans* do.
+To me, these ideas put the lie to the notion that Large Language Model-driven development will end 
+software engineering as we know it anytime soon. 
+A coding LLM is just a statistical model of (programming) languages, 
+"auto-complete on steroids". 
+LLMs can't think, they can't theorize, 
+no matter how many names you steal from cognitive science to give to the underlying math. 
+Yes, as a (lapsed) cognitive scientist, I think ["chain of thought reasoning"](https://machinelearning.apple.com/research/illusion-of-thinking) 
+is an offensive name for what is essentially Viterbi decoding with delusions of grandeur. 
+
+One major point of the "Theory Building" post, and the papers it's referencing, is that source code alone 
+doesn't matter as much as the domain expertise that has built up around the code. 
+I choose the term "domain expertise" to link it back to DDD, 
+but as a computational scientist I think we can literally describe programming as (part of!) theory building. 
+Depending on your perspective, you could also call it institutional knowledge, culture, and history. 
+You know, all the things that many software engineers seem to think 
+they can replace with a coding LLM, i.e., autocomplete on steroids. 
+Instead, it's becoming more and more obvious that 
+yet another externalized cost of relying on coding LLMs will be the 
+[cognitive debt](https://www.rockoder.com/beyondthecode/cognitive-debt-when-velocity-exceeds-comprehension/) 
+we incur by YOLOing hundreds of lines of code from a fancy text generator 
+just because it [feels good, man](https://www.fast.ai/posts/2026-01-28-dark-flow/).
+
+Sure, but coding LLMs allow end users to formulate
+And end users still need a way to formulate their ideas, including those that don't want to have to think too much about computer science, 
+they .
+These notes from Jamie sum up why doing that via an LLM using natural language "prompts" is a bad idea:
+https://www.scattered-thoughts.net/notes/a-small-matter-of-programming/
+
+> In natural language interfaces, users have to learn the undocumented subset of their natural language 
+> that the machine understands correctly
+
+See this quote from the introduction to "A Small Matter of Programming" 
+(the book I just linked to, that considers task-specific languages, among other things): 
+
+![](small-matter-of-programming-screenshot.jpg){fig-alt="Screenshot of text from introduction. What interests me about these scenarios is not that they make fantastic, unrealistic promises (though I think they do), or that the instructions given by the user are couched in simple English (Tesler at least concedes that more structured languages may be needed), or that they embody such a grand vision (though the vision has much appeal). Rather, it is interesting that it is the programmer who is to control all of the computational magic. As Tesler says, programmers will endow computer-agents with their basic capabilities, even meeting such exciting challenges as programming the computer to know what users will think before they think it! By comparison, notice the relationship of the end user to the computer; the end user is engaged in the most humdrum activities: making queries regarding a phone conversation, asking the computer to set up an appointment, requesting articles from the library (Tesler, 1991). Now contrast this vision of the computer-agent with what Alan Kay (in the same issue of Scientific American) envisions for educational software: children writing simulations of complex natural phenomena such as biological and physical systems to better understand how they function. Kay's colleagues have created a simulation construction kit for children so that they can build their own simulations. The construction kit lets children write simple scripts that model animal behavior. Using the kit they can change parameters to see how changing conditions affect the animal. This use of computers is an instance of what Tesler called the personal implement: the children are doing nothing more or less than programming. With the kit, the children have tools that give them tremendous scope for intellectual exploration and personal empowerment."}
+
+(Thank you to [Alistair Davidson](https://bellacaledonia.org.uk/contributor/alistair-davidson/) 
+who I saw post about this book [on Bluesky](https://bsky.app/profile/moh-kohn.bsky.social/post/3m5ia4x543s2s), 
+I'm recycling their screenshot and alt text.)
+
+
+These ideas present an alternative to magical, god-like AI "agents" that do all the intellectual heavy lifting for 
+software developers, and anyone else who does any kind of creative thinking for a living. 
+But I'll save those thoughts for yet another blog post.
