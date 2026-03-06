@@ -1,3 +1,15 @@
+---
+title: "Software as a domain"
+description: "Domain-driven design and related ideas put the lie to the notion we'll all be replaced with LLMs anytime soon"
+author: "David Nicholson"
+date: "03/12/2026"
+draft: true
+from: markdown+emoji
+image: git-staging-area.svg
+categories:
+- computer science
+- research software engineering
+---
 
 Not to belabor the point, but I'll stick in a couple more examples of architecture diagrams 
 from docs that I have noticed since I've been revisiting this idea. 
