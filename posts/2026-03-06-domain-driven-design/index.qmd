@@ -16,7 +16,7 @@ I first wrote this back at the start of 2025.
 Now I've rewritten and broken this post up into two, one here and [one on the VocalPy developer's blog](https://blog.vocalpy.org/posts/2025-12-19-domain-driven-design/), 
 based on feedback from folks in the [US-RSE](https://us-rse.org/) and [pyOpenSci](https://www.pyopensci.org/) communities: 
 [Ben Fulton](https://fosstodon.org/@benfulton), [Hector Correa](https://hectorcorrea.com/about), 
-[Kris Armeni](https://www.kristijanarmeni.net/) and [Warrick Ball](https://warrickball.gitlab.io/),
+[Kris Armeni](https://www.kristijanarmeni.net/), [Warrick Ball](https://warrickball.gitlab.io/),
 and [Felipe Moreno](https://flpm.dev/).
 Special thanks to [Alex Chabot-Leclerc](https://alexchabot.net/) for reading closely and talking through the earlier version.
 
@@ -31,8 +31,10 @@ I am not claiming this is a radical new idea.
 What I hope to convince you of is that, sure, domain-driven design is just as obvious as it sounds, 
 but you should be thinking about it more anyways.
 
-So: first I'll [introduce domain driven design](#what-is-domain-driven-design), 
-then I'll explain why [I think it's worth thinking about it more, even if you think it's something you already do](#domain-driven-design-is-not-new). 
+So: first I'll [introduce domain driven design](#what-is-domain-driven-design). 
+Then I'll attempt to [give some examples](#DDD-by-example). 
+Lastly I'll say why 
+[I still think it's worth thinking about it more, even if you feel like it's something you do already](#domain-driven-design-is-not-new). 
 
 ## What is domain-driven design? {#what-is-domain-driven-design}
 
@@ -89,8 +91,8 @@ But Evans advocates for a specific *development* process.
 He says this process is required for his approach to design to work.
 He sees it as a form of extreme or Agile programming.
 If you're not familiar with those, 
-the important thing to know here that they are more iterative 
-than previous approaches, that focused on 
+the important thing to know is that they are more iterative 
+than previous approaches that focused on 
 "elaborate development methodologies that burden projects with useless, 
 static documents and obsessive upfront planning and design", as Evans puts it.
 Instead, he focuses on writing code that has a bare bones implementation 
@@ -126,15 +128,14 @@ This mitigates the tendency of software developers to come up with computer-scie
 Those solutions make sense to them, but they are very hard for non-computer scientists to 
 learn and reason about. 
 A scientist cares about concepts from their domain, technical terms that 
-have very nuanced meanings.
-At the end of the day, a scientist using scientific Python only cares about a Numpy array 
-inasmuch as it makes life easier when they do an analysis.
+have very nuanced meanings. 
 Do not make your end user think in terms of csv files, Parquet formats, and json blobs. 
 It's bad enough that I have to think so much about 
-[the format of csv files](https://modelingwithdata.org/arch/00000201.htm), 
-if at all possible I should ameliorate the need for other humans to do so.
+[the format of csv files](https://modelingwithdata.org/arch/00000201.htm) 
+as a research software engineer; 
+if at all possible I should ameliorate the need for other humans to do so. 
 
-## Domain-driven design by example
+## Domain-driven design by example {#DDD-by-example}
 
 If DDD is so great, why isn't everyone doing it? 
 In other words, you might be wondering what some examples of DDD are. 
@@ -159,7 +160,7 @@ I've linked to before, in my post about
 [structuring Python packages for scientific software](../2022-12-26-four-tips-structuring-research-python/index.qmd). 
 Ostensibly, the post I'm linking to is about API design for Python. 
 It compares and contrasts the API of the `requests` library 
-with the `urllib` library built into the Python standard library.
+with the `urllib` module built into the Python standard library.
 
 > Let’s start with some code. What do you think this snippet does?
 >
@@ -199,16 +200,19 @@ Yes, you're right. I'm telling you that you should think about DDD more,
 but I can't give you many good examples of it. 
 The other example Alex suggested to me was `beautifulsoup`, 
 and I agree that package has a user-centric API, 
-but now we've moved from the email to another weird branch on the family tree of computer science: 
+but now we've moved from email to another weird branch on the family tree of computer science: 
 HTML and XML.
 The best example I have is [my own blog post](https://blog.vocalpy.org/posts/2025-12-19-domain-driven-design/) 
 on how I'm using DDD as I develop VocalPy. 
 The second best example I could think of in scientific Python was [`geopandas`](https://geopandas.org/en/stable/). 
+What I like about `geopandas` is that it has the feel of a library 
+designed by a domain expert, adding a bunch of methods to the `pandas.DataFrame` 
+that make sense to someone working with geospatial data. 
 Generally, I think a lot of [pyOpenSci packages](https://www.pyopensci.org/python-packages.html) 
 could be seen through a DDD lens. 
-But I'm pretty sure the developers don't think of themselves as "doing DDD". 
+But I'm pretty sure most developers don't think of themselves as "doing DDD". 
 In earlier versions of this post, I had a mini-rant about, 
-if you feel like everybody already does DDD, then show me! 
+if you feel like everybody already does DDD, then show me the proof! 
 Put the DDD-style diagrams in your docs, 
 let me see how the design evolved! 
 Literally I was advocating that researchers writing scientific software 
@@ -217,8 +221,10 @@ that specifically illustrate changes over time.
 Okay, maybe adding an illustrated history of your API to your docs won't help users much. 
 But I *do* think it would be really interesting, 
 if you care about the design of scientific software, 
-to look at a big dataset of design docs across time for multiple projects,  
-and try and make sense of them within the framework of DDD.
+to look at a big dataset of how design docs change across time for multiple projects. 
+This would be one way to see 
+if we can make better sense of scientific software design 
+through a DDD framework.
 
 ## Domain-driven design is not new, and you should think about it more anyway {#domain-driven-design-is-not-new}
 
