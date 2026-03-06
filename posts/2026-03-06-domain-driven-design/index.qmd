@@ -2,7 +2,7 @@
 title: "Domain-driven software design is a good idea, still"
 description: "Domain-driven design might not be a new idea, but you should think about it more anyways"
 author: "David Nicholson"
-date: "02/22/2026"
+date: "03/06/2026"
 from: markdown+emoji
 image: evans-2003-fig1.2.png
 categories:
@@ -11,13 +11,14 @@ categories:
 - research software engineering
 ---
 
-Update 2026-02-20:
-I broke this post up into two posts, one here and [one on the VocalPy developer's blog](https://blog.vocalpy.org/posts/2025-12-19-domain-driven-design/), 
+Update 2026-03-06:
+I first wrote this back at the start of 2025. 
+Now I've rewritten and broken this post up into two, one here and [one on the VocalPy developer's blog](https://blog.vocalpy.org/posts/2025-12-19-domain-driven-design/), 
 based on feedback from folks in the [US-RSE](https://us-rse.org/) and [pyOpenSci](https://www.pyopensci.org/) communities: 
 [Ben Fulton](https://fosstodon.org/@benfulton), [Hector Correa](https://hectorcorrea.com/about), 
 [Kris Armeni](https://www.kristijanarmeni.net/) and [Warrick Ball](https://warrickball.gitlab.io/),
 and [Felipe Moreno](https://flpm.dev/).
-Special thanks to [Alex Chabot-Leclerc](https://alexchabot.net/) for reading closely and talking through earlier versions of these posts.
+Special thanks to [Alex Chabot-Leclerc](https://alexchabot.net/) for reading closely and talking through the earlier version.
 
 ---
 
