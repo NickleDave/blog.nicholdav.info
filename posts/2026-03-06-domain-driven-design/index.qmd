@@ -1,6 +1,6 @@
 ---
-title: "Domain-driven software design is a good idea, still"
-description: "Domain-driven design might not be a new idea, but you should think about it more anyways"
+title: "How does domain modeling interact with the design of scientific software?"
+description: "How domain-driven design might not be a new idea, but you should think about it more anyways"
 author: "David Nicholson"
 date: "03/06/2026"
 from: markdown+emoji
@@ -22,10 +22,11 @@ Special thanks to [Alex Chabot-Leclerc](https://alexchabot.net/) for reading clo
 
 ---
 
-In this post I hope to convince you that you should care about domain-driven design.
+In this post I hope to convince you that it's worth thinking more about the interaction 
+of modeling and the design of scientific software. 
 It falls into the category of "me writing about how my thinking has evolved about research and software". 
 
-You might read about domain-driven design and think 
+You might read it and say  
 "I already do this. Why do I need to name it and formalize it?"
 I am not claiming this is a radical new idea. 
 What I hope to convince you of is that, sure, domain-driven design is just as obvious as it sounds, 
