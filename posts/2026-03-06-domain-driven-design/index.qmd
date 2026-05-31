@@ -1,6 +1,6 @@
 ---
-title: "How does domain modeling interact with the design of scientific software?"
-description: "How domain-driven design might not be a new idea, but you should think about it more anyways"
+title: "Why doesn't scientific software talk about domain modeling?"
+description: ""
 author: "David Nicholson"
 date: "03/06/2026"
 from: markdown+emoji
@@ -10,6 +10,9 @@ categories:
 - computer science
 - research software engineering
 ---
+
+Update 2026-05-30:
+I rewrote this again based on a single comment from Juan.
 
 Update 2026-03-06:
 I first wrote this back at the start of 2025. 
@@ -22,27 +25,88 @@ Special thanks to [Alex Chabot-Leclerc](https://alexchabot.net/) for reading clo
 
 ---
 
-In this post I hope to convince you that it's worth thinking more about the interaction 
-of modeling and the design of scientific software. 
-It falls into the category of "me writing about how my thinking has evolved about research and software". 
+I have a question: why doesn't scientific software talk about domain modeling?
+That question might immediately make you think that you are not the intended audience 
+for this blog post. So first let me tell you 
+that at the end of the post I am going to argue that everyone is a scientist, 
+so we should all care about how our models of the world get implemented in code. 
+If, as Peter Naur wrote, programming is theory building, 
+then we should definitely not relegate programming to Large Language Models 
+that so many people are currently using to vibe code, 
+since a model of language by definition cannot conceive of a theory.
+All it does is mindlessly generate code, 
+no matter how much you want to believe otherwise 
+because your all-too-human brain is hardwired to think that anything that can speak a language is as smart as you.
 
-You might read it and say  
-"I already do this. Why do I need to name it and formalize it?"
-I am not claiming this is a radical new idea. 
-What I hope to convince you of is that, sure, domain-driven design is just as obvious as it sounds, 
-but you should be thinking about it more anyways.
+If you're still reading this after that intro paragraph, let me ask again, 
+why doesn't scientific software talk about domain modeling?
+That question might not make any sense if I don't quickly define *domain model*. 
+This is a term of art in computer science and software engineering. 
+It can refer to an actual verbal or even mathematical model, 
+and so my question might have you saying  
+"we already have domain models in science; we just call them *models*, period."
+You will also hear the term "domain model" used in the tech community, where programmers go around giving talks,
+and where, more often than not, it can sound like it means  
+"all the messy real-world stuff that my code must unfortunately interact with--if only I didn't have to deal with those dang domains, 
+my code would be provably correct with formal methods".
 
-So: first I'll [introduce domain driven design](#what-is-domain-driven-design). 
-Then I'll attempt to [give some examples](#DDD-by-example). 
-Lastly I'll say why 
-[I still think it's worth thinking about it more, even if you feel like it's something you do already](#domain-driven-design-is-not-new). 
+More seriously, the term implies 
+an abstraction that lets programmers separate the domain from the 
+low-level implementation details of actual code. 
+This abstraction allows users of the software 
+to go about their business in their domain, 
+while programmers are free to fiddle with the low-level details, 
+as long as they don't break the contract written into the domain model.  
+It sure sounds like a good idea to me,
+as somebody who thinks about research software, 
+to make it easier for scientists to reason about a (domain) model, 
+while also making it easier for research software engineers 
+to develop and maintain the code that supports that model.
 
-## What is domain-driven design? {#what-is-domain-driven-design}
+If you're familiar with computer science,  
+you will probably have already recognized that 
+domain modeling is a specific case of a 
+more general phenomenon: the interface/implementation duality.
+In fact, you might feel like you want to scream that at me.
+You're right; I'll say more about this below.
 
-First, let me introduce domain-driven design, and tell you why you might care about it.
-(From here on out I'll write "DDD" to avoid making you read "domain-driven design" a thousand times.)
+But let me ask my question one last time.
+Why doesn't scientific software talk about domain modeling?
+
+One answer might be, actually it does, and I am just clueless.
+I would be more than happy to learn that I am wrong, 
+but I have at least spent a good chunk of time interacting 
+with the scientific Python ecosystem, 
+and I've had a few run-ins with scientific software in other languages as well.
+Yet when I first learned about the idea of domain models 
+in computer science, it was news to me. 
+
+Here's two other easy answers to my question.
+The first: "Domain models? You mean like classes with methods in object-oriented programming? Don't we all do that to some extent?"
+The second: "Domain models? You mean like messy business logic in CRUD apps? What does that have to do with scientific software?"
+
+In this post, I will try to convince you that both answers miss the mark in interesting ways. 
+I'll say why domain models are not just object-oriented programming (henceforth, OOP).
+I'll show that, quite the opposite, OOP is instead 
+a direct descendent of ideas about how to write code for scientific simulations 
+(thanks in large part to a talk from Casey Muratori)-- a descendent that seems to have 
+undergone some deleterious inbreeding as it made its way from academia to enterprise software.
+Then I'll make the case that, actually, 
+there's plenty of messiness in scientific software; 
+this business of science is not all just totally abstract models 
+that have been whittled down to a couple of perfect parameters with Occam's razor.
+Lastly, I will make good on my promise above 
+to tie this back to programming more generally, 
+and why I think it seriously is still worth 
+thinking about the relationship of (scientific) software and 
+(domain) models, in spite of all the hype about vibecoding.
+
+## What is domain modeling?
+
+First, let me introduce domain modeling, and tell you why you might care about it.
 Sometime in 2022-2023, I read 
 [Domain-Driven Design](https://www.domainlanguage.com/ddd/) by Eric Evans, and I got really excited about it.
+(From here on out I'll write "DDD" to avoid making you read "domain-driven design" a thousand times.)
 If you do nothing else, read the first chapter of Evans' book, where he relates the story 
 of how he worked with some electrical engineers to design software they would use to 
 design printed circuit boards (AKA PCBs). 
@@ -227,15 +291,29 @@ This would be one way to see
 if we can make better sense of scientific software design 
 through a DDD framework.
 
-## Domain-driven design is not new, and you should think about it more anyway {#domain-driven-design-is-not-new}
+## OOP as a direct descendent of domain modeling
 
-Ok, so now let me circle back around, talk about why, sure, DDD is not a new idea 
+Ok, so in the introduction I said 
+that domain models in software engineering 
+are, arguably, 
+just one more case of the distinction between 
+interface and implementation that we see 
+everywhere in computer science. 
+If you read [Elements of Computer], 
+you will be told that this distinction exists 
+even at the lowest level of simple logic gates, 
+where an And gate has the "interface" 
+of the truth table you might have seen in a 
+Philosophy 101 course, 
+but its implementation could be Nand gates 
+or Nor gates, or something else entirely.
+Bjorne Stroustrop thought this distinction was 
+so important that he hard-coded it into C++, 
+with the `public` and `private` keywords, 
+and its one of the first things he tells us in his PPP book.
+
+Likewise, domain modeling is not a new idea 
 (as Evans himself acknowledges right at the start of his book), 
-and why you should be doing it, or doing even more of it. 
-This is where I come back to the "no" part of "Do we already do this? Yes and no." 
-As you can tell, I've gotten this reaction before: "so, yeah, we already do that".
-
-Let me reiterate, I know these ideas are not new.
 I now know for sure they've been around longer than Eric Evans' book,
 because I have been attempting to read yet another book, 
 [Structure and Interpretation of Computer Programs](https://sourceacademy.org/sicpjs), AKA, SICP.
@@ -256,11 +334,12 @@ of the new symbolic analogs of those objects or actions.
 If we have been successful in our system organization, 
 then to add a new feature or debug an old one we will have to work on only a localized part of the system.
 
-Well there it is, DDD in a nutshell.
+Well there it is.
 
-I hate to end on an appeal to authority, 
-but I feel like, if a book as venerable and time-honored as SICP talks about DDD, 
-if the authors think it's worth discussing in the introductory sections of their chapters, 
-then it *must* be an idea worth keeping in mind.
-(Such is the state of computer science that I am calling a book that's less than half a century old "time-honored".)
-I hope I've convinced you to think about domain-driven design just a little more.
+But we can go beyond this and say, 
+from the beginning, 
+computers were developed by scientists 
+and researchers in academia.
+While the first computers were being built, 
+
+Of course some of the first things these scientists did was implement models from their scientific domains in software.
