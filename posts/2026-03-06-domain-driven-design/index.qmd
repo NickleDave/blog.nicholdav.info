@@ -1,6 +1,6 @@
 ---
-title: "Why doesn't scientific software talk about domain modeling?"
-description: ""
+title: "(scientific) software should focus on domain modeling more"
+description: "It's models all the way down, so let's be explicit about that"
 author: "David Nicholson"
 date: "03/06/2026"
 from: markdown+emoji
@@ -12,7 +12,8 @@ categories:
 ---
 
 Update 2026-05-30:
-I rewrote this again based on a single comment from Juan.
+I rewrote this again based on a single comment from Juan Luis Cano Rodríguez,
+that I didn't explain what domain modeling was. Right, of course.
 
 Update 2026-03-06:
 I first wrote this back at the start of 2025. 
@@ -25,28 +26,114 @@ Special thanks to [Alex Chabot-Leclerc](https://alexchabot.net/) for reading clo
 
 ---
 
-I have a question: why doesn't scientific software talk about domain modeling?
-That question might immediately make you think that you are not the intended audience 
+In this post I hope to convince you that scientific software should 
+focus on domain modeling more. 
+That open sentence might make you think that you are not the intended audience 
 for this blog post. So first let me tell you 
 that at the end of the post I am going to argue that everyone is a scientist, 
 so we should all care about how our models of the world get implemented in code. 
+Or, to put that in a way you might find less ridiculous, 
+I think you should read this post even if you think you don't care that much 
+about scientific software. 
+I am going to start out talking about 
+how I am more and more surprised that scientific software 
+rarely if ever talks about domain modeling, 
+but I am going to end up convinced 
+that what I have to say applies to software 
+more generally; scientific software is just a specific case 
+of a more general phenomenon.
+
+*Domain model.* I keep using that term.
+If you are a scientist, you might naturally think that 
+scientific software has a lot to do with (scientific) models already. 
+And if you are a *computer* scientist, 
+you might similarly think that of course scientific software 
+is built around domain models, 
+based on your understanding of that term.
+I will define domain modeling below. 
+And I will argue that, if you are already familiar with that term,  
+then everything you know about it, 
+and related topics like object-oriented programming, is wrong. 
+
+And I will conclude that this actually *matters*, 
+that if we want computer "scientists"
+and all the other scientists to work together better, 
+we should make these domain models super explicit. 
+And, again, I think this is true more generally  
+of software developers and the downstream users 
+of that software, who I think we can agree should ideally be in dialogue 
+with the core developers 
+(unless you are a little fascist that wants to jail users in a walled garden, 
+in which case, we'll be out here when you're ready to join the human race).
+There's two reasons that domain models matter. 
+The first reason is fairly obvious, and probably lines up 
+with your understanding of the term "domain model": 
+by focusing on a domain model, 
+we design software with affordances 
+that most fit the task at hand. 
+The second reason is less obvious, and, I hope, 
+more interesting: 
+domain models serve as boundary objects 
+that allow broad groups of workers with loosely-aligned interests 
+to collaborate. 
+(I'll also define what a boundary object is below.)
+
+Let me say right here at the top 
+that I am not claiming any of these ideas are new, 
+or my own. 
+But I think they bear repeating.  
+I will give detail and links below 
+but please know 
+I am stringing my thoughts together 
+from several people: Eric Evans Domain-Driven Design, 
+Casey Muratori's recent talk The Big OOPs,
+Peter Naur's Programming as Theory Building, 
+work from Susan Leigh Star, 
+Bonnie Nardi's A Small Matter of Programming, 
+and several recent blog posts citing those earlier writings. 
+Still, I am hoping that my focus here on scientific software
+has helped me synthesize these works 
+in a way that is more interesting.
+
+And when I say that I think these ideas bear repeating, 
+I mean that I feel like the people who most need to hear them 
+are the software engineers who seem to be all to eager 
+to believe that they can be replaced with "AI", 
+to relinquish that capacity that so many in Silicon Valley 
+would hold up as the pinnacle of human thought: 
+the ability to reason, their rationality. 
+Yes, I will also end the post by relating this all to "AI", 
+as is *de riguer* at the moment. 
+Since that acronymn that no longer means anything, 
+let me be clear that I actually mean 
+"vibe-coding" with Large Language Models.
 If, as Peter Naur wrote, programming is theory building, 
-then we should definitely not relegate programming to Large Language Models 
-that so many people are currently using to vibe code, 
+then we should definitely not relegate programming to Large Language Models, 
 since a model of language by definition cannot conceive of a theory.
 All it does is mindlessly generate code, 
 no matter how much you want to believe otherwise 
-because your all-too-human brain is hardwired to think that anything that can speak a language is as smart as you.
+because your all-too-human brain is hardwired to think that anything 
+that can speak a language is as smart as you.
 
-If you're still reading this after that intro paragraph, let me ask again, 
+---
+
+#todo
+- [ ] link Nicolas' post
+- [ ] link post on A Small Matter
+- [ ] link post on Peter Naur for "senior programmers"
+
+Okay, with all that intro out of the way, 
+let me go back to the question I started with: 
 why doesn't scientific software talk about domain modeling?
-That question might not make any sense if I don't quickly define *domain model*. 
-This is a term of art in computer science and software engineering. 
-It can refer to an actual verbal or even mathematical model, 
-and so my question might have you saying  
-"we already have domain models in science; we just call them *models*, period."
+If you're a scientist, my question might have you saying  
+"uh, of cousre we have *models* in scientific software".
+In other words, my question might not make any sense 
+if I don't quickly define *domain model*. 
+You're smart, you can guess what it means, 
+but we have to be clear about this: 
+it's a term of art in computer science and software engineering. 
 You will also hear the term "domain model" used in the tech community, where programmers go around giving talks,
-and where, more often than not, it can sound like it means  
+and where, more often than not, it can sound like shorthand for   
 "all the messy real-world stuff that my code must unfortunately interact with--if only I didn't have to deal with those dang domains, 
 my code would be provably correct with formal methods".
 
@@ -57,8 +144,8 @@ This abstraction allows users of the software
 to go about their business in their domain, 
 while programmers are free to fiddle with the low-level details, 
 as long as they don't break the contract written into the domain model.  
-It sure sounds like a good idea to me,
-as somebody who thinks about research software, 
+As somebody who thinks about research software, I 
+think it sure sounds like a good idea 
 to make it easier for scientists to reason about a (domain) model, 
 while also making it easier for research software engineers 
 to develop and maintain the code that supports that model.
@@ -67,7 +154,7 @@ If you're familiar with computer science,
 you will probably have already recognized that 
 domain modeling is a specific case of a 
 more general phenomenon: the interface/implementation duality.
-In fact, you might feel like you want to scream that at me.
+You might even be annoyed that I am missing this obvious point.
 You're right; I'll say more about this below.
 
 But let me ask my question one last time.
@@ -85,7 +172,7 @@ Here's two other easy answers to my question.
 The first: "Domain models? You mean like classes with methods in object-oriented programming? Don't we all do that to some extent?"
 The second: "Domain models? You mean like messy business logic in CRUD apps? What does that have to do with scientific software?"
 
-In this post, I will try to convince you that both answers miss the mark in interesting ways. 
+I will try to convince you that both answers miss the mark in interesting ways. 
 I'll say why domain models are not just object-oriented programming (henceforth, OOP).
 I'll show that, quite the opposite, OOP is instead 
 a direct descendent of ideas about how to write code for scientific simulations 
@@ -99,11 +186,11 @@ Lastly, I will make good on my promise above
 to tie this back to programming more generally, 
 and why I think it seriously is still worth 
 thinking about the relationship of (scientific) software and 
-(domain) models, in spite of all the hype about vibecoding.
+domain models, in spite of all the hype about vibecoding.
 
 ## What is domain modeling?
 
-First, let me introduce domain modeling, and tell you why you might care about it.
+Enough preamble; finally I will define domain modeling in detail with specific examples.
 Sometime in 2022-2023, I read 
 [Domain-Driven Design](https://www.domainlanguage.com/ddd/) by Eric Evans, and I got really excited about it.
 (From here on out I'll write "DDD" to avoid making you read "domain-driven design" a thousand times.)
@@ -133,6 +220,7 @@ some real-world domain into software, even if it's part of a culture they feel l
 Second, you really get a feel for his process. 
 If you have ever gone through the process of designing software for some real-world domain, 
 I bet the story really resonates with you.
+
 
 Now, you might be thinking, "write code in terms of your domain, yeah, sure, everybody does that".
 I got really excited reading this stuff, and told people about it at the job I had at the time.
