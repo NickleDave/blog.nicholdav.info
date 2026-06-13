@@ -116,12 +116,17 @@ no matter how much you want to believe otherwise
 because your all-too-human brain is hardwired to think that anything 
 that can speak a language is as smart as you.
 
----
+Last aside before I get into it: I know this is a long post. You might think I need to learn to 
+[write for a short attention span](https://matthewrocklin.com/blog/work/2020/07/13/brevity). 
+I have tried to write short versions of this post, 
+but I feel like there's something I want to say. 
+I'm making myself work through these thoughts to see if I'm making a mountain out of a molehill or not.
+This is why we write, instead of asking a statistical model of language to generate a bunch of text for us. 
+You might also consider the possibility that antisocial media has shortened your attention span, 
+and it might be good exercise to slow down and digest some ideas. 
+As a concession to our shortened attention spans, I have linked to relevant sections in the intro above.
 
-#todo
-- [ ] link Nicolas' post
-- [ ] link post on A Small Matter
-- [ ] link post on Peter Naur for "senior programmers"
+---
 
 Okay, with all that intro out of the way, 
 let me go back to the question I started with: 
@@ -384,7 +389,10 @@ This would be one way to see
 if we can make better sense of scientific software design 
 through a DDD framework.
 
-## OOP as a direct descendent of domain modeling
+One last thing I want to say here is that 
+https://nrposner.com/blog/affordances-in-library-api-design/
+
+## Object-oriented programming as a mutant descendent of domain modeling
 
 Ok, so in the introduction I said 
 that domain models in software engineering 
@@ -392,7 +400,7 @@ are, arguably,
 just one more case of the distinction between 
 interface and implementation that we see 
 everywhere in computer science. 
-If you read [Elements of Computer], 
+If you read [Elements of Computer Science], 
 you will be told that this distinction exists 
 even at the lowest level of simple logic gates, 
 where an And gate has the "interface" 
@@ -405,17 +413,50 @@ so important that he hard-coded it into C++,
 with the `public` and `private` keywords, 
 and its one of the first things he tells us in his PPP book.
 
-Likewise, domain modeling is not a new idea 
-(as Evans himself acknowledges right at the start of his book), 
-I now know for sure they've been around longer than Eric Evans' book,
-because I have been attempting to read yet another book, 
+I also said above that I have gotten the reaction, "domain-driven design? Isn't that just object-oriented programming?" 
+(henceforth, OOP).
+This is why I mention Stroustrop; you will of course know that his development of C++ began life as "C with classes", 
+and he is one of the reasons that OOP ruled the software engineering world for roughly thirty-five years.
+
+This is the part of the post where I tell you that everything you know about object-oriented programming is wrong. 
+
+Actually, I will let Casey Muratori tell you, since that is (one of) the point(s) of his excellent talk.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wo84LFzx5nI?si=nDWjPBE5rJN61tiE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+One big takeaway for me, given everything I've discussed above, 
+is that OOP is actually a sort of mutant cousin of domain modeling. 
+It's what happened when the good ideas behind OOP got corrupted 
+by a game of telephone running from academics doing research 
+to software engineers developing "enterprise" software for large businesses. 
+
+
+
+You should watch the whole thing,
+but I want to summarize some key points
+
+But we can go beyond this and say, 
+from the beginning, computers were developed in large part by scientists and researchers in academia.
+We have to remember, there was no computer science yet, 
+so the men and women who developed computer circuits and programming languages 
+brought together a wildly diverse background, 
+creating a "primordial soup" of ideas 
+that the von Neumann architecture emerged from, 
+as the authors of [Dive into Systems](https://diveintosystems.org/book/C5-Arch/hist.html) put it.
+Of course some of the first things these scientists did was implement models from their scientific domains in software.
+
+Just to really underscore the idea 
+that domain modeling has been around long before object-oriented programming,
+let me quote one more book, 
 [Structure and Interpretation of Computer Programs](https://sourceacademy.org/sicpjs), AKA, SICP.
-I ended up finding DDD in SICP, 
-and having to admit to myself that, yeah, this idea has been around forever.
-When I got to chapters 2 and 3, 
-there I saw that we were talking about data abstraction 
-and designing programs for modeling. Sound familiar?
-Let me quote you this bit from chapter 3:
+If you have ever tried to [teach yourself computer science](https://teachyourselfcs.com/), 
+you will be familiar with SICP, and in particular that it uses the [Scheme dialect of Lisp](https://norvig.com/lispy.html).
+[Wikipedia](https://en.wikipedia.org/wiki/Lisp_(programming_language)) tells us that 
+Lisp "is the second-oldest high-level programming language still in common use", so, 
+no, it doesn't have objects per se, although of course 
+people have defined them
+
+So, from chapter 3 of SICP:
 
 > One powerful design strategy, which is particularly appropriate to the construction of programs 
 for modeling physical systems, is to base the structure of our programs on the structure of the system being modeled. 
@@ -427,15 +468,20 @@ of the new symbolic analogs of those objects or actions.
 If we have been successful in our system organization, 
 then to add a new feature or debug an old one we will have to work on only a localized part of the system.
 
+
+Likewise, domain modeling is not a new idea 
+(as Evans himself acknowledges right at the start of his book), 
+I now know for sure they've been around longer than Eric Evans' book,
+because I have been attempting to read yet another book, 
+
+I ended up finding DDD in SICP, 
+and having to admit to myself that, yeah, this idea has been around forever.
+When I got to chapters 2 and 3, 
+there I saw that we were talking about data abstraction 
+and designing programs for modeling. Sound familiar?
+
 Well there it is.
 
-But we can go beyond this and say, 
-from the beginning, 
-computers were developed by scientists 
-and researchers in academia.
-While the first computers were being built, 
-
-Of course some of the first things these scientists did was implement models from their scientific domains in software.
 
 ## Domain models as boundary objects
 
