@@ -1,8 +1,8 @@
 ---
 title: "(scientific) software should focus on domain modeling more"
-description: "It's models all the way down, so let's be explicit about that"
+description: "Computing is models all the way down, so let's be explicit about that"
 author: "David Nicholson"
-date: "03/06/2026"
+date: "06/19/2026"
 from: markdown+emoji
 image: evans-2003-fig1.2.png
 categories:
@@ -12,9 +12,10 @@ categories:
 - domain-driven design
 ---
 
-Update 2026-05-30:
-I rewrote this again based on a single comment from Juan Luis Cano Rodríguez,
-that I didn't explain what domain modeling was. Right, of course.
+Update 2026-06-19:
+I totally rewrote this post again, spurred on by a single comment from 
+[Juan Luis Cano Rodríguez](https://bsky.app/profile/juanlu.space),
+that I didn't explain what domain modeling was. Right, of course. 
 
 Update 2026-03-06:
 I first wrote this back at the start of 2025. 
@@ -25,39 +26,53 @@ based on feedback from folks in the [US-RSE](https://us-rse.org/) and [pyOpenSci
 and [Felipe Moreno](https://flpm.dev/).
 Special thanks to [Alex Chabot-Leclerc](https://alexchabot.net/) for reading closely and talking through the earlier version.
 
----
+
+:::{.callout-warning}
+## *Avertissement*
+
+I know this is a long post. You might think I need to learn to 
+[write for a short attention span](https://matthewrocklin.com/blog/work/2020/07/13/brevity). 
+I have tried to write short versions of this post.
+But I keep thinking all the things I talk about here are connected, 
+so I am making myself write it all down, 
+to see if I'm making a mountain out of a molehill or not.
+This is why we write, instead of asking a statistical model of language to generate a bunch of text for us. 
+Also, I would like to do everything possible to resist the impact that 
+[antisocial media](https://journals.sagepub.com/doi/10.1177/20563051261437487) 
+and other tech has had on our [attention spans](https://www.apa.org/news/podcasts/speaking-of-psychology/attention-spans)
+But as a concession to our shortened attention spans, 
+I will write an overview with links to relevant sections.
+:::
 
 In this post I hope to convince you that scientific software should 
 focus on domain modeling more. 
-That open sentence might make you think that you are not the intended audience 
+That opening sentence might make you think that you are not the intended audience 
 for this blog post. So first let me tell you 
-that at the end of the post I am going to argue that everyone is a scientist, 
+that at the end of the post I am going to argue that 
+[everyone is a scientist](#we-are-all-scientists), 
 so we should all care about how our models of the world get implemented in code. 
-Or, to put that in a way you might find less ridiculous, 
-I think you should read this post even if you think you don't care that much 
-about scientific software. 
-I am going to start out talking about 
-how I am more and more surprised that scientific software 
+In case you think that's ridiculous, let me put it another way.
+You should read this post even if you think you don't care that much about scientific software, 
+because even though I start out talking about how I surprised I am that scientific software 
 rarely if ever talks about domain modeling, 
-but I am going to end up convinced 
-that what I have to say applies to software 
-more generally; scientific software is just a specific case 
-of a more general phenomenon.
+<!--actually say this in domain modeling section!-->
+I am going to end up convinced 
+that what I have to say applies to software more generally. 
+Scientific software is just a specific case of a more general phenomenon.
 
-*Domain model.* I keep using that term.
+*Domain model*. I keep using that term.
 If you are a scientist, you might naturally think that 
 scientific software has a lot to do with (scientific) models already. 
 And if you are a *computer* scientist, 
 you might similarly think that of course scientific software 
 is built around domain models, 
 based on your understanding of that term.
-I will define domain modeling below. 
-And I will argue that, if you are already familiar with that term,  
-then everything you know about it, 
-and related topics like object-oriented programming, is wrong. 
+I will [define domain modeling](#what-is-domain-modeling) below. 
+And I will argue that, if you are already familiar with that term, then 
+[everything you know about domain modeling, and related topics like object-oriented programming, is wrong](#OOP-and-domain-modeling).
 
 And I will conclude that this actually *matters*, 
-that if we want computer "scientists"
+that if we want computer scientists
 and all the other scientists to work together better, 
 we should make these domain models super explicit. 
 And, again, I think this is true more generally  
@@ -65,48 +80,71 @@ of software developers and the downstream users
 of that software, who I think we can agree should ideally be in dialogue 
 with the core developers 
 (unless you are a little fascist that wants to jail users in a walled garden, 
-in which case, we'll be out here when you're ready to join the human race).
+in which case, when you're ready to join the human race, we'll be out here).
 There's two reasons that domain models matter. 
 The first reason is fairly obvious, and probably lines up 
 with your understanding of the term "domain model": 
 by focusing on a domain model, 
 we design software with affordances 
-that most fit the task at hand. 
-The second reason is less obvious, and, I hope, 
-more interesting: 
-domain models serve as boundary objects 
+that most fit the task at hand.
+This is best made clear by [looking at some examples](#DDD-by-example) 
+of what I would call "domain-oriented code", 
+even if the people who wrote the code would not say they were 
+"doing domain-driven design".
+The second reason is less obvious, and, I hope, more interesting: 
+[domain models serve as boundary objects](#domain-models-as-boundary-objects)
 that allow broad groups of workers with loosely-aligned interests 
 to collaborate. 
-(I'll also define what a boundary object is below.)
+(I'll also define what a boundary object is.)
+To make this point, I will provide examples from actual libraries I work with 
+that I think show how software engineers working in different 
+"sub-domains" of computer science are actually using domain models as boundary objects. 
+I will also give an example to show how I think 
+*surfacing* these domain models,
+really putting them front and center in the documentation, 
+could actually help users work with the libraries.
 
 Let me say right here at the top 
-that I am not claiming any of these ideas are new, 
-or my own. 
-But I think they bear repeating.  
+that I am not claiming any of these ideas are new, or my own. 
+But I think they very much bear repeating.  
 I will give detail and links below 
 but please know 
 I am stringing my thoughts together 
 from several people: Eric Evans Domain-Driven Design, 
 Casey Muratori's recent talk The Big OOPs,
 Peter Naur's Programming as Theory Building, 
-work from Susan Leigh Star, 
+books and papers from Susan Leigh Star, 
 Bonnie Nardi's A Small Matter of Programming, 
 and several recent blog posts citing those earlier writings. 
 Still, I am hoping that my focus here on scientific software
 has helped me synthesize these works 
 in a way that is more interesting.
 
+<!--
+I'm not happy with this part, still sounds too ranty and easy to argue with.
+I think start with spec-driven development, say that yes, in theory, 
+you might be able to make that work, 
+but you still have this problem that natural language is way too expressive,
+but then you still end up with the problem 
+that no-one really has a good theory of how the code works.
+This lets you segue into the "everyone is a scientist" more naturally as well.
+-->
 And when I say that I think these ideas bear repeating, 
 I mean that I feel like the people who most need to hear them 
 are the software engineers who seem to be all to eager 
-to believe that they can be replaced with "AI", 
+to believe that they can replace themselves and many other humans with "A.I".
+<!--
+I know irony is dead but you must be able to see the irony 
+that 
 to relinquish that capacity that so many in Silicon Valley 
 would hold up as the pinnacle of human thought: 
 the ability to reason, their rationality. 
-Yes, I will also end the post by relating this all to "AI", 
-as is *de riguer* at the moment. 
-Since that acronymn that no longer means anything, 
-let me be clear that I actually mean 
+-->
+Yes, near the end of this I will relate domain modeling to "A.I.", 
+as is *de riguer* at the moment, 
+and more specifically to so-called *spec-driven development*.
+And since the acronymn "AI" has lost all meaning thanks to tech industry hype, 
+let me be clear that I am specifically talking about  
 "vibe-coding" with Large Language Models.
 If, as Peter Naur wrote, programming is theory building, 
 then we should definitely not relegate programming to Large Language Models, 
@@ -115,17 +153,24 @@ All it does is mindlessly generate code,
 no matter how much you want to believe otherwise 
 because your all-too-human brain is hardwired to think that anything 
 that can speak a language is as smart as you.
+I will argue that spec-driven development is not going to fix this problem, 
+because a verbal spec is a contract between software engineers 
+and other humans who are actually capable of understanding what it means, 
+an interface if you will.
+The problem with a non-coder generating code from a prompt "spec" 
+is that they don't actually know what they want, 
+and even if they prompt their way to an implementation 
+that gives them the interface they want, 
+they still won't know if it's a good or bad implementation. 
 
-Last aside before I get into it: I know this is a long post. You might think I need to learn to 
-[write for a short attention span](https://matthewrocklin.com/blog/work/2020/07/13/brevity). 
-I have tried to write short versions of this post, 
-but I feel like there's something I want to say. 
-I'm making myself work through these thoughts to see if I'm making a mountain out of a molehill or not.
-This is why we write, instead of asking a statistical model of language to generate a bunch of text for us. 
-You might also consider the possibility that antisocial media has shortened your attention span, 
-and it might be good exercise to slow down and digest some ideas. 
-As a concession to our shortened attention spans, I have linked to relevant sections in the intro above.
+A software engineer is a designer and an artist who translates 
+the verbal spec into an interface.
 
+and the software engineers are still responsible for the implementation.
+Since you could spend a lifetime understanding the infinite trade-offs 
+that are possible at every level of modeling up and down the stack, 
+do you really want to abdicate that responsibility 
+and 
 ---
 
 Okay, with all that intro out of the way, 
@@ -194,7 +239,7 @@ and why I think it seriously is still worth
 thinking about the relationship of (scientific) software and 
 domain models, in spite of all the hype about vibecoding.
 
-## What is domain modeling?
+## What is domain modeling? {#what-is-domain-modeling}
 
 Enough preamble; finally I will define domain modeling in detail with specific examples.
 Sometime in 2022-2023, I read 
@@ -227,7 +272,7 @@ Second, you really get a feel for his process.
 If you have ever gone through the process of designing software for some real-world domain, 
 I bet the story really resonates with you.
 You should also notice here that Evans and the electrical engineers 
-are co-developing a boundary object: a thing they can both refer to 
+are co-developing a [boundary object](): a thing they can both refer to,  
 that helps them work together to achieve some task, 
 in this case design a piece of software 
 that helps the electrical engineers develop circuits.
@@ -392,7 +437,7 @@ through a DDD framework.
 One last thing I want to say here is that 
 https://nrposner.com/blog/affordances-in-library-api-design/
 
-## Object-oriented programming as a mutant descendent of domain modeling
+## Object-oriented programming as a mutant descendent of domain modeling {#OOP-and-domain-modeling}
 
 Ok, so in the introduction I said 
 that domain models in software engineering 
@@ -509,8 +554,87 @@ one spoken by the other engineers they work with, and the engineers that use the
 They speak in terms of "abstractions" and "architectures". 
 (This is me returning to the point above about software engineering being a domain.)
 
+At the end of the day, a scientist using scientific Python only cares about a Numpy array 
+inasmuch as it makes life easier when they do an analysis.
 
-## Domain modeling and spec-driven development
+If that's so, then show me the doodles! 
+Like Evans' box-and-arrow diagrams above.
+Show me your mental model of your domain. Put it in your docs! 
+Let me read it, let me actually see these schematics, even if they are just doodles, 
+it helps me to know how your thought process evolved.
+All I can see right now is this insurmountable mountain of code. 
+I don't even know where the hiking trail starts so that I can scale the mountain!
+I know that there are examples of people doing this, 
+e.g., in the scientific Python community where I spend most of my time, 
+but I think it's fair to say that this is not the *norm*.
+(Thank you to Warrick Ball from US-RSE who shared a good example of domain-driven design from his [aims3 docs](https://warrickball.gitlab.io/aims3-alpha/grids.html))
+I don't know that I have ever seen diagrams showing how the *design evolved*, 
+as part of an iterative development process.
+I can't help but feel like that's exactly the sort of thing that could help people get up to speed on how the code works.
+
+Just to make this real concrete, I'll give one example from my world of scientific Python. 
+With this example, I want to show first of all that, yes, 
+people definitely work this already, even if they don't call it domain-driven design. 
+And, second, that we could make this design process easier to find, and use it in a way 
+that makes code easier to understand.
+My example is: the `numpy` n-dimensional array, that we'll call `ndarray` for short. 
+This is the core abstraction tha makes all of scientific Python possible. 
+How do the developers of NumPy conceive of the `ndarray`?
+Of course, if you go to the "Getting Started" section, you can get a [written introduction](https://numpy.org/doc/2.1/user/whatisnumpy.html), 
+arguing for why we need an n-dimensional array in Python, and showing you some code snippets.
+Great. But I want a drawing. Like the doodles above. A picture is worth a thousand words. 
+So if I make it down to the bottom of that page, I can find a link to the [NumPy reference](https://numpy.org/doc/2.1/reference/index.html#reference), 
+and there finally if I click on [array objects](https://numpy.org/doc/2.1/reference/arrays.html), I can find this picture: 
+
+![](conceptual-diagram-array.png)
+
+I think a diagram like this would help a beginner understand what an `ndarray` is!  
+And I can't be the only one, since [Nicolas Rougier](https://www.labri.fr/perso/nrougier/) has written [a whole book about](https://www.labri.fr/perso/nrougier/from-python-to-numpy/) 
+going from Python to NumPy, and he starts the book with these kinds of diagrams. 
+
+
+::: {#fig-rougier layout-ncol=2}
+
+![Diagram of item layout of NumPy array](rougier-numpy-array-01.png)
+
+![Diagram of memory layout of NumPy array](rougier-numpy-array-02.png)
+
+Diagrams from book From Python to NumPy showing "anatomy of a NumPy array"
+:::
+
+
+Similarly, the [Software Carpentry](software-carpentry.org) course [Programming with Python](https://swcarpentry.github.io/python-novice-inflammation/02-numpy.html) 
+uses a diagram to illustrate how `numpy.max` function works. 
+(If you look up the `numpy.ndarray.max` method, you'll be directed to the `numpy.max` page.)
+
+![Diagram of how the numpy max function works when the argument axis is 0 and when it is 1](python-operations-across-axes.png)
+
+Every time I have to remember which `axis` is which, I find myself wishing the NumPy docs had a diagram like this. 
+
+More to my point above: I want to know how the design of the `ndarray` evolved! 
+How did a group of developers come together from packages like `numeric` and arrive at a new design? 
+What did they recycle, and what did they throw away? 
+If I look at the ["Under-the-hood documentation for developers"](https://numpy.org/doc/2.1/dev/underthehood.html), 
+I don't find *any* of this. 
+Of course you can argue that this might seem like too much detail for developer docs. 
+If I'm a developer and I'm just trying to figure out how to subclass `ndarray`, 
+do I really need to know the whole history of your library? 
+Yet I know this stuff exists, on [GitHub issues](https://github.com/scikit-learn/scikit-learn/issues/29032) for example, 
+as part of the design and development process. 
+So maybe it's worth keeping a record of how things evolved somewhere in your documentation? 
+And making that more readable with diagrams. 
+
+Please let me emphasize that I am not trying to call out Numpy here, or make an example of them, 
+or anything like that. 
+I know how much work and how many volunteer hours go into maintaining NumPy, 
+and building the community around it. A lot of those people are my friends from conferences. 
+I just want to give some sort of concrete examples. 
+In their defense, we can notice that NumPy is so widely used that it was easy for me to find these examples. 
+I am just wondering what *else* we can do as research software engineers to make libraries more approachable. 
+Maybe it would help prevent snarky young kids from writing blog posts [like this](https://dynomight.net/numpy/). 
+
+
+## Domain modeling, spec-driven development, and vibe coding
 
 Ok, so, first off, believe me, I'm well aware that there's no shortage of thoughtfluencers 
 opining about coding LLMs.
@@ -569,4 +693,9 @@ I'm recycling their screenshot and alt text.)
 
 These ideas present an alternative to magical, god-like AI "agents" that do all the intellectual heavy lifting for 
 software developers, and anyone else who does any kind of creative thinking for a living. 
-But I'll save those thoughts for yet another blog post.
+
+
+## We need more domain modeling because we are all computational scientists now {#we-are-all-scientists}
+
+- insert Jerry Seinfeld walking out of talk gif
+- discuss perspectival realism, Michela Massimi
