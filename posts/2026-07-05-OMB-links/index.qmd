@@ -1,0 +1,62 @@
+---
+title: "Resources I used to write my comment on the OMB's proposed revisions "
+author: "David Nicholson"
+date: "07/05/2026"
+from: markdown+emoji
+categories:
+- science
+- federal funding
+---
+
+In a [separate post](/posts/2026-07-05-OMB-comment/index.qmd), I shared the comment 
+I wrote on the Office of Management and Budget's 
+[proposed revisions](https://www.regulations.gov/document/OMB-2026-0034-0001) 
+to the Guidance for Federal Financial Assistance. 
+Here I am sharing the resources I used to write that comment.
+
+First of all, [Grace Lindsay](https://gracewlindsay.com/) 
+has written a very clear summary in plain language, 
+[here](https://docs.google.com/document/d/e/2PACX-1vR6YD7l-9xb65JONdvKi6UW2ePIWn8uGkbRjFcxuJqsaKeocsTrp7-tiOFCVqFMU8NdiiyVTWEOp81y/pub), 
+of why *everyone* should care about these proposed revisions, 
+and how you can write a comment.
+
+Second, I found [this page](https://dashboards.planetary.org/rules-change/#cfr-200.461) 
+from the Planetary Society most helpful when writing. 
+The page is a tool that provides a "track changes" like comparison of 
+the various sections before and after revisions, so you can easily see 
+what actually changed. I also find it very helpful that they 
+have a top-level summaries broken out into categories of changes, 
+with each category tied to specific rules. 
+I found that page through [this post](https://openscapes.org/blog/2026-06-16-civic-engagement/) 
+from Julie Lowndes on the Openscapes blog.
+
+Third, Dr. Elizabeth Ginexi, a former NIH Program Official, 
+has a series of blog posts that are a good read for any scientist 
+to get a visceral sense of the impact these changes would have, 
+not just on [federally-funded scientific research](https://elizabethginexi.substack.com/p/summary-of-key-changes-in-ombs-proposed) 
+but [all federally-funded programs](https://elizabethginexi.substack.com/p/this-new-omb-rule-is-bigger-than?r=3v66gg&utm_medium=ios&triedRedirect=true)
+She also has a post that is more of a call to action with specific instructions 
+[here](https://elizabethginexi.substack.com/p/what-we-need-to-do-next-ombs-proposed).
+And if you find it easier to listen than to read, 
+you might find it helpful to watch [this video](https://www.youtube.com/watch?v=T6rq5lVZHWo) 
+of a [Stand Up for Science](https://www.standupforscience.net/) meeting 
+that included Dr.Ginexi among the speakers.
+
+And just to give more of a sense of the range of scientists raising alarms about these changes, 
+let me close with [this editorial](https://diabetesjournals.org/care/article/49/7/1157/170106/Please-Tell-Me-It-Is-Only-a-Nightmare-The-Proposed) 
+in the American Diabetes Assocation journal Diabetes Care.
+Some of the same authors wrote 
+[another editorial](https://diabetesjournals.org/care/article/49/6/901/164764/Misguided-Brushes-of-a-Pen-Continue-to-Dismantle) 
+critical of the Trump administration, 
+and were ejected from an ADA conference for distributing paper copies of the editorial, 
+as reported in Science, 
+[here](https://www.science.org/content/article/diabetes-society-officials-resign-after-removal-trump-protestors-conference)
+
+I'll just close by saying 
+I have been reading 
+[Somebody Should Do Something](https://mitpress.mit.edu/9780262049788/somebody-should-do-something/).
+One of the factors the authors identify 
+that push people over the tipping point from inaction to direct action 
+is outrage. 
+Well, I'm outraged, and I'm doing something.
+I hope you find some of these links helpful.
