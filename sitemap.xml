@@ -2,22 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://blog.nicholdav.info/index.html</loc>
-    <lastmod>2025-01-09T03:07:10.292Z</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.nicholdav.info/posts/2026-03-06-domain-driven-design/index.html</loc>
-    <lastmod>2026-03-06T20:16:06.130Z</lastmod>
+    <lastmod>2026-05-13T11:18:50.987Z</lastmod>
   </url>
   <url>
     <loc>https://blog.nicholdav.info/posts/2025-01-05-bandcamp-wrapped-2024/index.html</loc>
-    <lastmod>2025-10-19T14:59:09.920Z</lastmod>
+    <lastmod>2026-05-13T11:18:50.994Z</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.nicholdav.info/posts/2026-06-19-domain-modeling/index.html</loc>
+    <lastmod>2026-06-15T15:52:00.799Z</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.nicholdav.info/posts/2026-07-05-OMB-comment/index.html</loc>
+    <lastmod>2026-07-08T02:16:33.762Z</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.nicholdav.info/posts/2026-07-05-OMB-links/index.html</loc>
+    <lastmod>2026-07-08T02:57:38.119Z</lastmod>
   </url>
   <url>
     <loc>https://blog.nicholdav.info/posts/2022-03-16-how-to-jekyll-academic-website/index.html</loc>
-    <lastmod>2025-09-24T14:29:09.385Z</lastmod>
+    <lastmod>2026-05-13T11:18:50.989Z</lastmod>
   </url>
   <url>
     <loc>https://blog.nicholdav.info/posts/2022-12-26-four-tips-structuring-research-python/index.html</loc>
-    <lastmod>2025-09-24T14:02:59.832Z</lastmod>
+    <lastmod>2026-05-13T11:18:50.990Z</lastmod>
   </url>
 </urlset>
