@@ -1,0 +1,88 @@
+---
+title: "My comment on the OMB's proposed revisions to the Guidance for Federal Financial Assistance"
+description: "I probably wouldn't exist if these revisions had been in place when I went back to school"
+author: "David Nicholson"
+date: "07/05/2026"
+from: markdown+emoji
+categories:
+- science
+- federal funding
+---
+
+The Office of Management and Budget has proposed 
+[a sweeping set of revisions](https://www.regulations.gov/document/OMB-2026-0034-0001) 
+to the Guidance for Federal Financial Assistance. 
+Below I am posting the comment I left.
+I have a separate blog post explaining the links I used to write this comment, 
+[here](/posts/2026-07-05-OMB-links/index.qmd).
+
+> I owe almost everything I have in life to the opportunities afforded to me by 
+> federally-funded scientific research in the United States. 
+> Enlisting in the "science army" that fully paid for my education 
+> gave me a second chance in life that I am eternally grateful for. 
+> I want nothing more in life than to contribute back. 
+> That is why I oppose the three categories of proposed revisions I outline below, 
+> with references to specific sections for each. 
+> I can see clearly these changes would utterly destroy scientific research in the United States. 
+> The revisions would deny me the opportunity to pursue my own dreams, 
+> and deny similar opportunities to a broad swath of Americans.
+> 
+> First of all, I strongly oppose the changes that would take grant-awarding power 
+> out of the hands of scientific experts. This is the reason I oppose revisions to §200.205 
+> that require pre-issuance review of every grant by a political appointee. 
+> Such a revision would allow appointees to defund the kind of 
+> fundamental research I did as a graduate student, 
+> on the neural basis of song learning in the songbird brain. 
+> Comparative studies like these have revealed brain mechanisms conserved across species, 
+> an advance that is critical for treating neurodegenerative diseases 
+> such as Parkinson's and Alzheimer's at a time when we face an epidemic of such diseases. 
+> Likewise, I oppose revisions to §200.430 that allow grant termination without cause, 
+> that would similarly allow political appointees to derail fundamental research. 
+> Such research moves on timescales much longer than administrations. 
+> I know from firsthand experience that we must constantly maintain 
+> a fertile soil of fundamental research if we hope to cultivate translational medicines, 
+> like the  well-known GLP drugs derived from basic research on Gila monster venom. 
+> Similarly, I oppose the proposed revision to §200.204, 
+> that would allow agency heads to keep grant competitions off public sites 
+> whenever they decide it serves the "national interest". 
+> If it had been instituted at the time, this revision could have prevented me 
+> from working after graduate school at a small R&D company funded by DARPA programs on AI security. 
+> The likelihood of such a scenario is underscored by current events unfolding 
+> between the Department of War and frontier AI companies. 
+> Thus, the revisions to §200.204 would decimate the long tail of small businesses
+>  that often hire scientists like myself who struggle to find work 
+>  because of the limited number of academic positions.
+> 
+> Second, I strongly oppose changes that prohibit broad categories of research and collaboration. 
+> I oppose revisions to §200.202 stating that "programs must align with political priorities of the administration". 
+> Most of the research I have participated in would have been paralyzed 
+> if scientists leading it had to find new justifications every four years to satisfy an incoming administration. 
+> For similar reasons, I oppose the changes to § 200.220 that would prohibit spending any federal funds 
+> on collaboration with "covered foreign countries". 
+> As written, this revision is so broad it would have needlessly prevented 
+> a wide range of collaborations in every laboratory I have worked in, with scientists from Denmark to Japan.
+> 
+> Lastly, I strongly oppose revisions that would put restrictions on sharing results. 
+> Again, most of the opportunities I have had in adult life 
+> are due directly or indirectly to networking with scientists while sharing results. 
+> It would have been much less likely that I would have enjoyed any of these opportunities 
+> if I had had to do the following: obtain pre-approval for conference attendance, 
+> as proposed revisions to §200.432 would require; obtain pre-approval 
+> for scientific journal subscriptions and professional memberships, 
+> as proposed revisions to §200.454 would require; 
+> and find alternate finding for publication because such costs would not be allowed under revisions to §200.461. 
+> While I share the frustration of many scientists with for-profit scientific publishing, 
+> the changes to §200.461 would do nothing to fix or replace that system, 
+> and seem likely to exacerbate the current issues.
+> 
+> In summary, the proposed revisions I outlined above would consist 
+> of a scorched earth attack on the research infrastructure of the United States, 
+> causing the hard-won scientific advances of my colleagues to wither on the vine before they can bear fruit. 
+> I have made every effort to self-edit my own feelings 
+> and instead focus on the real effects these changes would have. 
+> But I cannot imagine any rationale for these self-destructive revisions 
+> beyond some sort of poisonous hatred of the United States and its position as a scientific superpower. 
+> If instituted, the proposed revisions would end any hope 
+> I have that I can one day as an independent researcher give back to the system 
+> that gave me a second chance in life, and they would rob the same opportunities, 
+> unique to our country, from an uncountable number of Americans.
